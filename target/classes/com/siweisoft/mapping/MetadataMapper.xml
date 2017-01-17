@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.siweisoft.dao.MetadataMapper">
+  <resultMap id="BaseResultMap" type="com.siweisoft.model.Metadata">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="meta_name" jdbcType="VARCHAR" property="metaName" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="creater" jdbcType="VARCHAR" property="creater" />
+    <result column="edited" jdbcType="VARCHAR" property="edited" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="created_time" jdbcType="TIMESTAMP" property="createdTime" />
+    <result column="edited_time" jdbcType="TIMESTAMP" property="editedTime" />
+    <result column="parent_id" jdbcType="INTEGER" property="parentId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, meta_name, description, creater, edited, status, created_time, edited_time, parent_id
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from metadata
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from metadata
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.siweisoft.model.Metadata">
+    insert into metadata (id, meta_name, description, 
+      creater, edited, status, 
+      created_time, edited_time)
+    values (#{id,jdbcType=INTEGER}, #{metaName,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, 
+      #{creater,jdbcType=VARCHAR}, #{edited,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, 
+      #{createdTime,jdbcType=TIMESTAMP}, #{editedTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.siweisoft.model.Metadata">
+    insert into metadata
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="metaName != null">
+        meta_name,
+      </if>
+      <if test="description != null">
+        description,
+      </if>
+      <if test="creater != null">
+        creater,
+      </if>
+      <if test="edited != null">
+        edited,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="createdTime != null">
+        created_time,
+      </if>
+      <if test="editedTime != null">
+        edited_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="metaName != null">
+        #{metaName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="creater != null">
+        #{creater,jdbcType=VARCHAR},
+      </if>
+      <if test="edited != null">
+        #{edited,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="createdTime != null">
+        #{createdTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="editedTime != null">
+        #{editedTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.siweisoft.model.Metadata">
+    update metadata
+    <set>
+      <if test="metaName != null">
+        meta_name = #{metaName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        description = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="creater != null">
+        creater = #{creater,jdbcType=VARCHAR},
+      </if>
+      <if test="edited != null">
+        edited = #{edited,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="createdTime != null">
+        created_time = #{createdTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="editedTime != null">
+        edited_time = #{editedTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.siweisoft.model.Metadata">
+    update metadata
+    set meta_name = #{metaName,jdbcType=VARCHAR},
+      description = #{description,jdbcType=VARCHAR},
+      creater = #{creater,jdbcType=VARCHAR},
+      edited = #{edited,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      created_time = #{createdTime,jdbcType=TIMESTAMP},
+      edited_time = #{editedTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

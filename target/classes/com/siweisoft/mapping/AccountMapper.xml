@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.siweisoft.dao.AccountMapper">
+  <resultMap id="BaseResultMap" type="com.siweisoft.model.Account">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="charge_type" jdbcType="VARCHAR" property="chargeType" />
+    <result column="bill_num" jdbcType="VARCHAR" property="billNum" />
+    <result column="created_time" jdbcType="TIMESTAMP" property="createdTime" />
+    <result column="money" jdbcType="REAL" property="money" />
+    <result column="summary" jdbcType="VARCHAR" property="summary" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="task_id" jdbcType="INTEGER" property="taskId" />
+    <result column="hotel_name" jdbcType="VARCHAR" property="hotelName" />
+    <result column="hotel_address" jdbcType="VARCHAR" property="hotelAddress" />
+    <result column="hotel_day" jdbcType="INTEGER" property="hotelDay" />
+    <result column="uuit_price" jdbcType="REAL" property="uuitPrice" />
+    <result column="hours" jdbcType="INTEGER" property="hours" />
+    <result column="call_time" jdbcType="INTEGER" property="callTime" />
+    <result column="edited" jdbcType="INTEGER" property="edited" />
+    <result column="edit_time" jdbcType="TIMESTAMP" property="editTime" />
+    <result column="creater" jdbcType="INTEGER" property="creater" />
+    <result column="car_record_id" jdbcType="INTEGER" property="carRecordId" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="auditor" jdbcType="INTEGER" property="auditor" />
+    <result column="audit_time" jdbcType="TIMESTAMP" property="auditTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, charge_type, bill_num, created_time, money, summary, user_id, task_id, hotel_name, 
+    hotel_address, hotel_day, uuit_price, hours, call_time, edited, edit_time, creater, 
+    car_record_id, status, auditor, audit_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from account
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from account
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.siweisoft.model.Account">
+    insert into account (id, charge_type, bill_num, 
+      created_time, money, summary, 
+      user_id, task_id, hotel_name, 
+      hotel_address, hotel_day, uuit_price, 
+      hours, call_time, edited, 
+      edit_time, creater, car_record_id, 
+      status, auditor, audit_time
+      )
+    values (#{id,jdbcType=INTEGER}, #{chargeType,jdbcType=VARCHAR}, #{billNum,jdbcType=VARCHAR}, 
+      #{createdTime,jdbcType=TIMESTAMP}, #{money,jdbcType=REAL}, #{summary,jdbcType=VARCHAR}, 
+      #{userId,jdbcType=INTEGER}, #{taskId,jdbcType=INTEGER}, #{hotelName,jdbcType=VARCHAR}, 
+      #{hotelAddress,jdbcType=VARCHAR}, #{hotelDay,jdbcType=INTEGER}, #{uuitPrice,jdbcType=REAL}, 
+      #{hours,jdbcType=INTEGER}, #{callTime,jdbcType=INTEGER}, #{edited,jdbcType=INTEGER}, 
+      #{editTime,jdbcType=TIMESTAMP}, #{creater,jdbcType=INTEGER}, #{carRecordId,jdbcType=INTEGER}, 
+      #{status,jdbcType=INTEGER}, #{auditor,jdbcType=INTEGER}, #{auditTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.siweisoft.model.Account">
+    insert into account
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="chargeType != null">
+        charge_type,
+      </if>
+      <if test="billNum != null">
+        bill_num,
+      </if>
+      <if test="createdTime != null">
+        created_time,
+      </if>
+      <if test="money != null">
+        money,
+      </if>
+      <if test="summary != null">
+        summary,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="taskId != null">
+        task_id,
+      </if>
+      <if test="hotelName != null">
+        hotel_name,
+      </if>
+      <if test="hotelAddress != null">
+        hotel_address,
+      </if>
+      <if test="hotelDay != null">
+        hotel_day,
+      </if>
+      <if test="uuitPrice != null">
+        uuit_price,
+      </if>
+      <if test="hours != null">
+        hours,
+      </if>
+      <if test="callTime != null">
+        call_time,
+      </if>
+      <if test="edited != null">
+        edited,
+      </if>
+      <if test="editTime != null">
+        edit_time,
+      </if>
+      <if test="creater != null">
+        creater,
+      </if>
+      <if test="carRecordId != null">
+        car_record_id,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="auditor != null">
+        auditor,
+      </if>
+      <if test="auditTime != null">
+        audit_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="chargeType != null">
+        #{chargeType,jdbcType=VARCHAR},
+      </if>
+      <if test="billNum != null">
+        #{billNum,jdbcType=VARCHAR},
+      </if>
+      <if test="createdTime != null">
+        #{createdTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="money != null">
+        #{money,jdbcType=REAL},
+      </if>
+      <if test="summary != null">
+        #{summary,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="taskId != null">
+        #{taskId,jdbcType=INTEGER},
+      </if>
+      <if test="hotelName != null">
+        #{hotelName,jdbcType=VARCHAR},
+      </if>
+      <if test="hotelAddress != null">
+        #{hotelAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="hotelDay != null">
+        #{hotelDay,jdbcType=INTEGER},
+      </if>
+      <if test="uuitPrice != null">
+        #{uuitPrice,jdbcType=REAL},
+      </if>
+      <if test="hours != null">
+        #{hours,jdbcType=INTEGER},
+      </if>
+      <if test="callTime != null">
+        #{callTime,jdbcType=INTEGER},
+      </if>
+      <if test="edited != null">
+        #{edited,jdbcType=INTEGER},
+      </if>
+      <if test="editTime != null">
+        #{editTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="creater != null">
+        #{creater,jdbcType=INTEGER},
+      </if>
+      <if test="carRecordId != null">
+        #{carRecordId,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="auditor != null">
+        #{auditor,jdbcType=INTEGER},
+      </if>
+      <if test="auditTime != null">
+        #{auditTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.siweisoft.model.Account">
+    update account
+    <set>
+      <if test="chargeType != null">
+        charge_type = #{chargeType,jdbcType=VARCHAR},
+      </if>
+      <if test="billNum != null">
+        bill_num = #{billNum,jdbcType=VARCHAR},
+      </if>
+      <if test="createdTime != null">
+        created_time = #{createdTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="money != null">
+        money = #{money,jdbcType=REAL},
+      </if>
+      <if test="summary != null">
+        summary = #{summary,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="taskId != null">
+        task_id = #{taskId,jdbcType=INTEGER},
+      </if>
+      <if test="hotelName != null">
+        hotel_name = #{hotelName,jdbcType=VARCHAR},
+      </if>
+      <if test="hotelAddress != null">
+        hotel_address = #{hotelAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="hotelDay != null">
+        hotel_day = #{hotelDay,jdbcType=INTEGER},
+      </if>
+      <if test="uuitPrice != null">
+        uuit_price = #{uuitPrice,jdbcType=REAL},
+      </if>
+      <if test="hours != null">
+        hours = #{hours,jdbcType=INTEGER},
+      </if>
+      <if test="callTime != null">
+        call_time = #{callTime,jdbcType=INTEGER},
+      </if>
+      <if test="edited != null">
+        edited = #{edited,jdbcType=INTEGER},
+      </if>
+      <if test="editTime != null">
+        edit_time = #{editTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="creater != null">
+        creater = #{creater,jdbcType=INTEGER},
+      </if>
+      <if test="carRecordId != null">
+        car_record_id = #{carRecordId,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="auditor != null">
+        auditor = #{auditor,jdbcType=INTEGER},
+      </if>
+      <if test="auditTime != null">
+        audit_time = #{auditTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.siweisoft.model.Account">
+    update account
+    set charge_type = #{chargeType,jdbcType=VARCHAR},
+      bill_num = #{billNum,jdbcType=VARCHAR},
+      created_time = #{createdTime,jdbcType=TIMESTAMP},
+      money = #{money,jdbcType=REAL},
+      summary = #{summary,jdbcType=VARCHAR},
+      user_id = #{userId,jdbcType=INTEGER},
+      task_id = #{taskId,jdbcType=INTEGER},
+      hotel_name = #{hotelName,jdbcType=VARCHAR},
+      hotel_address = #{hotelAddress,jdbcType=VARCHAR},
+      hotel_day = #{hotelDay,jdbcType=INTEGER},
+      uuit_price = #{uuitPrice,jdbcType=REAL},
+      hours = #{hours,jdbcType=INTEGER},
+      call_time = #{callTime,jdbcType=INTEGER},
+      edited = #{edited,jdbcType=INTEGER},
+      edit_time = #{editTime,jdbcType=TIMESTAMP},
+      creater = #{creater,jdbcType=INTEGER},
+      car_record_id = #{carRecordId,jdbcType=INTEGER},
+      status = #{status,jdbcType=INTEGER},
+      auditor = #{auditor,jdbcType=INTEGER},
+      audit_time = #{auditTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

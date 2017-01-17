@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.siweisoft.dao.carRecordMapper">
+  <resultMap id="BaseResultMap" type="com.siweisoft.model.carRecord">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="car_number" jdbcType="VARCHAR" property="carNumber" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="start_time" jdbcType="TIMESTAMP" property="startTime" />
+    <result column="arrive_time" jdbcType="TIMESTAMP" property="arriveTime" />
+    <result column="start_kilometre" jdbcType="REAL" property="startKilometre" />
+    <result column="arrive_kilometre" jdbcType="REAL" property="arriveKilometre" />
+    <result column="kilometre" jdbcType="REAL" property="kilometre" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="edited_time" jdbcType="TIMESTAMP" property="editedTime" />
+    <result column="edited" jdbcType="VARCHAR" property="edited" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="created_time" jdbcType="TIMESTAMP" property="createdTime" />
+    <result column="created" jdbcType="INTEGER" property="created" />
+    <result column="start_longitude" jdbcType="REAL" property="startLongitude" />
+    <result column="start_latitude" jdbcType="REAL" property="startLatitude" />
+    <result column="arrive_longitude" jdbcType="REAL" property="arriveLongitude" />
+    <result column="arrive_latitude" jdbcType="REAL" property="arriveLatitude" />
+    <result column="task_id" jdbcType="INTEGER" property="taskId" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, car_number, type, start_time, arrive_time, start_kilometre, arrive_kilometre, 
+    kilometre, remark, edited_time, edited, user_id, created_time, created, start_longitude, 
+    start_latitude, arrive_longitude, arrive_latitude, task_id, status
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from car_record
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from car_record
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.siweisoft.model.carRecord">
+    insert into car_record (id, car_number, type, 
+      start_time, arrive_time, start_kilometre, 
+      arrive_kilometre, kilometre, remark, 
+      edited_time, edited, user_id, 
+      created_time, created, start_longitude, 
+      start_latitude, arrive_longitude, arrive_latitude, 
+      task_id, status)
+    values (#{id,jdbcType=INTEGER}, #{carNumber,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, 
+      #{startTime,jdbcType=TIMESTAMP}, #{arriveTime,jdbcType=TIMESTAMP}, #{startKilometre,jdbcType=REAL}, 
+      #{arriveKilometre,jdbcType=REAL}, #{kilometre,jdbcType=REAL}, #{remark,jdbcType=VARCHAR}, 
+      #{editedTime,jdbcType=TIMESTAMP}, #{edited,jdbcType=VARCHAR}, #{userId,jdbcType=INTEGER}, 
+      #{createdTime,jdbcType=TIMESTAMP}, #{created,jdbcType=INTEGER}, #{startLongitude,jdbcType=REAL}, 
+      #{startLatitude,jdbcType=REAL}, #{arriveLongitude,jdbcType=REAL}, #{arriveLatitude,jdbcType=REAL}, 
+      #{taskId,jdbcType=INTEGER}, #{status,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.siweisoft.model.carRecord">
+    insert into car_record
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="carNumber != null">
+        car_number,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+      <if test="startTime != null">
+        start_time,
+      </if>
+      <if test="arriveTime != null">
+        arrive_time,
+      </if>
+      <if test="startKilometre != null">
+        start_kilometre,
+      </if>
+      <if test="arriveKilometre != null">
+        arrive_kilometre,
+      </if>
+      <if test="kilometre != null">
+        kilometre,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="editedTime != null">
+        edited_time,
+      </if>
+      <if test="edited != null">
+        edited,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="createdTime != null">
+        created_time,
+      </if>
+      <if test="created != null">
+        created,
+      </if>
+      <if test="startLongitude != null">
+        start_longitude,
+      </if>
+      <if test="startLatitude != null">
+        start_latitude,
+      </if>
+      <if test="arriveLongitude != null">
+        arrive_longitude,
+      </if>
+      <if test="arriveLatitude != null">
+        arrive_latitude,
+      </if>
+      <if test="taskId != null">
+        task_id,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="carNumber != null">
+        #{carNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="startTime != null">
+        #{startTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="arriveTime != null">
+        #{arriveTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="startKilometre != null">
+        #{startKilometre,jdbcType=REAL},
+      </if>
+      <if test="arriveKilometre != null">
+        #{arriveKilometre,jdbcType=REAL},
+      </if>
+      <if test="kilometre != null">
+        #{kilometre,jdbcType=REAL},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="editedTime != null">
+        #{editedTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="edited != null">
+        #{edited,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="createdTime != null">
+        #{createdTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="created != null">
+        #{created,jdbcType=INTEGER},
+      </if>
+      <if test="startLongitude != null">
+        #{startLongitude,jdbcType=REAL},
+      </if>
+      <if test="startLatitude != null">
+        #{startLatitude,jdbcType=REAL},
+      </if>
+      <if test="arriveLongitude != null">
+        #{arriveLongitude,jdbcType=REAL},
+      </if>
+      <if test="arriveLatitude != null">
+        #{arriveLatitude,jdbcType=REAL},
+      </if>
+      <if test="taskId != null">
+        #{taskId,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.siweisoft.model.carRecord">
+    update car_record
+    <set>
+      <if test="carNumber != null">
+        car_number = #{carNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        type = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="startTime != null">
+        start_time = #{startTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="arriveTime != null">
+        arrive_time = #{arriveTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="startKilometre != null">
+        start_kilometre = #{startKilometre,jdbcType=REAL},
+      </if>
+      <if test="arriveKilometre != null">
+        arrive_kilometre = #{arriveKilometre,jdbcType=REAL},
+      </if>
+      <if test="kilometre != null">
+        kilometre = #{kilometre,jdbcType=REAL},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="editedTime != null">
+        edited_time = #{editedTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="edited != null">
+        edited = #{edited,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="createdTime != null">
+        created_time = #{createdTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="created != null">
+        created = #{created,jdbcType=INTEGER},
+      </if>
+      <if test="startLongitude != null">
+        start_longitude = #{startLongitude,jdbcType=REAL},
+      </if>
+      <if test="startLatitude != null">
+        start_latitude = #{startLatitude,jdbcType=REAL},
+      </if>
+      <if test="arriveLongitude != null">
+        arrive_longitude = #{arriveLongitude,jdbcType=REAL},
+      </if>
+      <if test="arriveLatitude != null">
+        arrive_latitude = #{arriveLatitude,jdbcType=REAL},
+      </if>
+      <if test="taskId != null">
+        task_id = #{taskId,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.siweisoft.model.carRecord">
+    update car_record
+    set car_number = #{carNumber,jdbcType=VARCHAR},
+      type = #{type,jdbcType=VARCHAR},
+      start_time = #{startTime,jdbcType=TIMESTAMP},
+      arrive_time = #{arriveTime,jdbcType=TIMESTAMP},
+      start_kilometre = #{startKilometre,jdbcType=REAL},
+      arrive_kilometre = #{arriveKilometre,jdbcType=REAL},
+      kilometre = #{kilometre,jdbcType=REAL},
+      remark = #{remark,jdbcType=VARCHAR},
+      edited_time = #{editedTime,jdbcType=TIMESTAMP},
+      edited = #{edited,jdbcType=VARCHAR},
+      user_id = #{userId,jdbcType=INTEGER},
+      created_time = #{createdTime,jdbcType=TIMESTAMP},
+      created = #{created,jdbcType=INTEGER},
+      start_longitude = #{startLongitude,jdbcType=REAL},
+      start_latitude = #{startLatitude,jdbcType=REAL},
+      arrive_longitude = #{arriveLongitude,jdbcType=REAL},
+      arrive_latitude = #{arriveLatitude,jdbcType=REAL},
+      task_id = #{taskId,jdbcType=INTEGER},
+      status = #{status,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

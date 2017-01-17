@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.siweisoft.dao.ChargeMapper">
+  <resultMap id="BaseResultMap" type="com.siweisoft.model.Charge">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="charge_type" jdbcType="VARCHAR" property="chargeType" />
+    <result column="summary" jdbcType="VARCHAR" property="summary" />
+    <result column="amount" jdbcType="VARCHAR" property="amount" />
+    <result column="created" jdbcType="INTEGER" property="created" />
+    <result column="created_time" jdbcType="TIMESTAMP" property="createdTime" />
+    <result column="edited_time" jdbcType="TIMESTAMP" property="editedTime" />
+    <result column="edited" jdbcType="INTEGER" property="edited" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="account_id" jdbcType="INTEGER" property="accountId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, user_id, charge_type, summary, amount, created, created_time, edited_time, edited, 
+    status, account_id
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from charge
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from charge
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.siweisoft.model.Charge">
+    insert into charge (id, user_id, charge_type, 
+      summary, amount, created, 
+      created_time, edited_time, edited, 
+      status, account_id)
+    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{chargeType,jdbcType=VARCHAR}, 
+      #{summary,jdbcType=VARCHAR}, #{amount,jdbcType=VARCHAR}, #{created,jdbcType=INTEGER}, 
+      #{createdTime,jdbcType=TIMESTAMP}, #{editedTime,jdbcType=TIMESTAMP}, #{edited,jdbcType=INTEGER}, 
+      #{status,jdbcType=INTEGER}, #{accountId,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.siweisoft.model.Charge">
+    insert into charge
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="chargeType != null">
+        charge_type,
+      </if>
+      <if test="summary != null">
+        summary,
+      </if>
+      <if test="amount != null">
+        amount,
+      </if>
+      <if test="created != null">
+        created,
+      </if>
+      <if test="createdTime != null">
+        created_time,
+      </if>
+      <if test="editedTime != null">
+        edited_time,
+      </if>
+      <if test="edited != null">
+        edited,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="accountId != null">
+        account_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="chargeType != null">
+        #{chargeType,jdbcType=VARCHAR},
+      </if>
+      <if test="summary != null">
+        #{summary,jdbcType=VARCHAR},
+      </if>
+      <if test="amount != null">
+        #{amount,jdbcType=VARCHAR},
+      </if>
+      <if test="created != null">
+        #{created,jdbcType=INTEGER},
+      </if>
+      <if test="createdTime != null">
+        #{createdTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="editedTime != null">
+        #{editedTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="edited != null">
+        #{edited,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="accountId != null">
+        #{accountId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.siweisoft.model.Charge">
+    update charge
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="chargeType != null">
+        charge_type = #{chargeType,jdbcType=VARCHAR},
+      </if>
+      <if test="summary != null">
+        summary = #{summary,jdbcType=VARCHAR},
+      </if>
+      <if test="amount != null">
+        amount = #{amount,jdbcType=VARCHAR},
+      </if>
+      <if test="created != null">
+        created = #{created,jdbcType=INTEGER},
+      </if>
+      <if test="createdTime != null">
+        created_time = #{createdTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="editedTime != null">
+        edited_time = #{editedTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="edited != null">
+        edited = #{edited,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="accountId != null">
+        account_id = #{accountId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.siweisoft.model.Charge">
+    update charge
+    set user_id = #{userId,jdbcType=INTEGER},
+      charge_type = #{chargeType,jdbcType=VARCHAR},
+      summary = #{summary,jdbcType=VARCHAR},
+      amount = #{amount,jdbcType=VARCHAR},
+      created = #{created,jdbcType=INTEGER},
+      created_time = #{createdTime,jdbcType=TIMESTAMP},
+      edited_time = #{editedTime,jdbcType=TIMESTAMP},
+      edited = #{edited,jdbcType=INTEGER},
+      status = #{status,jdbcType=INTEGER},
+      account_id = #{accountId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

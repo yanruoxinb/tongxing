@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.siweisoft.dao.TaskMapper">
+  <resultMap id="BaseResultMap" type="com.siweisoft.model.Task">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="number" jdbcType="VARCHAR" property="number" />
+    <result column="creater" jdbcType="VARCHAR" property="creater" />
+    <result column="created_time" jdbcType="TIMESTAMP" property="createdTime" />
+    <result column="customer_id" jdbcType="INTEGER" property="customerId" />
+    <result column="short_name" jdbcType="VARCHAR" property="shortName" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="province" jdbcType="VARCHAR" property="province" />
+    <result column="county" jdbcType="VARCHAR" property="county" />
+    <result column="fault_type" jdbcType="VARCHAR" property="faultType" />
+    <result column="plan_arrive_time" jdbcType="TIMESTAMP" property="planArriveTime" />
+    <result column="plan_finish_time" jdbcType="TIMESTAMP" property="planFinishTime" />
+    <result column="task_type" jdbcType="VARCHAR" property="taskType" />
+    <result column="car_record_id" jdbcType="INTEGER" property="carRecordId" />
+    <result column="contact_id" jdbcType="INTEGER" property="contactId" />
+    <result column="charge_id" jdbcType="INTEGER" property="chargeId" />
+    <result column="work_hours" jdbcType="INTEGER" property="workHours" />
+    <result column="loop_time" jdbcType="INTEGER" property="loopTime" />
+    <result column="send_demand" jdbcType="VARCHAR" property="sendDemand" />
+    <result column="workload" jdbcType="VARCHAR" property="workload" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, number, creater, created_time, customer_id, short_name, user_id, province, county, 
+    fault_type, plan_arrive_time, plan_finish_time, task_type, car_record_id, contact_id, 
+    charge_id, work_hours, loop_time, send_demand, workload
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from task
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from task
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.siweisoft.model.Task">
+    insert into task (id, number, creater, 
+      created_time, customer_id, short_name, 
+      user_id, province, county, 
+      fault_type, plan_arrive_time, plan_finish_time, 
+      task_type, car_record_id, contact_id, 
+      charge_id, work_hours, loop_time, 
+      send_demand, workload)
+    values (#{id,jdbcType=INTEGER}, #{number,jdbcType=VARCHAR}, #{creater,jdbcType=VARCHAR}, 
+      #{createdTime,jdbcType=TIMESTAMP}, #{customerId,jdbcType=INTEGER}, #{shortName,jdbcType=VARCHAR}, 
+      #{userId,jdbcType=INTEGER}, #{province,jdbcType=VARCHAR}, #{county,jdbcType=VARCHAR}, 
+      #{faultType,jdbcType=VARCHAR}, #{planArriveTime,jdbcType=TIMESTAMP}, #{planFinishTime,jdbcType=TIMESTAMP}, 
+      #{taskType,jdbcType=VARCHAR}, #{carRecordId,jdbcType=INTEGER}, #{contactId,jdbcType=INTEGER}, 
+      #{chargeId,jdbcType=INTEGER}, #{workHours,jdbcType=INTEGER}, #{loopTime,jdbcType=INTEGER}, 
+      #{sendDemand,jdbcType=VARCHAR}, #{workload,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.siweisoft.model.Task">
+    insert into task
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="number != null">
+        number,
+      </if>
+      <if test="creater != null">
+        creater,
+      </if>
+      <if test="createdTime != null">
+        created_time,
+      </if>
+      <if test="customerId != null">
+        customer_id,
+      </if>
+      <if test="shortName != null">
+        short_name,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="province != null">
+        province,
+      </if>
+      <if test="county != null">
+        county,
+      </if>
+      <if test="faultType != null">
+        fault_type,
+      </if>
+      <if test="planArriveTime != null">
+        plan_arrive_time,
+      </if>
+      <if test="planFinishTime != null">
+        plan_finish_time,
+      </if>
+      <if test="taskType != null">
+        task_type,
+      </if>
+      <if test="carRecordId != null">
+        car_record_id,
+      </if>
+      <if test="contactId != null">
+        contact_id,
+      </if>
+      <if test="chargeId != null">
+        charge_id,
+      </if>
+      <if test="workHours != null">
+        work_hours,
+      </if>
+      <if test="loopTime != null">
+        loop_time,
+      </if>
+      <if test="sendDemand != null">
+        send_demand,
+      </if>
+      <if test="workload != null">
+        workload,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="number != null">
+        #{number,jdbcType=VARCHAR},
+      </if>
+      <if test="creater != null">
+        #{creater,jdbcType=VARCHAR},
+      </if>
+      <if test="createdTime != null">
+        #{createdTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="customerId != null">
+        #{customerId,jdbcType=INTEGER},
+      </if>
+      <if test="shortName != null">
+        #{shortName,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="province != null">
+        #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="county != null">
+        #{county,jdbcType=VARCHAR},
+      </if>
+      <if test="faultType != null">
+        #{faultType,jdbcType=VARCHAR},
+      </if>
+      <if test="planArriveTime != null">
+        #{planArriveTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="planFinishTime != null">
+        #{planFinishTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="taskType != null">
+        #{taskType,jdbcType=VARCHAR},
+      </if>
+      <if test="carRecordId != null">
+        #{carRecordId,jdbcType=INTEGER},
+      </if>
+      <if test="contactId != null">
+        #{contactId,jdbcType=INTEGER},
+      </if>
+      <if test="chargeId != null">
+        #{chargeId,jdbcType=INTEGER},
+      </if>
+      <if test="workHours != null">
+        #{workHours,jdbcType=INTEGER},
+      </if>
+      <if test="loopTime != null">
+        #{loopTime,jdbcType=INTEGER},
+      </if>
+      <if test="sendDemand != null">
+        #{sendDemand,jdbcType=VARCHAR},
+      </if>
+      <if test="workload != null">
+        #{workload,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.siweisoft.model.Task">
+    update task
+    <set>
+      <if test="number != null">
+        number = #{number,jdbcType=VARCHAR},
+      </if>
+      <if test="creater != null">
+        creater = #{creater,jdbcType=VARCHAR},
+      </if>
+      <if test="createdTime != null">
+        created_time = #{createdTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="customerId != null">
+        customer_id = #{customerId,jdbcType=INTEGER},
+      </if>
+      <if test="shortName != null">
+        short_name = #{shortName,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="province != null">
+        province = #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="county != null">
+        county = #{county,jdbcType=VARCHAR},
+      </if>
+      <if test="faultType != null">
+        fault_type = #{faultType,jdbcType=VARCHAR},
+      </if>
+      <if test="planArriveTime != null">
+        plan_arrive_time = #{planArriveTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="planFinishTime != null">
+        plan_finish_time = #{planFinishTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="taskType != null">
+        task_type = #{taskType,jdbcType=VARCHAR},
+      </if>
+      <if test="carRecordId != null">
+        car_record_id = #{carRecordId,jdbcType=INTEGER},
+      </if>
+      <if test="contactId != null">
+        contact_id = #{contactId,jdbcType=INTEGER},
+      </if>
+      <if test="chargeId != null">
+        charge_id = #{chargeId,jdbcType=INTEGER},
+      </if>
+      <if test="workHours != null">
+        work_hours = #{workHours,jdbcType=INTEGER},
+      </if>
+      <if test="loopTime != null">
+        loop_time = #{loopTime,jdbcType=INTEGER},
+      </if>
+      <if test="sendDemand != null">
+        send_demand = #{sendDemand,jdbcType=VARCHAR},
+      </if>
+      <if test="workload != null">
+        workload = #{workload,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.siweisoft.model.Task">
+    update task
+    set number = #{number,jdbcType=VARCHAR},
+      creater = #{creater,jdbcType=VARCHAR},
+      created_time = #{createdTime,jdbcType=TIMESTAMP},
+      customer_id = #{customerId,jdbcType=INTEGER},
+      short_name = #{shortName,jdbcType=VARCHAR},
+      user_id = #{userId,jdbcType=INTEGER},
+      province = #{province,jdbcType=VARCHAR},
+      county = #{county,jdbcType=VARCHAR},
+      fault_type = #{faultType,jdbcType=VARCHAR},
+      plan_arrive_time = #{planArriveTime,jdbcType=TIMESTAMP},
+      plan_finish_time = #{planFinishTime,jdbcType=TIMESTAMP},
+      task_type = #{taskType,jdbcType=VARCHAR},
+      car_record_id = #{carRecordId,jdbcType=INTEGER},
+      contact_id = #{contactId,jdbcType=INTEGER},
+      charge_id = #{chargeId,jdbcType=INTEGER},
+      work_hours = #{workHours,jdbcType=INTEGER},
+      loop_time = #{loopTime,jdbcType=INTEGER},
+      send_demand = #{sendDemand,jdbcType=VARCHAR},
+      workload = #{workload,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

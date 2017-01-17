@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.siweisoft.dao.uploadPicMapper">
+  <resultMap id="BaseResultMap" type="com.siweisoft.model.uploadPic">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="clientname" jdbcType="VARCHAR" property="clientname" />
+    <result column="servername" jdbcType="VARCHAR" property="servername" />
+    <result column="filetype" jdbcType="VARCHAR" property="filetype" />
+    <result column="filesize" jdbcType="INTEGER" property="filesize" />
+    <result column="filewidth" jdbcType="INTEGER" property="filewidth" />
+    <result column="fileheight" jdbcType="INTEGER" property="fileheight" />
+    <result column="module_id" jdbcType="VARCHAR" property="moduleId" />
+    <result column="task_id" jdbcType="VARCHAR" property="taskId" />
+    <result column="filefullpath" jdbcType="VARCHAR" property="filefullpath" />
+    <result column="zipid" jdbcType="INTEGER" property="zipid" />
+    <result column="procode" jdbcType="VARCHAR" property="procode" />
+    <result column="profiletype" jdbcType="VARCHAR" property="profiletype" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="creater" jdbcType="INTEGER" property="creater" />
+    <result column="created_time" jdbcType="TIMESTAMP" property="createdTime" />
+    <result column="edited" jdbcType="INTEGER" property="edited" />
+    <result column="edited_time" jdbcType="TIMESTAMP" property="editedTime" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="rmark" jdbcType="VARCHAR" property="rmark" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, clientname, servername, filetype, filesize, filewidth, fileheight, module_id, 
+    task_id, filefullpath, zipid, procode, profiletype, user_id, creater, created_time, 
+    edited, edited_time, status, rmark
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from upload_pic
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from upload_pic
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.siweisoft.model.uploadPic">
+    insert into upload_pic (id, clientname, servername, 
+      filetype, filesize, filewidth, 
+      fileheight, module_id, task_id, 
+      filefullpath, zipid, procode, 
+      profiletype, user_id, creater, 
+      created_time, edited, edited_time, 
+      status, rmark)
+    values (#{id,jdbcType=INTEGER}, #{clientname,jdbcType=VARCHAR}, #{servername,jdbcType=VARCHAR}, 
+      #{filetype,jdbcType=VARCHAR}, #{filesize,jdbcType=INTEGER}, #{filewidth,jdbcType=INTEGER}, 
+      #{fileheight,jdbcType=INTEGER}, #{moduleId,jdbcType=VARCHAR}, #{taskId,jdbcType=VARCHAR}, 
+      #{filefullpath,jdbcType=VARCHAR}, #{zipid,jdbcType=INTEGER}, #{procode,jdbcType=VARCHAR}, 
+      #{profiletype,jdbcType=VARCHAR}, #{userId,jdbcType=INTEGER}, #{creater,jdbcType=INTEGER}, 
+      #{createdTime,jdbcType=TIMESTAMP}, #{edited,jdbcType=INTEGER}, #{editedTime,jdbcType=TIMESTAMP}, 
+      #{status,jdbcType=INTEGER}, #{rmark,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.siweisoft.model.uploadPic">
+    insert into upload_pic
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="clientname != null">
+        clientname,
+      </if>
+      <if test="servername != null">
+        servername,
+      </if>
+      <if test="filetype != null">
+        filetype,
+      </if>
+      <if test="filesize != null">
+        filesize,
+      </if>
+      <if test="filewidth != null">
+        filewidth,
+      </if>
+      <if test="fileheight != null">
+        fileheight,
+      </if>
+      <if test="moduleId != null">
+        module_id,
+      </if>
+      <if test="taskId != null">
+        task_id,
+      </if>
+      <if test="filefullpath != null">
+        filefullpath,
+      </if>
+      <if test="zipid != null">
+        zipid,
+      </if>
+      <if test="procode != null">
+        procode,
+      </if>
+      <if test="profiletype != null">
+        profiletype,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="creater != null">
+        creater,
+      </if>
+      <if test="createdTime != null">
+        created_time,
+      </if>
+      <if test="edited != null">
+        edited,
+      </if>
+      <if test="editedTime != null">
+        edited_time,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="rmark != null">
+        rmark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="clientname != null">
+        #{clientname,jdbcType=VARCHAR},
+      </if>
+      <if test="servername != null">
+        #{servername,jdbcType=VARCHAR},
+      </if>
+      <if test="filetype != null">
+        #{filetype,jdbcType=VARCHAR},
+      </if>
+      <if test="filesize != null">
+        #{filesize,jdbcType=INTEGER},
+      </if>
+      <if test="filewidth != null">
+        #{filewidth,jdbcType=INTEGER},
+      </if>
+      <if test="fileheight != null">
+        #{fileheight,jdbcType=INTEGER},
+      </if>
+      <if test="moduleId != null">
+        #{moduleId,jdbcType=VARCHAR},
+      </if>
+      <if test="taskId != null">
+        #{taskId,jdbcType=VARCHAR},
+      </if>
+      <if test="filefullpath != null">
+        #{filefullpath,jdbcType=VARCHAR},
+      </if>
+      <if test="zipid != null">
+        #{zipid,jdbcType=INTEGER},
+      </if>
+      <if test="procode != null">
+        #{procode,jdbcType=VARCHAR},
+      </if>
+      <if test="profiletype != null">
+        #{profiletype,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="creater != null">
+        #{creater,jdbcType=INTEGER},
+      </if>
+      <if test="createdTime != null">
+        #{createdTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="edited != null">
+        #{edited,jdbcType=INTEGER},
+      </if>
+      <if test="editedTime != null">
+        #{editedTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="rmark != null">
+        #{rmark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.siweisoft.model.uploadPic">
+    update upload_pic
+    <set>
+      <if test="clientname != null">
+        clientname = #{clientname,jdbcType=VARCHAR},
+      </if>
+      <if test="servername != null">
+        servername = #{servername,jdbcType=VARCHAR},
+      </if>
+      <if test="filetype != null">
+        filetype = #{filetype,jdbcType=VARCHAR},
+      </if>
+      <if test="filesize != null">
+        filesize = #{filesize,jdbcType=INTEGER},
+      </if>
+      <if test="filewidth != null">
+        filewidth = #{filewidth,jdbcType=INTEGER},
+      </if>
+      <if test="fileheight != null">
+        fileheight = #{fileheight,jdbcType=INTEGER},
+      </if>
+      <if test="moduleId != null">
+        module_id = #{moduleId,jdbcType=VARCHAR},
+      </if>
+      <if test="taskId != null">
+        task_id = #{taskId,jdbcType=VARCHAR},
+      </if>
+      <if test="filefullpath != null">
+        filefullpath = #{filefullpath,jdbcType=VARCHAR},
+      </if>
+      <if test="zipid != null">
+        zipid = #{zipid,jdbcType=INTEGER},
+      </if>
+      <if test="procode != null">
+        procode = #{procode,jdbcType=VARCHAR},
+      </if>
+      <if test="profiletype != null">
+        profiletype = #{profiletype,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="creater != null">
+        creater = #{creater,jdbcType=INTEGER},
+      </if>
+      <if test="createdTime != null">
+        created_time = #{createdTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="edited != null">
+        edited = #{edited,jdbcType=INTEGER},
+      </if>
+      <if test="editedTime != null">
+        edited_time = #{editedTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="rmark != null">
+        rmark = #{rmark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.siweisoft.model.uploadPic">
+    update upload_pic
+    set clientname = #{clientname,jdbcType=VARCHAR},
+      servername = #{servername,jdbcType=VARCHAR},
+      filetype = #{filetype,jdbcType=VARCHAR},
+      filesize = #{filesize,jdbcType=INTEGER},
+      filewidth = #{filewidth,jdbcType=INTEGER},
+      fileheight = #{fileheight,jdbcType=INTEGER},
+      module_id = #{moduleId,jdbcType=VARCHAR},
+      task_id = #{taskId,jdbcType=VARCHAR},
+      filefullpath = #{filefullpath,jdbcType=VARCHAR},
+      zipid = #{zipid,jdbcType=INTEGER},
+      procode = #{procode,jdbcType=VARCHAR},
+      profiletype = #{profiletype,jdbcType=VARCHAR},
+      user_id = #{userId,jdbcType=INTEGER},
+      creater = #{creater,jdbcType=INTEGER},
+      created_time = #{createdTime,jdbcType=TIMESTAMP},
+      edited = #{edited,jdbcType=INTEGER},
+      edited_time = #{editedTime,jdbcType=TIMESTAMP},
+      status = #{status,jdbcType=INTEGER},
+      rmark = #{rmark,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

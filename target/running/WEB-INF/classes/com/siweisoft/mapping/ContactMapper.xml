@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.siweisoft.dao.ContactMapper">
+  <resultMap id="BaseResultMap" type="com.siweisoft.model.Contact">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="customer_id" jdbcType="INTEGER" property="customerId" />
+    <result column="contact_name" jdbcType="VARCHAR" property="contactName" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="fixed_phone" jdbcType="VARCHAR" property="fixedPhone" />
+    <result column="fax" jdbcType="VARCHAR" property="fax" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="weixin" jdbcType="VARCHAR" property="weixin" />
+    <result column="qq" jdbcType="VARCHAR" property="qq" />
+    <result column="dept" jdbcType="VARCHAR" property="dept" />
+    <result column="position" jdbcType="VARCHAR" property="position" />
+    <result column="creater" jdbcType="INTEGER" property="creater" />
+    <result column="created_time" jdbcType="TIMESTAMP" property="createdTime" />
+    <result column="edited" jdbcType="INTEGER" property="edited" />
+    <result column="edited_time" jdbcType="TIMESTAMP" property="editedTime" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="contact_num" jdbcType="VARCHAR" property="contactNum" />
+    <result column="ding_name" jdbcType="VARCHAR" property="dingName" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, customer_id, contact_name, phone, fixed_phone, fax, email, weixin, qq, dept, 
+    position, creater, created_time, edited, edited_time, status, contact_num, ding_name
+  </sql>
+  <select id="findAllContact" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from contact
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from contact
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from contact
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.siweisoft.model.Contact">
+    insert into contact (id, customer_id, contact_name, 
+      phone, fixed_phone, fax, 
+      email, weixin, qq, 
+      dept, position, creater, 
+      created_time, edited, edited_time, 
+      status, contact_num, ding_name
+      )
+    values (#{id,jdbcType=INTEGER}, #{customerId,jdbcType=INTEGER}, #{contactName,jdbcType=VARCHAR}, 
+      #{phone,jdbcType=VARCHAR}, #{fixedPhone,jdbcType=VARCHAR}, #{fax,jdbcType=VARCHAR}, 
+      #{email,jdbcType=VARCHAR}, #{weixin,jdbcType=VARCHAR}, #{qq,jdbcType=VARCHAR}, 
+      #{dept,jdbcType=VARCHAR}, #{position,jdbcType=VARCHAR}, #{creater,jdbcType=INTEGER}, 
+      #{createdTime,jdbcType=TIMESTAMP}, #{edited,jdbcType=INTEGER}, #{editedTime,jdbcType=TIMESTAMP}, 
+      #{status,jdbcType=INTEGER}, #{contactNum,jdbcType=VARCHAR}, #{dingName,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.siweisoft.model.Contact">
+    insert into contact
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="customerId != null">
+        customer_id,
+      </if>
+      <if test="contactName != null">
+        contact_name,
+      </if>
+      <if test="phone != null">
+        phone,
+      </if>
+      <if test="fixedPhone != null">
+        fixed_phone,
+      </if>
+      <if test="fax != null">
+        fax,
+      </if>
+      <if test="email != null">
+        email,
+      </if>
+      <if test="weixin != null">
+        weixin,
+      </if>
+      <if test="qq != null">
+        qq,
+      </if>
+      <if test="dept != null">
+        dept,
+      </if>
+      <if test="position != null">
+        position,
+      </if>
+      <if test="creater != null">
+        creater,
+      </if>
+      <if test="createdTime != null">
+        created_time,
+      </if>
+      <if test="edited != null">
+        edited,
+      </if>
+      <if test="editedTime != null">
+        edited_time,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="contactNum != null">
+        contact_num,
+      </if>
+      <if test="dingName != null">
+        ding_name,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="customerId != null">
+        #{customerId,jdbcType=INTEGER},
+      </if>
+      <if test="contactName != null">
+        #{contactName,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="fixedPhone != null">
+        #{fixedPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="fax != null">
+        #{fax,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="weixin != null">
+        #{weixin,jdbcType=VARCHAR},
+      </if>
+      <if test="qq != null">
+        #{qq,jdbcType=VARCHAR},
+      </if>
+      <if test="dept != null">
+        #{dept,jdbcType=VARCHAR},
+      </if>
+      <if test="position != null">
+        #{position,jdbcType=VARCHAR},
+      </if>
+      <if test="creater != null">
+        #{creater,jdbcType=INTEGER},
+      </if>
+      <if test="createdTime != null">
+        #{createdTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="edited != null">
+        #{edited,jdbcType=INTEGER},
+      </if>
+      <if test="editedTime != null">
+        #{editedTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="contactNum != null">
+        #{contactNum,jdbcType=VARCHAR},
+      </if>
+      <if test="dingName != null">
+        #{dingName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.siweisoft.model.Contact">
+    update contact
+    <set>
+      <if test="customerId != null">
+        customer_id = #{customerId,jdbcType=INTEGER},
+      </if>
+      <if test="contactName != null">
+        contact_name = #{contactName,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="fixedPhone != null">
+        fixed_phone = #{fixedPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="fax != null">
+        fax = #{fax,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="weixin != null">
+        weixin = #{weixin,jdbcType=VARCHAR},
+      </if>
+      <if test="qq != null">
+        qq = #{qq,jdbcType=VARCHAR},
+      </if>
+      <if test="dept != null">
+        dept = #{dept,jdbcType=VARCHAR},
+      </if>
+      <if test="position != null">
+        position = #{position,jdbcType=VARCHAR},
+      </if>
+      <if test="creater != null">
+        creater = #{creater,jdbcType=INTEGER},
+      </if>
+      <if test="createdTime != null">
+        created_time = #{createdTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="edited != null">
+        edited = #{edited,jdbcType=INTEGER},
+      </if>
+      <if test="editedTime != null">
+        edited_time = #{editedTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="contactNum != null">
+        contact_num = #{contactNum,jdbcType=VARCHAR},
+      </if>
+      <if test="dingName != null">
+        ding_name = #{dingName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.siweisoft.model.Contact">
+    update contact
+    set customer_id = #{customerId,jdbcType=INTEGER},
+      contact_name = #{contactName,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      fixed_phone = #{fixedPhone,jdbcType=VARCHAR},
+      fax = #{fax,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      weixin = #{weixin,jdbcType=VARCHAR},
+      qq = #{qq,jdbcType=VARCHAR},
+      dept = #{dept,jdbcType=VARCHAR},
+      position = #{position,jdbcType=VARCHAR},
+      creater = #{creater,jdbcType=INTEGER},
+      created_time = #{createdTime,jdbcType=TIMESTAMP},
+      edited = #{edited,jdbcType=INTEGER},
+      edited_time = #{editedTime,jdbcType=TIMESTAMP},
+      status = #{status,jdbcType=INTEGER},
+      contact_num = #{contactNum,jdbcType=VARCHAR},
+      ding_name = #{dingName,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

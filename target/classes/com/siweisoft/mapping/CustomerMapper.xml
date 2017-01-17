@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.siweisoft.dao.CustomerMapper">
+  <resultMap id="BaseResultMap" type="com.siweisoft.model.Customer">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="customer_name" jdbcType="VARCHAR" property="customerName" />
+    <result column="level" jdbcType="INTEGER" property="level" />
+    <result column="customer_property" jdbcType="VARCHAR" property="customerProperty" />
+    <result column="enterprise_property" jdbcType="VARCHAR" property="enterpriseProperty" />
+    <result column="fixed_phone" jdbcType="VARCHAR" property="fixedPhone" />
+    <result column="comment" jdbcType="VARCHAR" property="comment" />
+    <result column="province" jdbcType="VARCHAR" property="province" />
+    <result column="county" jdbcType="VARCHAR" property="county" />
+    <result column="postcode" jdbcType="VARCHAR" property="postcode" />
+    <result column="potential" jdbcType="VARCHAR" property="potential" />
+    <result column="source" jdbcType="VARCHAR" property="source" />
+    <result column="traffic_route" jdbcType="VARCHAR" property="trafficRoute" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="superior_belong" jdbcType="VARCHAR" property="superiorBelong" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="added" jdbcType="INTEGER" property="added" />
+    <result column="added_time" jdbcType="TIMESTAMP" property="addedTime" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="customer_num" jdbcType="VARCHAR" property="customerNum" />
+    <result column="perjoct_id" jdbcType="INTEGER" property="perjoctId" />
+    <result column="main_business" jdbcType="VARCHAR" property="mainBusiness" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, customer_name, level, customer_property, enterprise_property, fixed_phone, comment, 
+    province, county, postcode, potential, source, traffic_route, address, superior_belong, 
+    remark, added, added_time, status, customer_num, perjoct_id, main_business
+  </sql>
+<!--查询所有的客户-->
+  <select id="findAllCustomer" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from customer
+  </select>
+  <!--根据Id查找客户-->
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from customer
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <!--根据Id删除客户-->
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from customer
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <!--增加客户-->
+  <insert id="insert" parameterType="com.siweisoft.model.Customer">
+    insert into customer (id, customer_name, level, 
+      customer_property, enterprise_property, fixed_phone, 
+      comment, province, county, 
+      postcode, potential, source, 
+      traffic_route, address, superior_belong, 
+      remark, added, added_time, 
+      status, customer_num, perjoct_id, 
+      main_business)
+    values (#{id,jdbcType=INTEGER}, #{customerName,jdbcType=VARCHAR}, #{level,jdbcType=INTEGER}, 
+      #{customerProperty,jdbcType=VARCHAR}, #{enterpriseProperty,jdbcType=VARCHAR}, #{fixedPhone,jdbcType=VARCHAR}, 
+      #{comment,jdbcType=VARCHAR}, #{province,jdbcType=VARCHAR}, #{county,jdbcType=VARCHAR}, 
+      #{postcode,jdbcType=VARCHAR}, #{potential,jdbcType=VARCHAR}, #{source,jdbcType=VARCHAR}, 
+      #{trafficRoute,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{superiorBelong,jdbcType=VARCHAR}, 
+      #{remark,jdbcType=VARCHAR}, #{added,jdbcType=INTEGER}, #{addedTime,jdbcType=TIMESTAMP}, 
+      #{status,jdbcType=INTEGER}, #{customerNum,jdbcType=VARCHAR}, #{perjoctId,jdbcType=INTEGER}, 
+      #{mainBusiness,jdbcType=VARCHAR})
+  </insert>
+
+  <insert id="insertSelective" parameterType="com.siweisoft.model.Customer">
+    insert into customer
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="customerName != null">
+        customer_name,
+      </if>
+      <if test="level != null">
+        level,
+      </if>
+      <if test="customerProperty != null">
+        customer_property,
+      </if>
+      <if test="enterpriseProperty != null">
+        enterprise_property,
+      </if>
+      <if test="fixedPhone != null">
+        fixed_phone,
+      </if>
+      <if test="comment != null">
+        comment,
+      </if>
+      <if test="province != null">
+        province,
+      </if>
+      <if test="county != null">
+        county,
+      </if>
+      <if test="postcode != null">
+        postcode,
+      </if>
+      <if test="potential != null">
+        potential,
+      </if>
+      <if test="source != null">
+        source,
+      </if>
+      <if test="trafficRoute != null">
+        traffic_route,
+      </if>
+      <if test="address != null">
+        address,
+      </if>
+      <if test="superiorBelong != null">
+        superior_belong,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="added != null">
+        added,
+      </if>
+      <if test="addedTime != null">
+        added_time,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="customerNum != null">
+        customer_num,
+      </if>
+      <if test="perjoctId != null">
+        perjoct_id,
+      </if>
+      <if test="mainBusiness != null">
+        main_business,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="customerName != null">
+        #{customerName,jdbcType=VARCHAR},
+      </if>
+      <if test="level != null">
+        #{level,jdbcType=INTEGER},
+      </if>
+      <if test="customerProperty != null">
+        #{customerProperty,jdbcType=VARCHAR},
+      </if>
+      <if test="enterpriseProperty != null">
+        #{enterpriseProperty,jdbcType=VARCHAR},
+      </if>
+      <if test="fixedPhone != null">
+        #{fixedPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="comment != null">
+        #{comment,jdbcType=VARCHAR},
+      </if>
+      <if test="province != null">
+        #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="county != null">
+        #{county,jdbcType=VARCHAR},
+      </if>
+      <if test="postcode != null">
+        #{postcode,jdbcType=VARCHAR},
+      </if>
+      <if test="potential != null">
+        #{potential,jdbcType=VARCHAR},
+      </if>
+      <if test="source != null">
+        #{source,jdbcType=VARCHAR},
+      </if>
+      <if test="trafficRoute != null">
+        #{trafficRoute,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="superiorBelong != null">
+        #{superiorBelong,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="added != null">
+        #{added,jdbcType=INTEGER},
+      </if>
+      <if test="addedTime != null">
+        #{addedTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="customerNum != null">
+        #{customerNum,jdbcType=VARCHAR},
+      </if>
+      <if test="perjoctId != null">
+        #{perjoctId,jdbcType=INTEGER},
+      </if>
+      <if test="mainBusiness != null">
+        #{mainBusiness,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.siweisoft.model.Customer">
+    update customer
+    <set>
+      <if test="customerName != null">
+        customer_name = #{customerName,jdbcType=VARCHAR},
+      </if>
+      <if test="level != null">
+        level = #{level,jdbcType=INTEGER},
+      </if>
+      <if test="customerProperty != null">
+        customer_property = #{customerProperty,jdbcType=VARCHAR},
+      </if>
+      <if test="enterpriseProperty != null">
+        enterprise_property = #{enterpriseProperty,jdbcType=VARCHAR},
+      </if>
+      <if test="fixedPhone != null">
+        fixed_phone = #{fixedPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="comment != null">
+        comment = #{comment,jdbcType=VARCHAR},
+      </if>
+      <if test="province != null">
+        province = #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="county != null">
+        county = #{county,jdbcType=VARCHAR},
+      </if>
+      <if test="postcode != null">
+        postcode = #{postcode,jdbcType=VARCHAR},
+      </if>
+      <if test="potential != null">
+        potential = #{potential,jdbcType=VARCHAR},
+      </if>
+      <if test="source != null">
+        source = #{source,jdbcType=VARCHAR},
+      </if>
+      <if test="trafficRoute != null">
+        traffic_route = #{trafficRoute,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="superiorBelong != null">
+        superior_belong = #{superiorBelong,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="added != null">
+        added = #{added,jdbcType=INTEGER},
+      </if>
+      <if test="addedTime != null">
+        added_time = #{addedTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="customerNum != null">
+        customer_num = #{customerNum,jdbcType=VARCHAR},
+      </if>
+      <if test="perjoctId != null">
+        perjoct_id = #{perjoctId,jdbcType=INTEGER},
+      </if>
+      <if test="mainBusiness != null">
+        main_business = #{mainBusiness,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.siweisoft.model.Customer">
+    update customer
+    set customer_name = #{customerName,jdbcType=VARCHAR},
+      level = #{level,jdbcType=INTEGER},
+      customer_property = #{customerProperty,jdbcType=VARCHAR},
+      enterprise_property = #{enterpriseProperty,jdbcType=VARCHAR},
+      fixed_phone = #{fixedPhone,jdbcType=VARCHAR},
+      comment = #{comment,jdbcType=VARCHAR},
+      province = #{province,jdbcType=VARCHAR},
+      county = #{county,jdbcType=VARCHAR},
+      postcode = #{postcode,jdbcType=VARCHAR},
+      potential = #{potential,jdbcType=VARCHAR},
+      source = #{source,jdbcType=VARCHAR},
+      traffic_route = #{trafficRoute,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      superior_belong = #{superiorBelong,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR},
+      added = #{added,jdbcType=INTEGER},
+      added_time = #{addedTime,jdbcType=TIMESTAMP},
+      status = #{status,jdbcType=INTEGER},
+      customer_num = #{customerNum,jdbcType=VARCHAR},
+      perjoct_id = #{perjoctId,jdbcType=INTEGER},
+      main_business = #{mainBusiness,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

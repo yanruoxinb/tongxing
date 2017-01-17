@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.siweisoft.dao.ProcessMapper">
+  <resultMap id="BaseResultMap" type="com.siweisoft.model.Process">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="product_line" jdbcType="VARCHAR" property="productLine" />
+    <result column="cement_bunker" jdbcType="VARCHAR" property="cementBunker" />
+    <result column="capacity" jdbcType="VARCHAR" property="capacity" />
+    <result column="cement_material" jdbcType="VARCHAR" property="cementMaterial" />
+    <result column="procedure_code" jdbcType="VARCHAR" property="procedureCode" />
+    <result column="mash_bin" jdbcType="VARCHAR" property="mashBin" />
+    <result column="supporting_manufacturer" jdbcType="VARCHAR" property="supportingManufacturer" />
+    <result column="powder_easure" jdbcType="VARCHAR" property="powderEasure" />
+    <result column="control_system" jdbcType="VARCHAR" property="controlSystem" />
+    <result column="water_sump" jdbcType="VARCHAR" property="waterSump" />
+    <result column="water_measure" jdbcType="VARCHAR" property="waterMeasure" />
+    <result column="mixing_form" jdbcType="VARCHAR" property="mixingForm" />
+    <result column="aggregate_storage_bin" jdbcType="VARCHAR" property="aggregateStorageBin" />
+    <result column="bone_measure" jdbcType="VARCHAR" property="boneMeasure" />
+    <result column="additional_serafume" jdbcType="VARCHAR" property="additionalSerafume" />
+    <result column="additional_measure" jdbcType="VARCHAR" property="additionalMeasure" />
+    <result column="machine" jdbcType="VARCHAR" property="machine" />
+    <result column="version" jdbcType="VARCHAR" property="version" />
+    <result column="config" jdbcType="VARCHAR" property="config" />
+    <result column="aggregate_storage_measure" jdbcType="VARCHAR" property="aggregateStorageMeasure" />
+    <result column="special_process_instructions" jdbcType="VARCHAR" property="specialProcessInstructions" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, product_line, cement_bunker, capacity, cement_material, procedure_code, mash_bin, 
+    supporting_manufacturer, powder_easure, control_system, water_sump, water_measure, 
+    mixing_form, aggregate_storage_bin, bone_measure, additional_serafume, additional_measure, 
+    machine, version, config, aggregate_storage_measure, special_process_instructions
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from process
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from process
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.siweisoft.model.Process">
+    insert into process (id, product_line, cement_bunker, 
+      capacity, cement_material, procedure_code, 
+      mash_bin, supporting_manufacturer, powder_easure, 
+      control_system, water_sump, water_measure, 
+      mixing_form, aggregate_storage_bin, bone_measure, 
+      additional_serafume, additional_measure, 
+      machine, version, config, 
+      aggregate_storage_measure, special_process_instructions
+      )
+    values (#{id,jdbcType=INTEGER}, #{productLine,jdbcType=VARCHAR}, #{cementBunker,jdbcType=VARCHAR}, 
+      #{capacity,jdbcType=VARCHAR}, #{cementMaterial,jdbcType=VARCHAR}, #{procedureCode,jdbcType=VARCHAR}, 
+      #{mashBin,jdbcType=VARCHAR}, #{supportingManufacturer,jdbcType=VARCHAR}, #{powderEasure,jdbcType=VARCHAR}, 
+      #{controlSystem,jdbcType=VARCHAR}, #{waterSump,jdbcType=VARCHAR}, #{waterMeasure,jdbcType=VARCHAR}, 
+      #{mixingForm,jdbcType=VARCHAR}, #{aggregateStorageBin,jdbcType=VARCHAR}, #{boneMeasure,jdbcType=VARCHAR}, 
+      #{additionalSerafume,jdbcType=VARCHAR}, #{additionalMeasure,jdbcType=VARCHAR}, 
+      #{machine,jdbcType=VARCHAR}, #{version,jdbcType=VARCHAR}, #{config,jdbcType=VARCHAR}, 
+      #{aggregateStorageMeasure,jdbcType=VARCHAR}, #{specialProcessInstructions,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.siweisoft.model.Process">
+    insert into process
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="productLine != null">
+        product_line,
+      </if>
+      <if test="cementBunker != null">
+        cement_bunker,
+      </if>
+      <if test="capacity != null">
+        capacity,
+      </if>
+      <if test="cementMaterial != null">
+        cement_material,
+      </if>
+      <if test="procedureCode != null">
+        procedure_code,
+      </if>
+      <if test="mashBin != null">
+        mash_bin,
+      </if>
+      <if test="supportingManufacturer != null">
+        supporting_manufacturer,
+      </if>
+      <if test="powderEasure != null">
+        powder_easure,
+      </if>
+      <if test="controlSystem != null">
+        control_system,
+      </if>
+      <if test="waterSump != null">
+        water_sump,
+      </if>
+      <if test="waterMeasure != null">
+        water_measure,
+      </if>
+      <if test="mixingForm != null">
+        mixing_form,
+      </if>
+      <if test="aggregateStorageBin != null">
+        aggregate_storage_bin,
+      </if>
+      <if test="boneMeasure != null">
+        bone_measure,
+      </if>
+      <if test="additionalSerafume != null">
+        additional_serafume,
+      </if>
+      <if test="additionalMeasure != null">
+        additional_measure,
+      </if>
+      <if test="machine != null">
+        machine,
+      </if>
+      <if test="version != null">
+        version,
+      </if>
+      <if test="config != null">
+        config,
+      </if>
+      <if test="aggregateStorageMeasure != null">
+        aggregate_storage_measure,
+      </if>
+      <if test="specialProcessInstructions != null">
+        special_process_instructions,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="productLine != null">
+        #{productLine,jdbcType=VARCHAR},
+      </if>
+      <if test="cementBunker != null">
+        #{cementBunker,jdbcType=VARCHAR},
+      </if>
+      <if test="capacity != null">
+        #{capacity,jdbcType=VARCHAR},
+      </if>
+      <if test="cementMaterial != null">
+        #{cementMaterial,jdbcType=VARCHAR},
+      </if>
+      <if test="procedureCode != null">
+        #{procedureCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mashBin != null">
+        #{mashBin,jdbcType=VARCHAR},
+      </if>
+      <if test="supportingManufacturer != null">
+        #{supportingManufacturer,jdbcType=VARCHAR},
+      </if>
+      <if test="powderEasure != null">
+        #{powderEasure,jdbcType=VARCHAR},
+      </if>
+      <if test="controlSystem != null">
+        #{controlSystem,jdbcType=VARCHAR},
+      </if>
+      <if test="waterSump != null">
+        #{waterSump,jdbcType=VARCHAR},
+      </if>
+      <if test="waterMeasure != null">
+        #{waterMeasure,jdbcType=VARCHAR},
+      </if>
+      <if test="mixingForm != null">
+        #{mixingForm,jdbcType=VARCHAR},
+      </if>
+      <if test="aggregateStorageBin != null">
+        #{aggregateStorageBin,jdbcType=VARCHAR},
+      </if>
+      <if test="boneMeasure != null">
+        #{boneMeasure,jdbcType=VARCHAR},
+      </if>
+      <if test="additionalSerafume != null">
+        #{additionalSerafume,jdbcType=VARCHAR},
+      </if>
+      <if test="additionalMeasure != null">
+        #{additionalMeasure,jdbcType=VARCHAR},
+      </if>
+      <if test="machine != null">
+        #{machine,jdbcType=VARCHAR},
+      </if>
+      <if test="version != null">
+        #{version,jdbcType=VARCHAR},
+      </if>
+      <if test="config != null">
+        #{config,jdbcType=VARCHAR},
+      </if>
+      <if test="aggregateStorageMeasure != null">
+        #{aggregateStorageMeasure,jdbcType=VARCHAR},
+      </if>
+      <if test="specialProcessInstructions != null">
+        #{specialProcessInstructions,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.siweisoft.model.Process">
+    update process
+    <set>
+      <if test="productLine != null">
+        product_line = #{productLine,jdbcType=VARCHAR},
+      </if>
+      <if test="cementBunker != null">
+        cement_bunker = #{cementBunker,jdbcType=VARCHAR},
+      </if>
+      <if test="capacity != null">
+        capacity = #{capacity,jdbcType=VARCHAR},
+      </if>
+      <if test="cementMaterial != null">
+        cement_material = #{cementMaterial,jdbcType=VARCHAR},
+      </if>
+      <if test="procedureCode != null">
+        procedure_code = #{procedureCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mashBin != null">
+        mash_bin = #{mashBin,jdbcType=VARCHAR},
+      </if>
+      <if test="supportingManufacturer != null">
+        supporting_manufacturer = #{supportingManufacturer,jdbcType=VARCHAR},
+      </if>
+      <if test="powderEasure != null">
+        powder_easure = #{powderEasure,jdbcType=VARCHAR},
+      </if>
+      <if test="controlSystem != null">
+        control_system = #{controlSystem,jdbcType=VARCHAR},
+      </if>
+      <if test="waterSump != null">
+        water_sump = #{waterSump,jdbcType=VARCHAR},
+      </if>
+      <if test="waterMeasure != null">
+        water_measure = #{waterMeasure,jdbcType=VARCHAR},
+      </if>
+      <if test="mixingForm != null">
+        mixing_form = #{mixingForm,jdbcType=VARCHAR},
+      </if>
+      <if test="aggregateStorageBin != null">
+        aggregate_storage_bin = #{aggregateStorageBin,jdbcType=VARCHAR},
+      </if>
+      <if test="boneMeasure != null">
+        bone_measure = #{boneMeasure,jdbcType=VARCHAR},
+      </if>
+      <if test="additionalSerafume != null">
+        additional_serafume = #{additionalSerafume,jdbcType=VARCHAR},
+      </if>
+      <if test="additionalMeasure != null">
+        additional_measure = #{additionalMeasure,jdbcType=VARCHAR},
+      </if>
+      <if test="machine != null">
+        machine = #{machine,jdbcType=VARCHAR},
+      </if>
+      <if test="version != null">
+        version = #{version,jdbcType=VARCHAR},
+      </if>
+      <if test="config != null">
+        config = #{config,jdbcType=VARCHAR},
+      </if>
+      <if test="aggregateStorageMeasure != null">
+        aggregate_storage_measure = #{aggregateStorageMeasure,jdbcType=VARCHAR},
+      </if>
+      <if test="specialProcessInstructions != null">
+        special_process_instructions = #{specialProcessInstructions,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.siweisoft.model.Process">
+    update process
+    set product_line = #{productLine,jdbcType=VARCHAR},
+      cement_bunker = #{cementBunker,jdbcType=VARCHAR},
+      capacity = #{capacity,jdbcType=VARCHAR},
+      cement_material = #{cementMaterial,jdbcType=VARCHAR},
+      procedure_code = #{procedureCode,jdbcType=VARCHAR},
+      mash_bin = #{mashBin,jdbcType=VARCHAR},
+      supporting_manufacturer = #{supportingManufacturer,jdbcType=VARCHAR},
+      powder_easure = #{powderEasure,jdbcType=VARCHAR},
+      control_system = #{controlSystem,jdbcType=VARCHAR},
+      water_sump = #{waterSump,jdbcType=VARCHAR},
+      water_measure = #{waterMeasure,jdbcType=VARCHAR},
+      mixing_form = #{mixingForm,jdbcType=VARCHAR},
+      aggregate_storage_bin = #{aggregateStorageBin,jdbcType=VARCHAR},
+      bone_measure = #{boneMeasure,jdbcType=VARCHAR},
+      additional_serafume = #{additionalSerafume,jdbcType=VARCHAR},
+      additional_measure = #{additionalMeasure,jdbcType=VARCHAR},
+      machine = #{machine,jdbcType=VARCHAR},
+      version = #{version,jdbcType=VARCHAR},
+      config = #{config,jdbcType=VARCHAR},
+      aggregate_storage_measure = #{aggregateStorageMeasure,jdbcType=VARCHAR},
+      special_process_instructions = #{specialProcessInstructions,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

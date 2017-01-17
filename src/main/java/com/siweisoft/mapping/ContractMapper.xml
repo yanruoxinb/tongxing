@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.siweisoft.dao.ContractMapper">
+  <resultMap id="BaseResultMap" type="com.siweisoft.model.Contract">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="contract_name" jdbcType="VARCHAR" property="contractName" />
+    <result column="contract_nature" jdbcType="VARCHAR" property="contractNature" />
+    <result column="contract_money" jdbcType="REAL" property="contractMoney" />
+    <result column="contract_date" jdbcType="TIMESTAMP" property="contractDate" />
+    <result column="our_agent" jdbcType="VARCHAR" property="ourAgent" />
+    <result column="other_agent" jdbcType="VARCHAR" property="otherAgent" />
+    <result column="purchase_unit" jdbcType="VARCHAR" property="purchaseUnit" />
+    <result column="department_audit" jdbcType="INTEGER" property="departmentAudit" />
+    <result column="finance_audit" jdbcType="INTEGER" property="financeAudit" />
+    <result column="gathering" jdbcType="REAL" property="gathering" />
+    <result column="debt" jdbcType="REAL" property="debt" />
+    <result column="is_ticket" jdbcType="INTEGER" property="isTicket" />
+    <result column="is_owe" jdbcType="INTEGER" property="isOwe" />
+    <result column="project_id" jdbcType="INTEGER" property="projectId" />
+    <result column="use_unit" jdbcType="INTEGER" property="useUnit" />
+    <result column="birthline" jdbcType="TIMESTAMP" property="birthline" />
+    <result column="deadline" jdbcType="TIMESTAMP" property="deadline" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, contract_name, contract_nature, contract_money, contract_date, our_agent, other_agent, 
+    purchase_unit, department_audit, finance_audit, gathering, debt, is_ticket, is_owe, 
+    project_id, use_unit, birthline, deadline
+  </sql>
+
+  <!--查询所有合同-->
+  <select id="selectAll"  resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List"/>
+    FROM contract
+  </select>
+
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from contract
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from contract
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.siweisoft.model.Contract">
+    insert into contract (id, contract_name, contract_nature, 
+      contract_money, contract_date, our_agent, 
+      other_agent, purchase_unit, department_audit, 
+      finance_audit, gathering, debt, 
+      is_ticket, is_owe, project_id, 
+      use_unit, birthline, deadline
+      )
+    values (#{id,jdbcType=INTEGER}, #{contractName,jdbcType=VARCHAR}, #{contractNature,jdbcType=VARCHAR}, 
+      #{contractMoney,jdbcType=REAL}, #{contractDate,jdbcType=TIMESTAMP}, #{ourAgent,jdbcType=VARCHAR}, 
+      #{otherAgent,jdbcType=VARCHAR}, #{purchaseUnit,jdbcType=VARCHAR}, #{departmentAudit,jdbcType=INTEGER}, 
+      #{financeAudit,jdbcType=INTEGER}, #{gathering,jdbcType=REAL}, #{debt,jdbcType=REAL}, 
+      #{isTicket,jdbcType=INTEGER}, #{isOwe,jdbcType=INTEGER}, #{projectId,jdbcType=INTEGER}, 
+      #{useUnit,jdbcType=INTEGER}, #{birthline,jdbcType=TIMESTAMP}, #{deadline,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.siweisoft.model.Contract">
+    insert into contract
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="contractName != null">
+        contract_name,
+      </if>
+      <if test="contractNature != null">
+        contract_nature,
+      </if>
+      <if test="contractMoney != null">
+        contract_money,
+      </if>
+      <if test="contractDate != null">
+        contract_date,
+      </if>
+      <if test="ourAgent != null">
+        our_agent,
+      </if>
+      <if test="otherAgent != null">
+        other_agent,
+      </if>
+      <if test="purchaseUnit != null">
+        purchase_unit,
+      </if>
+      <if test="departmentAudit != null">
+        department_audit,
+      </if>
+      <if test="financeAudit != null">
+        finance_audit,
+      </if>
+      <if test="gathering != null">
+        gathering,
+      </if>
+      <if test="debt != null">
+        debt,
+      </if>
+      <if test="isTicket != null">
+        is_ticket,
+      </if>
+      <if test="isOwe != null">
+        is_owe,
+      </if>
+      <if test="projectId != null">
+        project_id,
+      </if>
+      <if test="useUnit != null">
+        use_unit,
+      </if>
+      <if test="birthline != null">
+        birthline,
+      </if>
+      <if test="deadline != null">
+        deadline,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="contractName != null">
+        #{contractName,jdbcType=VARCHAR},
+      </if>
+      <if test="contractNature != null">
+        #{contractNature,jdbcType=VARCHAR},
+      </if>
+      <if test="contractMoney != null">
+        #{contractMoney,jdbcType=REAL},
+      </if>
+      <if test="contractDate != null">
+        #{contractDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ourAgent != null">
+        #{ourAgent,jdbcType=VARCHAR},
+      </if>
+      <if test="otherAgent != null">
+        #{otherAgent,jdbcType=VARCHAR},
+      </if>
+      <if test="purchaseUnit != null">
+        #{purchaseUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="departmentAudit != null">
+        #{departmentAudit,jdbcType=INTEGER},
+      </if>
+      <if test="financeAudit != null">
+        #{financeAudit,jdbcType=INTEGER},
+      </if>
+      <if test="gathering != null">
+        #{gathering,jdbcType=REAL},
+      </if>
+      <if test="debt != null">
+        #{debt,jdbcType=REAL},
+      </if>
+      <if test="isTicket != null">
+        #{isTicket,jdbcType=INTEGER},
+      </if>
+      <if test="isOwe != null">
+        #{isOwe,jdbcType=INTEGER},
+      </if>
+      <if test="projectId != null">
+        #{projectId,jdbcType=INTEGER},
+      </if>
+      <if test="useUnit != null">
+        #{useUnit,jdbcType=INTEGER},
+      </if>
+      <if test="birthline != null">
+        #{birthline,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deadline != null">
+        #{deadline,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.siweisoft.model.Contract">
+    update contract
+    <set>
+      <if test="contractName != null">
+        contract_name = #{contractName,jdbcType=VARCHAR},
+      </if>
+      <if test="contractNature != null">
+        contract_nature = #{contractNature,jdbcType=VARCHAR},
+      </if>
+      <if test="contractMoney != null">
+        contract_money = #{contractMoney,jdbcType=REAL},
+      </if>
+      <if test="contractDate != null">
+        contract_date = #{contractDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ourAgent != null">
+        our_agent = #{ourAgent,jdbcType=VARCHAR},
+      </if>
+      <if test="otherAgent != null">
+        other_agent = #{otherAgent,jdbcType=VARCHAR},
+      </if>
+      <if test="purchaseUnit != null">
+        purchase_unit = #{purchaseUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="departmentAudit != null">
+        department_audit = #{departmentAudit,jdbcType=INTEGER},
+      </if>
+      <if test="financeAudit != null">
+        finance_audit = #{financeAudit,jdbcType=INTEGER},
+      </if>
+      <if test="gathering != null">
+        gathering = #{gathering,jdbcType=REAL},
+      </if>
+      <if test="debt != null">
+        debt = #{debt,jdbcType=REAL},
+      </if>
+      <if test="isTicket != null">
+        is_ticket = #{isTicket,jdbcType=INTEGER},
+      </if>
+      <if test="isOwe != null">
+        is_owe = #{isOwe,jdbcType=INTEGER},
+      </if>
+      <if test="projectId != null">
+        project_id = #{projectId,jdbcType=INTEGER},
+      </if>
+      <if test="useUnit != null">
+        use_unit = #{useUnit,jdbcType=INTEGER},
+      </if>
+      <if test="birthline != null">
+        birthline = #{birthline,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deadline != null">
+        deadline = #{deadline,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.siweisoft.model.Contract">
+    update contract
+    set contract_name = #{contractName,jdbcType=VARCHAR},
+      contract_nature = #{contractNature,jdbcType=VARCHAR},
+      contract_money = #{contractMoney,jdbcType=REAL},
+      contract_date = #{contractDate,jdbcType=TIMESTAMP},
+      our_agent = #{ourAgent,jdbcType=VARCHAR},
+      other_agent = #{otherAgent,jdbcType=VARCHAR},
+      purchase_unit = #{purchaseUnit,jdbcType=VARCHAR},
+      department_audit = #{departmentAudit,jdbcType=INTEGER},
+      finance_audit = #{financeAudit,jdbcType=INTEGER},
+      gathering = #{gathering,jdbcType=REAL},
+      debt = #{debt,jdbcType=REAL},
+      is_ticket = #{isTicket,jdbcType=INTEGER},
+      is_owe = #{isOwe,jdbcType=INTEGER},
+      project_id = #{projectId,jdbcType=INTEGER},
+      use_unit = #{useUnit,jdbcType=INTEGER},
+      birthline = #{birthline,jdbcType=TIMESTAMP},
+      deadline = #{deadline,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.siweisoft.dao.MessageMapper">
+  <resultMap id="BaseResultMap" type="com.siweisoft.model.Message">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="alias" jdbcType="VARCHAR" property="alias" />
+    <result column="send_time" jdbcType="TIMESTAMP" property="sendTime" />
+    <result column="receive_time" jdbcType="TIMESTAMP" property="receiveTime" />
+    <result column="sender" jdbcType="INTEGER" property="sender" />
+    <result column="receiver" jdbcType="INTEGER" property="receiver" />
+    <result column="message" jdbcType="VARCHAR" property="message" />
+    <result column="editer" jdbcType="INTEGER" property="editer" />
+    <result column="edit_time" jdbcType="TIMESTAMP" property="editTime" />
+    <result column="send_tag" jdbcType="VARCHAR" property="sendTag" />
+    <result column="receive_tag" jdbcType="VARCHAR" property="receiveTag" />
+    <result column="task_id" jdbcType="INTEGER" property="taskId" />
+    <result column="send_type" jdbcType="VARCHAR" property="sendType" />
+    <result column="is_read" jdbcType="INTEGER" property="isRead" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="creater" jdbcType="VARCHAR" property="creater" />
+    <result column="created_time" jdbcType="TIMESTAMP" property="createdTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, alias, send_time, receive_time, sender, receiver, message, editer, edit_time, 
+    send_tag, receive_tag, task_id, send_type, is_read, status, creater, created_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from message
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from message
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.siweisoft.model.Message">
+    insert into message (id, alias, send_time, 
+      receive_time, sender, receiver, 
+      message, editer, edit_time, 
+      send_tag, receive_tag, task_id, 
+      send_type, is_read, status, 
+      creater, created_time)
+    values (#{id,jdbcType=INTEGER}, #{alias,jdbcType=VARCHAR}, #{sendTime,jdbcType=TIMESTAMP}, 
+      #{receiveTime,jdbcType=TIMESTAMP}, #{sender,jdbcType=INTEGER}, #{receiver,jdbcType=INTEGER}, 
+      #{message,jdbcType=VARCHAR}, #{editer,jdbcType=INTEGER}, #{editTime,jdbcType=TIMESTAMP}, 
+      #{sendTag,jdbcType=VARCHAR}, #{receiveTag,jdbcType=VARCHAR}, #{taskId,jdbcType=INTEGER}, 
+      #{sendType,jdbcType=VARCHAR}, #{isRead,jdbcType=INTEGER}, #{status,jdbcType=VARCHAR}, 
+      #{creater,jdbcType=VARCHAR}, #{createdTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.siweisoft.model.Message">
+    insert into message
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="alias != null">
+        alias,
+      </if>
+      <if test="sendTime != null">
+        send_time,
+      </if>
+      <if test="receiveTime != null">
+        receive_time,
+      </if>
+      <if test="sender != null">
+        sender,
+      </if>
+      <if test="receiver != null">
+        receiver,
+      </if>
+      <if test="message != null">
+        message,
+      </if>
+      <if test="editer != null">
+        editer,
+      </if>
+      <if test="editTime != null">
+        edit_time,
+      </if>
+      <if test="sendTag != null">
+        send_tag,
+      </if>
+      <if test="receiveTag != null">
+        receive_tag,
+      </if>
+      <if test="taskId != null">
+        task_id,
+      </if>
+      <if test="sendType != null">
+        send_type,
+      </if>
+      <if test="isRead != null">
+        is_read,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="creater != null">
+        creater,
+      </if>
+      <if test="createdTime != null">
+        created_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="alias != null">
+        #{alias,jdbcType=VARCHAR},
+      </if>
+      <if test="sendTime != null">
+        #{sendTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="receiveTime != null">
+        #{receiveTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sender != null">
+        #{sender,jdbcType=INTEGER},
+      </if>
+      <if test="receiver != null">
+        #{receiver,jdbcType=INTEGER},
+      </if>
+      <if test="message != null">
+        #{message,jdbcType=VARCHAR},
+      </if>
+      <if test="editer != null">
+        #{editer,jdbcType=INTEGER},
+      </if>
+      <if test="editTime != null">
+        #{editTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sendTag != null">
+        #{sendTag,jdbcType=VARCHAR},
+      </if>
+      <if test="receiveTag != null">
+        #{receiveTag,jdbcType=VARCHAR},
+      </if>
+      <if test="taskId != null">
+        #{taskId,jdbcType=INTEGER},
+      </if>
+      <if test="sendType != null">
+        #{sendType,jdbcType=VARCHAR},
+      </if>
+      <if test="isRead != null">
+        #{isRead,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="creater != null">
+        #{creater,jdbcType=VARCHAR},
+      </if>
+      <if test="createdTime != null">
+        #{createdTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.siweisoft.model.Message">
+    update message
+    <set>
+      <if test="alias != null">
+        alias = #{alias,jdbcType=VARCHAR},
+      </if>
+      <if test="sendTime != null">
+        send_time = #{sendTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="receiveTime != null">
+        receive_time = #{receiveTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sender != null">
+        sender = #{sender,jdbcType=INTEGER},
+      </if>
+      <if test="receiver != null">
+        receiver = #{receiver,jdbcType=INTEGER},
+      </if>
+      <if test="message != null">
+        message = #{message,jdbcType=VARCHAR},
+      </if>
+      <if test="editer != null">
+        editer = #{editer,jdbcType=INTEGER},
+      </if>
+      <if test="editTime != null">
+        edit_time = #{editTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sendTag != null">
+        send_tag = #{sendTag,jdbcType=VARCHAR},
+      </if>
+      <if test="receiveTag != null">
+        receive_tag = #{receiveTag,jdbcType=VARCHAR},
+      </if>
+      <if test="taskId != null">
+        task_id = #{taskId,jdbcType=INTEGER},
+      </if>
+      <if test="sendType != null">
+        send_type = #{sendType,jdbcType=VARCHAR},
+      </if>
+      <if test="isRead != null">
+        is_read = #{isRead,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="creater != null">
+        creater = #{creater,jdbcType=VARCHAR},
+      </if>
+      <if test="createdTime != null">
+        created_time = #{createdTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.siweisoft.model.Message">
+    update message
+    set alias = #{alias,jdbcType=VARCHAR},
+      send_time = #{sendTime,jdbcType=TIMESTAMP},
+      receive_time = #{receiveTime,jdbcType=TIMESTAMP},
+      sender = #{sender,jdbcType=INTEGER},
+      receiver = #{receiver,jdbcType=INTEGER},
+      message = #{message,jdbcType=VARCHAR},
+      editer = #{editer,jdbcType=INTEGER},
+      edit_time = #{editTime,jdbcType=TIMESTAMP},
+      send_tag = #{sendTag,jdbcType=VARCHAR},
+      receive_tag = #{receiveTag,jdbcType=VARCHAR},
+      task_id = #{taskId,jdbcType=INTEGER},
+      send_type = #{sendType,jdbcType=VARCHAR},
+      is_read = #{isRead,jdbcType=INTEGER},
+      status = #{status,jdbcType=VARCHAR},
+      creater = #{creater,jdbcType=VARCHAR},
+      created_time = #{createdTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,4 @@
+2016-11-22 16:17:10[main][org.apache.ibatis.logging.LogFactory] [DEBUG] [128]-Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2016-11-22 16:17:57[main][org.apache.ibatis.logging.LogFactory] [DEBUG] [128]-Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2016-11-22 16:17:57[main][org.mybatis.spring.SqlSessionFactoryBean] [DEBUG] [362]-Property 'configLocation' not specified, using default MyBatis Configuration
+2016-11-22 16:17:57[main][org.mybatis.spring.SqlSessionFactoryBean] [DEBUG] [477]-Property 'mapperLocations' was not specified or no matching resources found
