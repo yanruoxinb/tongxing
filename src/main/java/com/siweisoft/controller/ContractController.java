@@ -26,13 +26,14 @@ import java.util.List;
  */
 
 @Controller
-@RequestMapping("/contract")
+@RequestMapping("/limitAndMenu")
 
 public class ContractController {
-    @RequestMapping(value = "toContract",method = RequestMethod.GET)
+    @RequestMapping(value = "tolimitAndMenu",method = RequestMethod.GET)
     public String toUserManager() {
-        return "contract/ht";
+        return "limitAndMenu/tjcd";
     }
+
     @Resource
     private ContractService contractService;
     @Resource

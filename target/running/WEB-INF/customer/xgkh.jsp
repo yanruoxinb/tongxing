@@ -293,7 +293,7 @@
                                     </a>
                                 </li>
                                 <li class="row info col-lg-12">
-                                    <a href="../views/manage/qx.jsp">
+                                    <a href="../views/limitAndMenu/qx.jsp">
                                         <img src="image/权限管理.png" class="col-lg-offset-2">
                                         <span class="list">权限管理</span>
                                     </a>

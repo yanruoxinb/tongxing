@@ -360,15 +360,13 @@ margin: 15px 15px;
     height: 22px;
 }
 #pz1 input,#jsjd1 input,#kpsk1 input,#pz input,#jsjd input,.nbjs input,#kpsk input{
-    width: 95%;
     text-align: center;
 }
     .check_input1{
          left: 25px!important;
     }
 input[type=checkbox]{
-       opacity: 1!important; 
-    position: absolute;
+       opacity: 1!important;
    left:50px;
     z-index: 12;
     width: 18px;
@@ -541,4 +539,29 @@ input[type=checkbox]{
 .addxminfo input{
     width: 148px!important;
     height: 26px!important;
+}
+input{
+    text-align: center!important;
+}
+.toggle_htbgc{
+    color:#fff!important;
+    background-color: #008cee!important;
+}
+/*#addCountCheckoutTable input[type='text']{*/
+    /*width: 80%;*/
+/*}*/
+#addCraftDetailTable input[type="text"]{
+    width:80%
+}
+.pzgroup1 input[type="text"]{
+    width:80%
+}
+.submit{
+    margin: 0 auto;
+}
+.submit button{
+    padding:5px 36px;
+    margin: 20px;
+    background-color: #068cee;
+    color: #fff;
 }

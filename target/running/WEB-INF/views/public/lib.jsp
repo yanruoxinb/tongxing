@@ -9,3 +9,5 @@
 <link rel="stylesheet" href="../../../css/bootstrap.min.css"/>
 <link rel="stylesheet" href="../../../css/tq.css"/>
 <link rel="stylesheet" href="../../../css/tqcss.css"/>
+<script src="${ctx}/js/app.js"></script>
+<script src="${ctx}/js/bootstrap.min.js"></script>

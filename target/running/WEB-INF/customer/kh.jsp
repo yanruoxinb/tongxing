@@ -433,7 +433,7 @@
                                         </a>
                                     </li>
                                     <li class="row info col-lg-12">
-                                        <a id="j" href="../views/manage/rw.jsp">
+                                        <a id="j" href="../views/taskAndItem/rw.jsp">
                                             <img src="image/任务管理.png" class="col-lg-offset-2">
                                             <span class="list">任务管理</span>
                                         </a>
@@ -459,14 +459,14 @@
                                         </a>
                                     </li>
                                     <li class="row info col-lg-12">
-                                        <a href="../views/manage/qx.jsp">
+                                        <a href="../views/limitAndMenu/qx.jsp">
                                             <img src="image/权限管理.png" class="col-lg-offset-2">
                                             <span class="list">权限管理</span>
                                         </a>
                                     </li>
 
                                     <li class="row info col-lg-12">
-                                        <a href="../views/manage/cdmang.jsp">
+                                        <a href="../views/limitAndMenu/cdmang.jsp">
                                             <img src="image/菜单管理.png" class="col-lg-offset-2">
                                             <span class="list">菜单管理</span>
                                         </a>
@@ -511,8 +511,6 @@
     </div>
     <div id="ShowBolightBox" style=" width: 1932px; height: 100%;display:none;"></div>
     <div id="zhe" style="display:none;"></div>
-<!-- <a id="btn1" href="javascript:void(0)" >功能列表</a> -->
-<!-- <a  id="btn2" href='swindex.html'>返回首页</a> -->
-<script src="js/app.js"></script>
+</div>
 </body>
 </html>

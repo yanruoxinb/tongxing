@@ -32,14 +32,7 @@
 </head>
 <body>
 <!------------------------------任务管理---------------------------------->
-<div class="main-container container-fluid" class="top" style="padding-left: 0;">
-    <img src="./image/2.png" alt="">
-</div>
-<div class="main-container container-fluid" class="left" style="display:inline-block;    padding-left: 0;">
-    <img src="./image/1.png" alt="" style="width:230px;    height: 100%;">
-</div>
-
-<div style="height200px;width:350px;font-size:26px;font-family:'华文行楷','Arial','Microsoft YaHei','黑体','宋体','sans-serif';margin:0 auto; border:1px solid #008cee;background-color:#008cee;color:#fff;z-index:999;display:inline-block;line-height:50px;text-align:center;border-radius:20px;position:absolute;right: 42%;top: 480px;display:none;"
+<div style="height:200px;width:350px;font-size:26px;font-family:'华文行楷','Arial','Microsoft YaHei','黑体','宋体','sans-serif';margin:0 auto; border:1px solid #008cee;background-color:#008cee;color:#fff;z-index:999;display:inline-block;line-height:50px;text-align:center;border-radius:20px;position:absolute;right: 42%;top: 480px;display:none;"
      class="noticeCon">
     操作成功
 </div>
@@ -160,8 +153,8 @@
                                 class="btn btn-danger deleTask" style="color: #FFFFFF;"> 删除</button></span>
                     </td>
                     <td>
-                        <a href="infoMore.jsp"> <span class="xg"><button class="btn btn-primary"
-                                                                         style="color: #FFFFFF;"> 更多</button></span></a>
+                        <a href="../manage/infoMore.jsp"> <span class="xg"><button class="btn btn-primary"
+                                                                                   style="color: #FFFFFF;"> 更多</button></span></a>
                     </td>
                 </tr>
                 <tr>
@@ -185,8 +178,8 @@
                                 class="btn btn-danger deleTask" style="color: #FFFFFF;"> 删除</button></span>
                     </td>
                     <td>
-                        <a href="infoMore.jsp"> <span class="xg"><button class="btn btn-primary"
-                                                                         style="color: #FFFFFF;"> 更多</button></span></a>
+                        <a href="../manage/infoMore.jsp"> <span class="xg"><button class="btn btn-primary"
+                                                                                   style="color: #FFFFFF;"> 更多</button></span></a>
                     </td>
                 </tr>
                 <tr>
@@ -210,8 +203,8 @@
                                 class="btn btn-danger deleTask" style="color: #FFFFFF;"> 删除</button></span>
                     </td>
                     <td>
-                        <a href="infoMore.jsp"> <span class="xg"><button class="btn btn-primary"
-                                                                         style="color: #FFFFFF;"> 更多</button></span></a>
+                        <a href="../manage/infoMore.jsp"> <span class="xg"><button class="btn btn-primary"
+                                                                                   style="color: #FFFFFF;"> 更多</button></span></a>
                     </td>
                 </tr>
                 <tr>
@@ -235,8 +228,8 @@
                                 class="btn btn-danger deleTask" style="color: #FFFFFF;"> 删除</button></span>
                     </td>
                     <td>
-                        <a href="infoMore.jsp"> <span class="xg"><button class="btn btn-primary"
-                                                                         style="color: #FFFFFF;"> 更多</button></span></a>
+                        <a href="../manage/infoMore.jsp"> <span class="xg"><button class="btn btn-primary"
+                                                                                   style="color: #FFFFFF;"> 更多</button></span></a>
                     </td>
                 </tr>
                 <tr>
@@ -260,8 +253,8 @@
                                 class="btn btn-danger deleTask" style="color: #FFFFFF;"> 删除</button></span>
                     </td>
                     <td>
-                        <a href="infoMore.jsp"> <span class="xg"><button class="btn btn-primary"
-                                                                         style="color: #FFFFFF;"> 更多</button></span></a>
+                        <a href="../manage/infoMore.jsp"> <span class="xg"><button class="btn btn-primary"
+                                                                                   style="color: #FFFFFF;"> 更多</button></span></a>
                     </td>
                 </tr>
                 <tr>
@@ -285,8 +278,8 @@
                                 class="btn btn-danger deleTask" style="color: #FFFFFF;"> 删除</button></span>
                     </td>
                     <td>
-                        <a href="infoMore.jsp"> <span class="xg"><button class="btn btn-primary"
-                                                                         style="color: #FFFFFF;"> 更多</button></span></a>
+                        <a href="../manage/infoMore.jsp"> <span class="xg"><button class="btn btn-primary"
+                                                                                   style="color: #FFFFFF;"> 更多</button></span></a>
                     </td>
                 </tr>
                 <tr>
@@ -311,8 +304,8 @@
                                 class="btn btn-danger deleTask" style="color: #FFFFFF;"> 删除</button></span>
                     </td>
                     <td>
-                        <a href="infoMore.jsp"> <span class="xg"><button class="btn btn-primary"
-                                                                         style="color: #FFFFFF;"> 更多</button></span></a>
+                        <a href="../manage/infoMore.jsp"> <span class="xg"><button class="btn btn-primary"
+                                                                                   style="color: #FFFFFF;"> 更多</button></span></a>
                     </td>
                 </tr>
                 <tr>
@@ -336,8 +329,8 @@
                                 class="btn btn-danger deleTask" style="color: #FFFFFF;"> 删除</button></span>
                     </td>
                     <td>
-                        <a href="infoMore.jsp"> <span class="xg"><button class="btn btn-primary"
-                                                                         style="color: #FFFFFF;"> 更多</button></span></a>
+                        <a href="../manage/infoMore.jsp"> <span class="xg"><button class="btn btn-primary"
+                                                                                   style="color: #FFFFFF;"> 更多</button></span></a>
                     </td>
                 </tr>
                 </tbody>
@@ -561,7 +554,7 @@
                                     </a>
                                 </li>
                                 <li class="row info col-lg-12">
-                                    <a id="h" href="sk.jsp">
+                                    <a id="h" href="../manage/sk.jsp">
                                         <img src="image/收款管理.png" class="col-lg-offset-2">
                                         <span class="list">收款管理</span>
                                     </a>
@@ -569,26 +562,26 @@
 
 
                                 <li class="row info col-lg-12">
-                                    <a id="h" href="bx.jsp">
+                                    <a id="h" href="../manage/bx.jsp">
                                         <img src="image/报销管理.png" class="col-lg-offset-2">
                                         <span class="list">报销管理</span>
                                     </a>
                                 </li>
                                 <li class="row info col-lg-12">
-                                    <a id="e" href="yh.jsp">
+                                    <a id="e" href="../manage/yh.jsp">
                                         <img src="image/用户管理.png" class="col-lg-offset-2">
                                         <span class="list">用户管理</span>
                                     </a>
                                 </li>
                                 <li class="row info col-lg-12">
-                                    <a href="qx.jsp">
+                                    <a href="../limitAndMenu/qx.jsp">
                                         <img src="image/权限管理.png" class="col-lg-offset-2">
                                         <span class="list">权限管理</span>
                                     </a>
                                 </li>
 
                                 <li class="row info col-lg-12">
-                                    <a href="cdmang.jsp">
+                                    <a href="../limitAndMenu/cdmang.jsp">
                                         <img src="image/菜单管理.png" class="col-lg-offset-2">
                                         <span class="list">菜单管理</span>
                                     </a>

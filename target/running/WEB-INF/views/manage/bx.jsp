@@ -11,14 +11,9 @@
 <jsp:include page="../public/menulist.jsp"></jsp:include>
 <jsp:include page="../public/lib.jsp"></jsp:include>
 <!------------------------------报销管理---------------------------------->
-<div class="main-container container-fluid" class="top"style="padding-left: 0;">
-<img src="../../../image/2.png" alt="">
-</div>
-<div class="main-container container-fluid" class="left"style="display:inline-block;    padding-left: 0;">
-<img src="../../../image/1.png" alt="" style="width:230px;    height: 100%;">
-</div>
 
-<div style="height:200px;width:350px;font-size:26px;font-family:'华文行楷','Arial','Microsoft YaHei','黑体','宋体','sans-serif';margin:0 auto; border:1px solid #008cee;background-color:#008cee;color:#fff;z-index:999;display:inline-block;line-height:50px;text-align:center;border-radius:20px;position:absolute;right: 42%;top: 480px;display:none;" class="noticeCon">
+
+<div style="height:50px;width:350px;font-size:26px;font-family:'华文行楷','Arial','Microsoft YaHei','黑体','宋体','sans-serif';margin:0 auto; border:1px solid #008cee;background-color:#008cee;color:#fff;z-index:999;display:inline-block;line-height:50px;text-align:center;border-radius:20px;position:absolute;right: 42%;top: 480px;display:none;" class="noticeCon">
     操作成功
 </div>
 
@@ -282,6 +277,6 @@
     </div>
 </div>
 <div id="ShowBolightBox" style=" width: 1932px; height: 100%;display:none;"></div>
-<script src="../../../js/app.js"></script>
+
 </body>
 </html>

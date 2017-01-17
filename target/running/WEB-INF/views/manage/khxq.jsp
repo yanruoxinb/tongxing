@@ -3,15 +3,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/tq.css">
-    <link rel="stylesheet" href="css/index.css"/>
-        <link rel="stylesheet" href="css/tqcss.css"/>
-    <link rel="stylesheet" href="css/change_style.css"/>
-    <link rel="stylesheet" href="css/bootstrap.min.css"/>
-    <link rel="stylesheet" type="text/css" href="assets/bootstrap/css/font-awesome.min.css"/>
-    <script src="js/jquery-1.11.3.min.js"></script>
-    <script src="js/bootstrap1.js"></script>
-        <script src="js/app.js"></script>
     <title>客户详情</title>
     <style>
         .padright {
@@ -31,127 +22,123 @@
         .wtt {
             margin: 90px 72px !important;
         }
-        .setLabelStyle label{
-            color:#666;
+
+        .setLabelStyle label {
+            color: #666;
         }
     </style>
 </head>
 <body>
+<jsp:include page="../public/menulist.jsp"></jsp:include>
+<jsp:include page="../public/lib.jsp"></jsp:include>
 <!------------------------------客户详情---------------------------------->
-<div class="main-container container-fluid" class="top" style="padding-left: 0;">
-    <img src="./image/2.png" alt="">
-</div>
-<div class="main-container container-fluid" class="left" style="display:inline-block;    padding-left: 0;">
-    <img src="./image/1.png" alt="" style="width:230px;    height: 100%;">
-</div>
-
 <div style="height:50px;width:350px;font-size:26px;font-family:'华文行楷','Arial','Microsoft YaHei','黑体','宋体','sans-serif';margin:0 auto; border:1px solid #008cee;background-color:#008cee;color:#fff;z-index:999;display:inline-block;line-height:50px;text-align:center;border-radius:20px;position:absolute;right: 42%;top: 480px;display:none;"
      class="noticeCon">
     操作成功
 </div>
 
 <div class="container" id="page7" style="width:86%;float:right;padding:0 35px;">
-    <a id="btn1" href="swindex.html" style="left: -30px;padding: 17px 10px;float: left;position: relative;"> 首页 / </a>
-    <a class="btn1" href="javascript:void(0)" style="left: -30px;padding: 17px 5px;float: left;position: relative;">
+    <a id="btn1" href="swindex.html" style="left: 115px;padding: 17px 10px;float: left;position: relative;"> 首页 / </a>
+    <a class="btn1" href="javascript:void(0)" style="left: 108px;padding: 17px 5px;float: left;position: relative;">
         功能列表</a>
     <div class="section" style="margin:15px 120px;">
         <fieldset style="border:1px dashed #ddd!important;">
             <legend>
                 <h3 class="baoxiao" style="text-align: center;position: relative;right: 8px;">客户详情</h3>
             </legend>
-                <form class="form-horizontal" role="form">
-                    <div class="row setLabelStyle">
-                        <div class="col-sm-4 col-sm-offset-2">
-                            <div class="form-group">
-                                <label class="col-sm-4 control-label">客户名称:</label>
-                                <div class="col-sm-8 khbz">
-                                    <span>湖北老河口市慧江混凝土有限公司</span>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-4 control-label">客户性质:</label>
-                                <div class="col-sm-8 khbz">
-                                    <span>代理商</span>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-4 control-label padright">状态:</label>
-                                <div class="col-sm-8 khbz">
-                                    <span>合作中</span>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-4 control-label padright">来源:</label>
-                                <div class="col-sm-8 khbz">
-                                    <span>走访</span>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-4 control-label padright">省市:</label>
-                                <div class="col-sm-8 khbz">
-                                    <span>湖北省</span>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-4 control-label padright">县区:</label>
-                                <div class="col-sm-8 khbz">
-                                    <span>武汉市</span>
-                                </div>
+            <form class="form-horizontal" role="form">
+                <div class="row setLabelStyle">
+                    <div class="col-sm-4 col-sm-offset-2">
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">客户名称:</label>
+                            <div class="col-sm-8 khbz">
+                                <span>湖北老河口市慧江混凝土有限公司</span>
                             </div>
                         </div>
-                        <div class="col-sm-4 col-sm-offset-1">
-                            <div class="form-group">
-                                <label class="col-sm-4 control-label">客户等级:</label>
-                                <div class="col-sm-8 khbz">
-                                    <span>一级</span>
-                                </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">客户性质:</label>
+                            <div class="col-sm-8 khbz">
+                                <span>代理商</span>
                             </div>
-                            <div class="form-group">
-                                <label class="col-sm-4 control-label">主要业务</label>
-                                <div class="col-sm-8 khbz">
-                                    <span>混凝土</span>
-                                </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label padright">状态:</label>
+                            <div class="col-sm-8 khbz">
+                                <span>合作中</span>
                             </div>
-                            <div class="form-group">
-                                <label class="col-sm-4 control-label">上属公司:</label>
-                                <div class="col-sm-8 khbz">
-                                    <span>大唐有限公司</span>
-                                </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label padright">来源:</label>
+                            <div class="col-sm-8 khbz">
+                                <span>走访</span>
                             </div>
-                            <div class="form-group">
-                                <label class="col-sm-4 control-label">企业性质:</label>
-                                <div class="col-sm-8 khbz">
-                                    <span>私企</span>
-                                </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label padright">省市:</label>
+                            <div class="col-sm-8 khbz">
+                                <span>湖北省</span>
                             </div>
-                            <div class="form-group">
-                                <label class="col-sm-4 control-label">详细地址:</label>
-                                <div class="col-sm-8 khbz">
-                                    <span>陕西省西安市雁塔区市建四公司</span>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-4 control-label padright">备注:</label>
-                                <div class="col-sm-8 khbz">
-                                    <span>请尽快为我们服务</span>
-                                </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label padright">县区:</label>
+                            <div class="col-sm-8 khbz">
+                                <span>武汉市</span>
                             </div>
                         </div>
                     </div>
-                </form>
+                    <div class="col-sm-4 col-sm-offset-1">
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">客户等级:</label>
+                            <div class="col-sm-8 khbz">
+                                <span>一级</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">主要业务</label>
+                            <div class="col-sm-8 khbz">
+                                <span>混凝土</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">上属公司:</label>
+                            <div class="col-sm-8 khbz">
+                                <span>大唐有限公司</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">企业性质:</label>
+                            <div class="col-sm-8 khbz">
+                                <span>私企</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">详细地址:</label>
+                            <div class="col-sm-8 khbz">
+                                <span>陕西省西安市雁塔区市建四公司</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label padright">备注:</label>
+                            <div class="col-sm-8 khbz">
+                                <span>请尽快为我们服务</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
         </fieldset>
     </div>
- 
+
 
     <div class="section" id="lxr_xz_restore">
-     <div style="text-align:center;">
-          <h3 class="baoxiao" style="display:inline-block;margin:20px 0 10px 0;">联系人信息</h3>
-     </div>
-    
+        <div style="text-align:center;">
+            <h3 class="baoxiao" style="display:inline-block;margin:20px 0 10px 0;">联系人信息</h3>
+        </div>
+
         <div class="row col-sm-8   col-xs-offset-2" style="text-align: center">
             <div class="table-responsive" style="margin:15px 0; ">
                 <table class="table table-bordered" id="lxr">
-                 
+
                     <thead>
                     <tr>
                         <td>客户姓名</td>
@@ -248,95 +235,7 @@
             </div>
         </div>
     </div>
-    <div class="olct" style="position: fixed; top: 69px;    right: -250px;">
-        <div class="clearfloat">
-            <div class="olct_left"></div>
-            <div class="olct_right">
-                <div class="olct_box">
-                    <div class="olct_top"
-                         style=" z-index:2;   display: inline-block;width: 100px;position: relative;right: -130px;">
-                        <a href="javascript:void(0);" style=""><img
-                                src="image/lADOjttrRMykXQ_93_164.png" alt=""
-                                style="height: 150px; position: absolute;"></a></div>
-                    <div class="olct_conwrap clearfloat">
-                        <div class="scrollbar" style="height: 280px;">
-                            <div class="track" style="height: 280px;">
-                                <div class="thumb" style="top: 0px; height: 100.384px;">
-                                    <div class="end"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="olct_conbox">
-                            <div class="olct_con" style="top: 0px;">
 
-                                <div class="olct_teacher clearfloat col-lg-10"
-                                     style="    position: relative; top: -19px;">
-                                    <li class="row info col-lg-12">
-                                        <a id="f" href="kh.html">
-                                            <img src="image/客户管理.png" class="col-lg-offset-2">
-                                            <span class="list">客户管理</span>
-                                        </a>
-                                    </li>
-                                    <li class="row info col-lg-12">
-                                        <a id="c" href="../../contract/ht.jsp">
-                                            <img src="image/合同管理.png" class="col-lg-offset-2">
-                                            <span class="list">合同管理</span>
-                                        </a>
-                                    </li>
-                                    <li class="row info col-lg-12">
-                                        <a id="h" href="sk.html">
-                                            <img src="image/收款管理.png" class="col-lg-offset-2">
-                                            <span class="list">收款管理</span>
-                                        </a>
-                                    </li>
-                                    <li class="row info col-lg-12">
-                                        <a id="j" href="xm.jsp">
-                                            <img src="image/项目管理.png" class="col-lg-offset-2">
-                                            <span class="list">项目管理</span>
-
-                                        </a>
-                                    </li>
-                                    <li class="row info col-lg-12">
-                                        <a id="j" href="rw.html">
-                                            <img src="image/任务管理.png" class="col-lg-offset-2">
-                                            <span class="list">任务管理</span>
-                                        </a>
-                                    </li>
-                                    <li class="row info col-lg-12">
-                                        <a id="h" href="bx.html">
-                                            <img src="image/报销管理.png" class="col-lg-offset-2">
-                                            <span class="list">报销管理</span>
-                                        </a>
-                                    </li>
-                                    <li class="row info col-lg-12">
-                                        <a id="e" href="yh.jsp">
-                                            <img src="image/用户管理.png" class="col-lg-offset-2">
-                                            <span class="list">用户管理</span>
-                                        </a>
-                                    </li>
-                                    <li class="row info col-lg-12">
-                                        <a href="qx.jsp">
-                                            <img src="image/权限管理.png" class="col-lg-offset-2">
-                                            <span class="list">权限管理</span>
-                                        </a>
-                                    </li>
-
-                                    <li class="row info col-lg-12">
-                                        <a href="cdmang.html">
-                                            <img src="image/菜单管理.png" class="col-lg-offset-2">
-                                            <span class="list">菜单管理</span>
-                                        </a>
-                                    </li>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="olct_footer"></div>
-
-    </div>
 </div>
 
 <!-- 确认confirm -->
@@ -349,10 +248,10 @@
     <div class="body">
         <div class="right">
             <div class="ct" id="dvMsgCT">
-             <img src="image/警示.png" alt="" style="width:30px;height:30px;margin-right:10px;">
-            您确认要进行保存操作吗？
+                <img src="image/警示.png" alt="" style="width:30px;height:30px;margin-right:10px;">
+                您确认要进行保存操作吗？
                 <div class="clear">
-                    <img src="image/bottom_smile.png" alt="">   
+                    <img src="image/bottom_smile.png" alt="">
                 </div>
             </div>
         </div>

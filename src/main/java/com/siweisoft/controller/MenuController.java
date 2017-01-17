@@ -13,13 +13,13 @@ import javax.servlet.http.HttpServletResponse;
  * Created by sw004 on 2017-1-17.
  */
 @Controller
-@RequestMapping("/account")
+@RequestMapping("/manage")
 public class MenuController {
 
         //跳转到报销管理页面
         @RequestMapping(value = "toAccount",method = RequestMethod.GET)
         public String toUserManager() {
-            return "manage/bxxg";
+            return "manage/kpxz";
         }
     }
 

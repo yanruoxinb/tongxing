@@ -30,7 +30,7 @@
 <img src="./image/1.png" alt=""style="width:230px;    height: 100%;">
 </div>
 
-<div style="height200px;width:350px;font-size:26px;font-family:'华文行楷','Arial','Microsoft YaHei','黑体','宋体','sans-serif';margin:0 auto; border:1px solid #008cee;background-color:#008cee;color:#fff;z-index:999;display:inline-block;line-height:50px;text-align:center;border-radius:20px;position:absolute;right: 42%;top: 480px;display:none;" class="noticeCon">
+<div style="height:50px;width:350px;font-size:26px;font-family:'华文行楷','Arial','Microsoft YaHei','黑体','宋体','sans-serif';margin:0 auto; border:1px solid #008cee;background-color:#008cee;color:#fff;z-index:999;display:inline-block;line-height:50px;text-align:center;border-radius:20px;position:absolute;right: 42%;top: 480px;display:none;" class="noticeCon">
     操作成功
 </div>
 
@@ -200,7 +200,7 @@
                     </a>
                 </li>
                 <li class="row info col-lg-12">
-                    <a id="j" href="xm.jsp">
+                    <a id="j" href="../taskAndItem/xm.jsp">
                         <img src="image/项目管理.png" class="col-lg-offset-2">
                         <span class="list">项目管理</span>
 
@@ -225,7 +225,7 @@
                     </a>
                 </li>
                 <li class="row info col-lg-12">
-                    <a href="qx.jsp">
+                    <a href="../limitAndMenu/qx.jsp">
                         <img src="image/权限管理.png" class="col-lg-offset-2">
                         <span class="list">权限管理</span>
                     </a>

@@ -207,7 +207,7 @@
                     </a>
                 </li>
                                 <li class="row info col-lg-12">
-                    <a id="j" href="xm.jsp">
+                    <a id="j" href="../taskAndItem/xm.jsp">
                         <img src="image/项目管理.png" class="col-lg-offset-2">
                         <span class="list">项目管理</span>
 
@@ -232,7 +232,7 @@
                     </a>
                 </li>
                 <li class="row info col-lg-12">
-                    <a href="qx.jsp">
+                    <a href="../limitAndMenu/qx.jsp">
                         <img src="image/权限管理.png" class="col-lg-offset-2">
                         <span class="list">权限管理</span>
                     </a>

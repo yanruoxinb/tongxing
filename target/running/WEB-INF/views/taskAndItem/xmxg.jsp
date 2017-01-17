@@ -513,7 +513,7 @@
                     </a>
               </li>
                 <li class="row info col-lg-12">
-                    <a id="a" href="lx.jsp">
+                    <a id="a" href="../manage/lx.jsp">
                         <img src="image/联系人管理.png" class="col-lg-offset-2">
                         <span class="list">联系人管理</span>
                     </a>
@@ -551,13 +551,13 @@
                     </a>
                 </li>
                 <li class="row info col-lg-12">
-                    <a id="e" href="yh.jsp">
+                    <a id="e" href="../manage/yh.jsp">
                         <img src="image/用户管理.png" class="col-lg-offset-2">
                         <span class="list">用户管理</span>
                     </a>
                 </li>
                 <li class="row info col-lg-12">
-                    <a href="qx.jsp">
+                    <a href="../limitAndMenu/qx.jsp">
                         <img src="image/权限管理.png" class="col-lg-offset-2">
                         <span class="list">权限管理</span>
                     </a>
