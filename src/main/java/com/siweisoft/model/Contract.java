@@ -39,6 +39,16 @@ public class Contract {
 
     private Date deadline;
 
+    private String customer;
+
+    public String getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(String customer) {
+        this.customer = customer;
+    }
+
     public Integer getId() {
         return id;
     }

@@ -9,34 +9,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="/css/index.css"/>
-  <link rel="stylesheet" href="/css/tq.css">
-  <link rel="stylesheet" href="/css/bootstrap.min.css"/>
-  <link rel="stylesheet" href="/css/change_style.css"/>
-  <link rel="stylesheet" type="text/css" href="/assets/bootstrap/css/font-awesome.min.css" />
-  <script src="/js/jquery-1.11.3.min.js"></script>
-  <link rel="stylesheet" href="/css/tqcss.css"/>
-  <script src="/js/showBo.js"></script>
-  <script type="text/javascript" src="/js/jquery-2.0.3.min.js" charset="UTF-8"></script>
-  <script type="text/javascript" src="/js/bootstrap.min.js" charset="UTF-8"></script>
-  <script type="text/javascript" src="/js/common.js" charset="UTF-8"></script>
+  <jsp:include page="../public/lib.jsp"></jsp:include>
   <title>合同管理</title>
 </head>
 <body>
 <!------------------------------合同管理---------------------------------->
 <div class="main-container container-fluid" class="top"style="padding-left: 0;">
-  <img src="./image/2.png" alt="">
+  <img src="${ctx}/image/2.png" alt="">
 </div>
 <div class="main-container container-fluid" class="left"style="display:inline-block;    padding-left: 0;">
-  <img src="./image/1.png" alt=""style="width:230px;    height: 1300px;">
+  <img src="${ctx}/image/1.png" alt=""style="width:230px;    height: 1300px;">
 </div>
 
-<div style="height200px;width:350px;font-size:26px;font-family:'华文行楷','Arial','Microsoft YaHei','黑体','宋体','sans-serif';margin:0 auto; border:1px solid #008cee;background-color:#008cee;color:#fff;z-index:999;display:inline-block;line-height:50px;text-align:center;border-radius:20px;position:absolute;right: 42%;top: 480px;display:none;" class="noticeCon">
+<div style="height:200px;width:350px;font-size:26px;font-family:'华文行楷','Arial','Microsoft YaHei','黑体','宋体','sans-serif';margin:0 auto; border:1px solid #008cee;background-color:#008cee;color:#fff;z-index:999;display:inline-block;line-height:50px;text-align:center;border-radius:20px;position:absolute;right: 42%;top: 480px;display:none;" class="noticeCon">
   操作成功
 </div>
 
 <div class="contaner"  id="page2"style="width:86%;float:right;padding:0 35px;border:1px solid #ddd;    margin: 10px 10px 0 0;">
-  <a id="btn1" href="swindex.html"style="left: -30px;padding: 17px 10px;float: left;position: relative;" > 首页 / </a>
+  <a id="btn1" href="${ctx}/index.jsp"style="left: -30px;padding: 17px 10px;float: left;position: relative;" > 首页 / </a>
   <a class="btn1" href="javascript:void(0)"style="left: -30px;padding: 17px 5px;float: left;position: relative;" > 功能列表</a>
   <div class="section">
     <h3 class="baoxiao">合同管理</h3>
@@ -74,7 +64,7 @@
 
               <div class="olct_teacher clearfloat col-lg-10"style="    position: relative; top: -19px;">
                 <li class="row info col-lg-12">
-                  <a id="f" href="kh.html">
+                  <a id="f" href="${ctx}/customer/toList">
                     <img src="image/客户管理.png" class="col-lg-offset-2">
                     <span class="list">客户管理</span>
                   </a>
@@ -87,7 +77,7 @@
                 </li>
 
                 <li class="row info col-lg-12">
-                  <a id="c" href="ht.html">
+                  <a id="c" href="${ctx}/contract/find">
                     <img src="image/合同管理.png" class="col-lg-offset-2">
                     <span class="list">合同管理</span>
                   </a>
@@ -124,7 +114,7 @@
                   </a>
                 </li>
                 <li class="row info col-lg-12">
-                  <a href="qx.html">
+                  <a href="${ctx}/role/toQxgl">
                     <img src="" class="col-lg-offset-2">
                     <span class="list">权限管理</span>
                   </a>
@@ -147,7 +137,7 @@
 
 </div>
 <div id="zhe" style="display:none;"></div>
-<script src="/js/app.js"></script>
+<script src="${ctx}/js/app.js"></script>
 
 <script>
   $(function(){
@@ -255,7 +245,7 @@
                   //请求后台
                   callSapiServer("/contract/delete",function(data){
                     //成功后，执行此回调函数
-                    alert(data.message);
+                    //alert(data.message);
                     if(data.code == 200) {
                       //如果后台删除成功，直接删除当前行，不需要再请求后台，减少后台压力
                       $(tr).remove();

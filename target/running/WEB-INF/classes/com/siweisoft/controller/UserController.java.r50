@@ -30,6 +30,8 @@ public class UserController {
         return "user/user_manager";
     }
 
+
+
     @RequestMapping(value = "selectAll",method = RequestMethod.GET)
     @ResponseBody
     public String selectAll(){

@@ -60,7 +60,8 @@
                         default :
                             return null;
                     }
-                }, function (table) {
+                },
+                function (table) {
                     //设置table的样式
                     $(table).addClass("table table-striped table-hover table-bordered");
                     $(table).attr("border","1");

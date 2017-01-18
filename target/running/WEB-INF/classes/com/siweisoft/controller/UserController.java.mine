@@ -30,6 +30,8 @@ public class UserController {
         return "user/user_manager";
     }
 
+
+    //查询所有的用户
     @RequestMapping(value = "selectAll",method = RequestMethod.GET)
     @ResponseBody
     public String selectAll(){
@@ -44,8 +46,6 @@ public class UserController {
         }
         return json;
     }
-
-
 
     //删除用户数据
     @RequestMapping(value = "deleteByPrimaryKey",method = RequestMethod.POST)

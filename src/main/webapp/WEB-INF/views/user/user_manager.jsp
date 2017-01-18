@@ -76,8 +76,10 @@
 
             <button type="button" class="btn" style="background-color: #008cee;color: #fff;margin:0 10px;">搜索</button>
             <button type="reset" class="btn" style="background-color: #008cee;color: #fff;margin:0 10px;">重置</button>
-            <a href="${ctx}/user/toUserTjyh"> <button type="button" class="btn" style="background-color: #008cee;color: #fff;margin:0 10px;">新增</button></a>
+            <a href="tjyh.html"> <button type="button" class="btn" style="background-color: #008cee;color: #fff;margin:0 10px;">新增</button></a>
         </form>
+
+
         <div id="table-responsive" class="table-responsive" style="margin-top:15px;">
             <table class="table table-bordered" id="deleteUserTable">
                 <thead>
@@ -421,30 +423,29 @@
 
     function userBody1(data){
         //列名初始化
-        var head = ["用户名","真实名字","角色","职务","部门","联系电话","地址","操作"];
+        var head = ["姓名","位置","状态"];
         tab_jsonTable($("#table-responsive"), data, head,
                 function (td, row, col, content) {
                     $(td).css("text-align", "center");//添加td的样式
                     //初始化每一行的数据
                     switch (col) {
                         case 0:
-                            return nullToString(content.username) + "<input name='id' type='hidden' value='"+content.id+"'>";
+                            return nullToString(content.trueName) + "<input name='id' type='hidden' value='"+content.id+"'>";
                         case 1:
-                            return nullToString(content.trueName);
+                            return "<a href='javascript:void(0);'>" + nullToString(content.address) + "</a>";
                         case 2:
                             var statusText = "";
-                            if(content.userType == null || content.userType == "") {
+                            if(content.status == null || content.status == "") {
                                 statusText = "--";
-                            } else if(content.userType == 0) {
-                                statusText = "客服妹子";
-                            }  else if(content.userType == 1) {
-                                statusText = "工程师";
-                            } else if(content.userType == 2){
-                                statusText = "部门主管";
-                            }else {
+                            } else if(content.status == 0) {
+                                statusText = "工作中";
+                            }  else if(content.status == 1) {
+                                statusText = "休息中";
+                            } else {
                                 statusText = "异常";
                             }
                             return statusText;
+
                         case 3:
                             var statusText = "";
                             if(content.roleId == null || content.roleId == "") {
@@ -486,7 +487,6 @@
                 }, function (table) {
                     //设置table的样式
                     $(table).addClass("table table-bordered");
-
                     //通过检索table里面所有button赋值，当button的name为delete时，为它执行删除操作
                     $(table).find("button[name='delete']").click(function(){
                         var flag = confirm("您确定删除该元数据吗？一旦删除，将无法恢复！");

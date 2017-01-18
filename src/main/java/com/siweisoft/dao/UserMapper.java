@@ -18,6 +18,5 @@ public interface UserMapper {
     int updateByPrimaryKey(User record);
 
     List<User> selectAll();
-
     int deleteByPrimaryKey(Integer id);
 }

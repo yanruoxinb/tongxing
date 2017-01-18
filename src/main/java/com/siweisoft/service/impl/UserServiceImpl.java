@@ -54,4 +54,5 @@ public class UserServiceImpl implements UserService {
         List<User> list = userMapper.selectAll();
         return list;
     }
+
 }

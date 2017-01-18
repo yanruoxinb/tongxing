@@ -9,14 +9,14 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" type="text/css" href="assets/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="assets/bootstrap/css/font-awesome.min.css" />
-    <link rel="stylesheet" type="text/css" href="assets/bootstrap/css/weather-icons.min.css" />
-    <link href="assets/bootstrap/css/beyond.min.css" rel="stylesheet" type="text/css" />
-    <link href="assets/bootstrap/css/demo.min.css" rel="stylesheet" />
-    <link href="assets/bootstrap/css/typicons.min.css" rel="stylesheet" />
-    <link href="assets/bootstrap/css/animate.min.css" rel="stylesheet" />
-    <link href="assets/css/change_style.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="/assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/bootstrap/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/bootstrap/css/weather-icons.min.css" />
+    <link href="/assets/bootstrap/css/beyond.min.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/bootstrap/css/demo.min.css" rel="stylesheet" />
+    <link href="/assets/bootstrap/css/typicons.min.css" rel="stylesheet" />
+    <link href="/assets/bootstrap/css/animate.min.css" rel="stylesheet" />
+    <link href="/assets/css/change_style.css" rel="stylesheet" />
     <link type="text/css" rel="stylesheet" href="http://cdn.staticfile.org/twitter-bootstrap/3.1.1/css/bootstrap.min.css"/>
 
 

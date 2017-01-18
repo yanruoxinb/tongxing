@@ -43,4 +43,5 @@ public interface UserService {
      * @return 符合条件的用户数据列表
      */
       List<User> selectAll();
+
 }

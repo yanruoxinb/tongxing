@@ -49,7 +49,7 @@
                                 </li>
                                 <li class="row info col-lg-12">
                                     <a id="e" href="${ctx}/user/toUserManager">
-                                        <img src="image/用户管理.png" class="col-lg-offset-2">
+                                        <img src="${ctx}/image/用户管理.png" class="col-lg-offset-2">
                                         <span class="list">用户管理</span>
                                     </a>
                                 </li>
@@ -59,13 +59,26 @@
                                         <span class="list">权限管理</span>
                                     </a>
                                 </li>
-
+                                <li class="row info col-lg-12">
+                                    <a href="${ctx}/contract/find">
+                                        <img src="${ctx}image/合同管理.png" class="col-lg-offset-2">
+                                        <span class="list">合同管理</span>
+                                    </a>
+                                </li>
                                 <li class="row info col-lg-12">
                                     <a href="cdmang.html">
-                                        <img src="image/菜单管理.png" class="col-lg-offset-2">
+                                        <img src="${ctx}/image/菜单管理.png" class="col-lg-offset-2">
                                         <span class="list">菜单管理</span>
                                     </a>
                                 </li>
+
+                                <li class="row info col-lg-12">
+                                    <a href="contract/ht">
+                                        <img src="image/合同管理.png" class="col-lg-offset-2">
+                                        <span class="list">合同管理</span>
+                                    </a>
+                                </li>
+
                             </div>
                         </div>
                     </div>

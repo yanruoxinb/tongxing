@@ -20,9 +20,19 @@
 </div>
 <script>
     $(function() {
+
+        callSapiServer("/user/login",function(data){
+            userList(data);
+        },"GET");
+
+        callSapiServer("/user/selectAll",function(data){
+            userList(data);
+        },"GET");
+
 //        callSapiServer("/user/login",function(data){
 //            userList(data);
 //        },"GET");
+
     });
 
     function userList(data){

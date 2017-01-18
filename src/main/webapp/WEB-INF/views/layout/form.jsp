@@ -181,6 +181,12 @@
 
             <script>
             $(function(){
+
+                callSapiServer("/user/selectAll",function(data){
+                    console.log(data);
+                    proList(data);
+                },"GET");
+
 //                callSapiServer("/user/login",function(data){
 //                    console.log(data);
 //                    proList(data);
@@ -1097,6 +1103,7 @@
                 </div>
             </div>
     </div>
+
     </fieldset>
     <div class="arcivePart" style="display:none;">
         <div class="row change_mar rt1">
@@ -1175,6 +1182,24 @@
     </div>
 </div>
 <script>
+
+//    <div class="col-md-4">
+//            <input id="taskNum" name="taskNum"  class="textbox right" style="height: 22px;width:128px;" />
+//            <p class="ma_t  ab" style="float: right;">任务编号：</p>
+//    </div>
+//    <div class="col-md-4">
+//            <input id="createdPerson" name="createdPerson" class="textbox right"style="height: 22px; width:128px;" />
+//            <p class="ma_t  ab" style="float: right;">创建人：</p>
+//    </div>
+//    <div class="col-md-4">
+//            <!-- 	<input id="sendTime" name="sendTime"  class="easyui-datetimebox right" required = "required"  style="width: 180px;"/> -->
+//            <input id="sendTime" name="sendTime"  class=" right" required = "required"  style="width: 180px;"  />
+//            <p class="ma_t  ab" style="float: right;">发布时间：</p>
+//    </div>
+
+
+
+
     $(function(){
         var json = {
             taskNum : 1,
@@ -1182,7 +1207,8 @@
             sendTime :3
         };
         jsonToForm("#fieldset_baiyouli",json);
-//        jsonToSelect("/user/login","#executorId",null,"id","trueName",true,false);
+
+        jsonToSelect("/user/selectAll","#executorId",null,"id","trueName",true,false);
     });
     $("#operateMode_release").click(function(){
         var json = formToJson("#fieldset_baiyouli");

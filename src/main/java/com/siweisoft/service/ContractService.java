@@ -3,10 +3,7 @@ package com.siweisoft.service;
 import com.siweisoft.model.Contract;
 
 import java.util.List;
-
-/**
- * Created by sw-112 on 2017-01-16.
- */
+import java.util.Map;
 public interface ContractService {
     int deleteByPrimaryKey(Integer id);
 
@@ -21,5 +18,7 @@ public interface ContractService {
     int updateByPrimaryKey(Contract record);
 
     List<Contract> selectAll();
+
+    List<Map<String,Object>> searchproject(Map<String,Object> map);
 
 }

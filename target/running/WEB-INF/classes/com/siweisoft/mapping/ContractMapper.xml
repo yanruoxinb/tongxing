@@ -24,7 +24,13 @@
   <sql id="Base_Column_List">
     id, contract_name, contract_nature, contract_money, contract_date, our_agent, other_agent, 
     purchase_unit, department_audit, finance_audit, gathering, debt, is_ticket, is_owe, 
-    project_id, use_unit, birthline, deadline
+    project_id, use_unit, birthline, deadline,customer
+  </sql>
+  <sql id="candp">
+    c.id, c.contract_name, c.contract_nature, c.contract_money, c.contract_date, c.our_agent, c.other_agent,
+    c.purchase_unit, c.department_audit, c.finance_audit, c.gathering, c.debt, c.is_ticket, c.is_owe,
+    c.project_id, c.use_unit, c.birthline, c.deadline,cp.project_id,cp.contract_id,p.id, p.project_num, p.project_name, p.customer_id, p.project_code, p.deadline_type, p.commissioning_date,
+    p.debug_date, p.acceptance_date, p.contact_id, p.debug_name, p.project_status, p.inform_num,p.config_id, p.process_id
   </sql>
 
   <!--查询所有合同-->
@@ -32,6 +38,18 @@
     SELECT
     <include refid="Base_Column_List"/>
     FROM contract
+  </select>
+  <!--查询合同的项目-->
+  <select id="searchproject"  parameterType="java.util.Map" resultType="java.util.Map">
+    SELECT
+    <include refid="candp"/>
+    FROM contract c left join project_contract cp on c.id=cp.contract_id left join project p on cp.project_id=p.id where c.id=#{cid} limit #{pageInfo.pageIndex},#{pageInfo.pageSize}
+  </select>
+  <!--查询合同的项目个数-->
+  <select id="searchpcount"  parameterType="java.util.Map" resultType="java.util.Map">
+    SELECT
+    count(*)
+    FROM contract c left join project_contract cp on c.id=cp.contract_id left join project p on cp.project=p.id where c.id=#{cid}
   </select>
 
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">

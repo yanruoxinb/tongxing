@@ -46,9 +46,7 @@ public class ContractController {
     private PageInfo pageInfo=new PageInfo();
     private Map<String,Object> map=new HashMap<String,Object>();
     List<Map<String,Object>> listproject=new ArrayList<Map<String,Object>>();
-
-
-    @RequestMapping("/find")
+ @RequestMapping("/find")
     public String find(){
         return "contract/ht";
     }
@@ -121,18 +119,5 @@ public class ContractController {
         return "contract/htxq";
     }
 
-//    @RequestMapping("/modify")
-//    @ResponseBody
-//    public String modify(Integer id){
-//        String json="";
-//        StateCode stateCode=null;
-//        try{
-//
-//        }catch (Exception e){
-//            e.printStackTrace();
-//        }
-//        return json;
-//
-//    }
 
 }

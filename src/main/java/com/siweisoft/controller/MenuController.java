@@ -19,7 +19,7 @@ public class MenuController {
         //跳转到报销管理页面
         @RequestMapping(value = "toAccount",method = RequestMethod.GET)
         public String toUserManager() {
-            return "taskAndItem/rw(1)";
+            return "taskAndItem/rw";
         }
     }
 

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author sw-112 on 2017-01-16.
@@ -51,5 +52,10 @@ public class ContractServiceImpl implements ContractService{
     @Override
     public List<Contract> selectAll() {
         return contractMapper.selectAll();
+    }
+
+    @Override
+    public List<Map<String, Object>> searchproject(Map<String, Object> map) {
+        return contractMapper.searchproject(map);
     }
 }

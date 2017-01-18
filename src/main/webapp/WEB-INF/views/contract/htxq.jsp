@@ -13,16 +13,16 @@
 <body>
 <!------------------------------合同详情---------------------------------->
 
-<jsp:include page="../public/menulist.jsp"></jsp:include>
+<jsp:include page="../layout/menu.jsp"></jsp:include>
 <jsp:include page="../public/lib.jsp"></jsp:include>
-<div style="height:200px;width:350px;font-size:26px;font-family:'华文行楷','Arial','Microsoft YaHei','黑体','宋体','sans-serif';margin:0 auto; border:1px solid #008cee;background-color:#008cee;color:#fff;z-index:999;display:inline-block;line-height:50px;text-align:center;border-radius:20px;position:absolute;right: 42%;top: 480px;display:none;"
+<div style="height:50px;width:350px;font-size:26px;font-family:'华文行楷','Arial','Microsoft YaHei','黑体','宋体','sans-serif';margin:0 auto; border:1px solid #008cee;background-color:#008cee;color:#fff;z-index:999;display:inline-block;line-height:50px;text-align:center;border-radius:20px;position:absolute;right: 42%;top: 480px;display:none;"
      class="noticeCon">
     操作成功
 </div>
-
+<input type="hidden" id="pid" value="${id}">
 <div class="contaner" id="page2"
      style="width:86%;float:right;padding:0 35px;border:1px solid #ddd;    margin: 10px 10px 0 0;">
-    <a id="btn1" href="swindex.html" style="left: -30px;padding: 17px 10px;float: left;position: relative;"> 首页 / </a>
+    <a id="btn1" href="${ctx}/swindex.jsp" style="left: -30px;padding: 17px 10px;float: left;position: relative;"> 首页 / </a>
     <a class="btn1" href="javascript:void(0)" style="left: -30px;padding: 17px 5px;float: left;position: relative;">
         功能列表</a>
     <div class="section">
@@ -100,7 +100,7 @@
             </div>
 
             <div class="table-responsive" style="margin-top:15px;">
-                <table class="table table-bordered">
+                <table class="table table-bordered" id="c-project">
                     <caption style="    text-align: left;font-weight:700;margin-bottom:10px;">合同详情</caption>
                     <thead>
                     <tr>
@@ -389,3 +389,70 @@
 </div>
 </body>
 </html>
+<script>
+    $(function(){
+        callSapiServer("/contract/search/project/bycid",function(data){
+            console.log(data);
+            userBody(data);
+        },"GET",{id:$("#pid").val()});
+    });
+    function userBody(data){
+        console.log("result"+data.result.results[0]);
+        //列名初始化
+        var head = [""];
+        tab_jsonTable($("#c-project"), data.result.results, head,
+                function (td, row, col, content) {
+
+                    //初始化每一行的数据
+                    switch (col) {
+                        case 0:
+                            return nullToString(content.project_num) + "<input name='id' type='hidden' value='"+content.id+"'>";
+                        case 1:
+                            return nullToString(content.project_name);
+                        case 2:
+                            return nullToString(content.contract_money);
+                        case 3:
+                            var statusText = "";
+                            if(content.project_status=0) {
+                                statusText = "执行中";
+                            } else if(content.project_status == 0) {
+                                statusText = "已完成";
+                            }  else if(content.project_status == 1) {
+                                statusText = "刚开始";
+                            }
+                            return statusText;
+                        default :
+                            return null;
+                    }
+                },
+
+                function (table) {
+                    //设置table的样式
+                    $(table).addClass("table table-bordered");
+                    $(table).find("button[name='delete']").click(function(){
+                        var flag = confirm("您确定删除该元数据吗？一旦删除，将无法恢复！");
+                        var tr = $(this).parents("tr");
+                        if(flag) {
+                            //检索当前行中，name为id的input
+                            var id = $(this).parents("tr").find("input[name='id']").val();
+                            //参数列表
+                            var json = {
+                                id : id
+                            };
+                            //请求后台
+                            callSapiServer("/contract/delete",function(data){
+                                //成功后，执行此回调函数
+                                //alert(data.message);
+                                if(data.code == 200) {
+                                    //如果后台删除成功，直接删除当前行，不需要再请求后台，减少后台压力
+                                    $(tr).remove();
+                                }
+                            },"POST",json);
+                        }
+                    });
+                    $(table).find("button[name='update']").click(function(){
+                        var flag = confirm("您确定修改该元数据吗？一旦删除，将无法恢复！");
+                    });
+                })
+    }
+</script>
