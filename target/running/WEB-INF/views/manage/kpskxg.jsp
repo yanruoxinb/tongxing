@@ -102,9 +102,5 @@
 
     <!-- <a id="btn1" href="javascript:void(0)"style="left: -30px;padding: 17px 0px;float: left;position: relative;" >功能列表</a> -->
 </div>
-
-<!-- <a id="btn1" href="javascript:void(0)" >功能列表</a> -->
-<!-- <a  id="btn2" href='swindex.html'>返回首页</a> -->
-
 </body>
 </html>

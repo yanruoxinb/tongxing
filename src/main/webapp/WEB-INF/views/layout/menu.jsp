@@ -48,7 +48,7 @@
                                     </a>
                                 </li>
                                 <li class="row info col-lg-12">
-                                    <a id="e" href="yh.html">
+                                    <a id="e" href="${ctx}/user/toUserManager">
                                         <img src="image/用户管理.png" class="col-lg-offset-2">
                                         <span class="list">用户管理</span>
                                     </a>

@@ -21,4 +21,6 @@ public interface ContactMapper {
     int updateByPrimaryKey(Contact record);
 
     List<Contact> findAllContact(Contract contract);
+
+    int batchInsert(List<Contact> lxrs);
 }

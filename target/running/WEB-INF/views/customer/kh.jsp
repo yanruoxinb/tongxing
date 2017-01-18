@@ -155,7 +155,7 @@
     $(function(){
         callSapiServer("/customer/kh",function(data){
             list(data);
-            console.log(data);
+//            console.log(data);
         },"GET");
     });
 
@@ -168,7 +168,7 @@
                     //初始化每一行的数据
                     switch (col) {
                         case 0:
-                            return nullToString(content.id) + "<input name='id' type='hidden' value='"+content.id+"'>";
+                            return nullToString(content.customerNum) + "<input name='id' type='hidden' value='"+content.id+"'>";
                         case 1:
                             return "<a href='javascript:void(0);'>" + nullToString(content.customerName) + "</a>";
                         case 2:

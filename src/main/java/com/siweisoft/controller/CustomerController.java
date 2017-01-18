@@ -32,13 +32,7 @@ public class CustomerController {
         return "customer/kh";
     }
 
-//    跳转到tjkh的页面
-    @RequestMapping(value = "toCustomerTjkh",method = RequestMethod.GET)
-    public  String addCustomer(){
-        return "customer/tjkh";
-    }
-
-//    客服页面
+    //    客服页面
     @RequestMapping(value = "kh",method = RequestMethod.GET)
     @ResponseBody
     public String list() {
@@ -54,6 +48,12 @@ public class CustomerController {
             e.printStackTrace();
         }
         return json;
+    }
+
+    //    跳转到tjkh的页面(添加客户)
+    @RequestMapping(value = "toCustomerTjkh",method = RequestMethod.GET)
+    public  String addCustomer(){
+        return "customer/tjkh";
     }
 
 //    添加客户
@@ -76,20 +76,20 @@ public class CustomerController {
         }
         return json;
     }
+
+    //    跳到khxq页面根据Id查数据
+    @RequestMapping(value = "toKhxq",method = RequestMethod.GET)
+    public String tokhxq(int userId,HttpServletRequest request,HttpServletResponse response){
+        Customer customer = customerService.selectByPrimaryKey(userId);
+        request.setAttribute("customer",customer);
+        return "contact/khxq";
+    }
 //    跳到tjkh页面根据Id查数据
     @RequestMapping(value = "toUpdate",method = RequestMethod.GET)
     public String update(int userId, HttpServletRequest request, HttpServletResponse response){
         Customer customer = customerService.selectByPrimaryKey(userId);
         request.setAttribute("customer",customer);
         return "customer/tjkh";
-    }
-
-//    跳到khxq页面根据Id查数据
-    @RequestMapping(value = "toKhxq",method = RequestMethod.GET)
-    public String tokhxq(int userId,HttpServletRequest request,HttpServletResponse response){
-        Customer customer = customerService.selectByPrimaryKey(userId);
-        request.setAttribute("customer",customer);
-        return "customer/khxq";
     }
 
 //根据id修改客户

@@ -1186,6 +1186,6 @@
     });
     $("#operateMode_release").click(function(){
         var json = formToJson("#fieldset_baiyouli");
-        console.log(json);
+//        console.log(json);
     });
 </script>

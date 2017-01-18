@@ -27,7 +27,7 @@
     <a class="btn1" href="javascript:void(0)" style="left: -30px;padding: 17px 5px;float: left;position: relative;">
         功能列表</a>
     <div class="section">
-        <h3 class="baoxiao" style="padding:0 100px">开票新增</h3>
+        <h3 class="baoxiao" style="padding:0 100px;margin: 15px 0">开票新增</h3>
         <hr/>
         <form class="form-horizontal" role="form">
             <div class="row">
@@ -96,14 +96,9 @@
             </div>
         </form>
     </div>
-
-    <!-- <a id="btn1" href="javascript:void(0)"style="left: -30px;padding: 17px 0px;float: left;position: relative;" >功能列表</a> -->
 </div>
 
 
 </div>
-<div id="zhe" style="display:none;"></div>
-
-<script src="js/app.js"></script>
 </body>
 </html>

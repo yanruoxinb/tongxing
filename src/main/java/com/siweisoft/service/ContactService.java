@@ -22,4 +22,6 @@ public interface ContactService {
     int updateByPrimaryKey(Contact record);
 //    查询所有联系人
     List<Contact> findAllContact(Contract contract);
+
+    int batchInsert(List<Contact> lxrs);
 }

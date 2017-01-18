@@ -258,10 +258,10 @@
     <div class="body">
         <div class="right">
             <div class="ct" id="dvMsgCT">
-                <img src="../../../image/警示.png" alt="" style="width:30px;height:30px;margin-right:10px;">
+                <img src="../../../image/.png" alt="" style="width:30px;height:30px;margin-right:10px;">
                 您确认要进行保存操作吗？
                 <div class="clear">
-                    <img src="../../../image/bottom_smile.png" alt="">
+                    <img src="../../../image/bottom_smnoticeile.png" alt="">
                 </div>
             </div>
         </div>

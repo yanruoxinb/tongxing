@@ -307,6 +307,6 @@
                 alert(data.message)
             }
         },"POST",json);
-        console.log(json);
+
     });
 </script>

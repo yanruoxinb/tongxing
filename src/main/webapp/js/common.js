@@ -1,7 +1,7 @@
 ﻿//var SAPIServerURL = "http://180.168.218.122:8181";
 //var SAPIServerURL = "http://182.254.133.132:8080";
 //var SAPIServerURL = "http://erp.siweisoft.cn:8181";
-var SAPIServerURL = "http://localhost:8000";
+var SAPIServerURL = "http://localhost:8080";
 function callSapiServer(url, callBackFunc, type, data, async, beforeSend, complete) {
     $.ajax({
         url: SAPIServerURL + url,
@@ -134,29 +134,34 @@ function addContent(url, part, async) {
 }
 
 //自动匹配form表单的对象，自动赋值
-function jsonToForm(target, data, forceBlank) {
+function jsonToForm(target, data, forceBlank,prefix) {
+    //{id : value,key:value....}
     $(target).find("select").each(function () {
-        var v = data[$(this).attr("name")];
+        var name = $(this).attr("name").replace(prefix,"");
+        var v = data[name];
         if (v != undefined && (forceBlank || v != '')) {
             $(this).val(v);
         }
     });
     $(target).find("textarea").each(function () {
-        var v = data[$(this).attr("name")];
+        var name = $(this).attr("name").replace(prefix,"");
+        var v = data[name];
         if (v != undefined && (forceBlank || v != '')) $(this).val(v);
     });
     $(target).find("input").each(function () {
         var type = $(this).attr("type");
         switch (type) {
             case "radio":
-                var v = data[$(this).attr("name")];
+                var name = $(this).attr("name").replace(prefix,"");
+                var v = data[name];
                 if (v != undefined && (forceBlank || v != '')) {
                     var radio = $(target).find("input[name='" + $(this).attr("name") + "'][value='" + v + "']");
                     $(radio).attr("checked", "checked");
                 }
                 break;
             default:
-                var v = data[$(this).attr("name")];
+                var name = $(this).attr("name").replace(prefix,"");
+                var v = data[name];
                 if (v != undefined && (forceBlank || v != '')) $(this).val(v);
         }
     });
@@ -164,13 +169,15 @@ function jsonToForm(target, data, forceBlank) {
 }
 
 //自动封装form表单的所有input，select，textArea对象的value值，key为name，return json
-function formToJson(target) {
+function formToJson(target,prefix) {
     var dataMap = {};
     $(target).find("select").each(function () {
-        dataMap[$(this).attr("name")] = $(this).val();
+        var name = $(this).attr("name").replace(prefix,"");
+        dataMap[name] = $(this).val();
     });
     $(target).find("textArea").each(function () {
-        dataMap[$(this).attr("name")] = $(this).val();
+        var name = $(this).attr("name").replace(prefix,"");
+        dataMap[name] = $(this).val();
     });
     $(target).find("input").each(function () {
         var type = $(this).attr("type");
@@ -178,10 +185,15 @@ function formToJson(target) {
             case "radio":
                 var val = $(target).find("input[name='" + $(this).attr("name") + "']:checked").val();
                 if (val == 'on') val = $(target).find("input[name='" + $(this).attr("name") + "']:checked").attr('value');
-                dataMap[$(this).attr("name")] = val;
+                var name = $(this).attr("name").replace(prefix,$(this).attr("name"));
+                dataMap[name] = $(this).val();
                 break;
             default:
-                dataMap[$(this).attr("name")] = $(this).val();
+                var name = $(this).attr("name").replace(prefix,"");
+                var v = $(this).val();
+                if(v != null && v != "") {
+                    dataMap[name] = $(this).val();
+                }
         }
     });
     delete dataMap['undefined'];

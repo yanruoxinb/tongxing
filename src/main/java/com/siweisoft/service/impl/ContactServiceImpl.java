@@ -51,4 +51,9 @@ public class ContactServiceImpl implements ContactService {
     public List<Contact> findAllContact(Contract contract) {
         return contactMapper.findAllContact(contract);
     }
+
+    @Override
+    public int batchInsert(List<Contact> lxrs) {
+        return contactMapper.batchInsert(lxrs);
+    }
 }

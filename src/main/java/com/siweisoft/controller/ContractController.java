@@ -52,7 +52,7 @@ public class ContractController {
             int pageSize = ConstantParams.PAGE_SIZE;
             List<Contract> list=contractService.selectAll();
             ObjectMapper mapper = new ObjectMapper();
-            stateCode=new StateCode(ConstantParams.SUCCESS,"查询成功",list);
+            stateCode=new StateCode("200", "查询成功",list);
             json = mapper.writeValueAsString(stateCode);
         } catch (Exception e) {
             e.printStackTrace();
@@ -71,7 +71,7 @@ public class ContractController {
             a=contractService.deleteByPrimaryKey(id);
             ObjectMapper mapper = new ObjectMapper();
             if(a>0){
-                stateCode=new StateCode(ConstantParams.SUCCESS,"删除成功");
+                stateCode=new StateCode("200", "删除成功");
             }else{
                 stateCode=new StateCode("-200","删除成功");
             }
