@@ -1,6 +1,6 @@
 package com.siweisoft.model;
 
-public class rolePermission {
+public class RolePermission {
     private Integer id;
 
     private Integer roleId;

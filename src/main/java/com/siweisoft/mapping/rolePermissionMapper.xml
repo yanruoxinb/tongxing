@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.siweisoft.dao.rolePermissionMapper">
-  <resultMap id="BaseResultMap" type="com.siweisoft.model.rolePermission">
+<mapper namespace="com.siweisoft.dao.RolePermissionMapper">
+  <resultMap id="BaseResultMap" type="com.siweisoft.model.RolePermission">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="role_id" jdbcType="INTEGER" property="roleId" />
     <result column="permission" jdbcType="INTEGER" property="permission" />
@@ -19,13 +19,13 @@
     delete from role_permission
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.siweisoft.model.rolePermission">
+  <insert id="insert" parameterType="com.siweisoft.model.RolePermission">
     insert into role_permission (id, role_id, permission
       )
     values (#{id,jdbcType=INTEGER}, #{roleId,jdbcType=INTEGER}, #{permission,jdbcType=INTEGER}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.siweisoft.model.rolePermission">
+  <insert id="insertSelective" parameterType="com.siweisoft.model.RolePermission">
     insert into role_permission
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -50,7 +50,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.siweisoft.model.rolePermission">
+  <update id="updateByPrimaryKeySelective" parameterType="com.siweisoft.model.RolePermission">
     update role_permission
     <set>
       <if test="roleId != null">
@@ -62,7 +62,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.siweisoft.model.rolePermission">
+  <update id="updateByPrimaryKey" parameterType="com.siweisoft.model.RolePermission">
     update role_permission
     set role_id = #{roleId,jdbcType=INTEGER},
       permission = #{permission,jdbcType=INTEGER}

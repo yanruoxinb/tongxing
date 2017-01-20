@@ -1,6 +1,6 @@
 package com.siweisoft.service;
 
-import com.siweisoft.model.contractMark;
+import com.siweisoft.model.ContractMark;
 
 import java.util.List;
 
@@ -10,15 +10,15 @@ import java.util.List;
 public interface ContractMarkService {
     int deleteByPrimaryKey(Integer id);
 
-    int insert(contractMark record);
+    int insert(ContractMark record);
 
-    int insertSelective(contractMark record);
+    int insertSelective(ContractMark record);
 
-    contractMark selectByPrimaryKey(Integer id);
+    ContractMark selectByPrimaryKey(Integer id);
 
-    int updateByPrimaryKeySelective(contractMark record);
+    int updateByPrimaryKeySelective(ContractMark record);
 
-    int updateByPrimaryKey(contractMark record);
+    int updateByPrimaryKey(ContractMark record);
     //根据合同ID查标的
-    List<contractMark> selectByCID(Integer id);
+    List<ContractMark> selectByCID(Integer id);
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.siweisoft.dao.uploadPicMapper">
-  <resultMap id="BaseResultMap" type="com.siweisoft.model.uploadPic">
+<mapper namespace="com.siweisoft.dao.UploadPicMapper">
+  <resultMap id="BaseResultMap" type="com.siweisoft.model.UploadPic">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="clientname" jdbcType="VARCHAR" property="clientname" />
     <result column="servername" jdbcType="VARCHAR" property="servername" />
@@ -38,7 +38,7 @@
     delete from upload_pic
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.siweisoft.model.uploadPic">
+  <insert id="insert" parameterType="com.siweisoft.model.UploadPic">
     insert into upload_pic (id, clientname, servername, 
       filetype, filesize, filewidth, 
       fileheight, module_id, task_id, 
@@ -54,7 +54,7 @@
       #{createdTime,jdbcType=TIMESTAMP}, #{edited,jdbcType=INTEGER}, #{editedTime,jdbcType=TIMESTAMP}, 
       #{status,jdbcType=INTEGER}, #{rmark,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.siweisoft.model.uploadPic">
+  <insert id="insertSelective" parameterType="com.siweisoft.model.UploadPic">
     insert into upload_pic
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -181,7 +181,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.siweisoft.model.uploadPic">
+  <update id="updateByPrimaryKeySelective" parameterType="com.siweisoft.model.UploadPic">
     update upload_pic
     <set>
       <if test="clientname != null">
@@ -244,7 +244,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.siweisoft.model.uploadPic">
+  <update id="updateByPrimaryKey" parameterType="com.siweisoft.model.UploadPic">
     update upload_pic
     set clientname = #{clientname,jdbcType=VARCHAR},
       servername = #{servername,jdbcType=VARCHAR},

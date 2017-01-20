@@ -1,17 +1,17 @@
 package com.siweisoft.dao;
 
-import com.siweisoft.model.uploadPic;
+import com.siweisoft.model.UploadPic;
 
-public interface uploadPicMapper {
+public interface UploadPicMapper {
     int deleteByPrimaryKey(Integer id);
 
-    int insert(uploadPic record);
+    int insert(UploadPic record);
 
-    int insertSelective(uploadPic record);
+    int insertSelective(UploadPic record);
 
-    uploadPic selectByPrimaryKey(Integer id);
+    UploadPic selectByPrimaryKey(Integer id);
 
-    int updateByPrimaryKeySelective(uploadPic record);
+    int updateByPrimaryKeySelective(UploadPic record);
 
-    int updateByPrimaryKey(uploadPic record);
+    int updateByPrimaryKey(UploadPic record);
 }

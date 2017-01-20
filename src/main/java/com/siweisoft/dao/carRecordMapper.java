@@ -1,17 +1,17 @@
 package com.siweisoft.dao;
 
-import com.siweisoft.model.carRecord;
+import com.siweisoft.model.CarRecord;
 
-public interface carRecordMapper {
+public interface CarRecordMapper {
     int deleteByPrimaryKey(Integer id);
 
-    int insert(carRecord record);
+    int insert(CarRecord record);
 
-    int insertSelective(carRecord record);
+    int insertSelective(CarRecord record);
 
-    carRecord selectByPrimaryKey(Integer id);
+    CarRecord selectByPrimaryKey(Integer id);
 
-    int updateByPrimaryKeySelective(carRecord record);
+    int updateByPrimaryKeySelective(CarRecord record);
 
-    int updateByPrimaryKey(carRecord record);
+    int updateByPrimaryKey(CarRecord record);
 }

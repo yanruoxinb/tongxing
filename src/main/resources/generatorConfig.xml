@@ -129,9 +129,13 @@
                enableSelectByExample="false" selectByExampleQueryId="false"></table>
         <table tableName="decoration_case" domainObjectName="DecorationCase" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
                enableSelectByExample="false" selectByExampleQueryId="false"></table>-->
-
-        <table tableName="contract_mark" domainObjectName="contractMark" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        <table tableName="project" domainObjectName="Project" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
                enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="configure" domainObjectName="Configure" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="process" domainObjectName="Process" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="false"></table>
+
 
 
     </context>

@@ -20,7 +20,7 @@ public class MenuController {
         @RequestMapping(value = "toAccount",method = RequestMethod.GET)
         public String toUserManager() {
 //            return "taskAndItem/addItemSettingDetailAndCraftDetail";
-            return "taskAndItem/xmxg";
+            return "index/swindex_sh";
         }
     }
 

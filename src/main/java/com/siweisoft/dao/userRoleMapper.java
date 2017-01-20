@@ -1,17 +1,17 @@
 package com.siweisoft.dao;
 
-import com.siweisoft.model.userRole;
+import com.siweisoft.model.UserRole;
 
-public interface userRoleMapper {
+public interface UserRoleMapper {
     int deleteByPrimaryKey(Integer id);
 
-    int insert(userRole record);
+    int insert(UserRole record);
 
-    int insertSelective(userRole record);
+    int insertSelective(UserRole record);
 
-    userRole selectByPrimaryKey(Integer id);
+    UserRole selectByPrimaryKey(Integer id);
 
-    int updateByPrimaryKeySelective(userRole record);
+    int updateByPrimaryKeySelective(UserRole record);
 
-    int updateByPrimaryKey(userRole record);
+    int updateByPrimaryKey(UserRole record);
 }

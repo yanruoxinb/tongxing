@@ -5,7 +5,7 @@ package com.siweisoft.controller;/**
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.siweisoft.base.StateCode;
 import com.siweisoft.constant.ConstantParams;
-import com.siweisoft.model.contractMark;
+import com.siweisoft.model.ContractMark;
 import com.siweisoft.service.ContractMarkService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,10 +31,11 @@ public class MarkController {
         StateCode stateCode=null;
         try {
             int pageSize = ConstantParams.PAGE_SIZE;
-            List<contractMark> list=contractMarkService.selectByCID(id);
+            List<ContractMark> list=contractMarkService.selectByCID(id);
             System.out.println(list);
             ObjectMapper mapper = new ObjectMapper();
-            stateCode=new StateCode(ConstantParams.SUCCESS,"查询成功",list);
+
+            stateCode=new StateCode("200","查询成功",list);
             json = mapper.writeValueAsString(stateCode);
             System.out.println(json);
         }catch (Exception e){

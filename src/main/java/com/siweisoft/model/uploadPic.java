@@ -2,7 +2,7 @@ package com.siweisoft.model;
 
 import java.util.Date;
 
-public class uploadPic {
+public class UploadPic {
     private Integer id;
 
     private String clientname;

@@ -6,7 +6,12 @@ package com.siweisoft.constant;
 public class ConstantParams {
     public static final int PAGE_SIZE = 20;
 
+    public static final int PAGE_INDEX = 1;
+
     public static final String SUCCESS="200";
 
+    public static final String CACHE_PREFIX = "cache_meta_";
+
+    public  static  final  int PAGE_INDEX = 20;
 
 }

@@ -565,3 +565,109 @@ input{
     background-color: #068cee;
     color: #fff;
 }
+/*main*/
+.lrzj_tabCard {
+    width: 1145px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 15px;
+    box-shadow: 0 0 10px #ccc;
+}
+
+.lrzj_tabCard .title {
+    height: 33px;
+    border-bottom: 3px solid #e7e7e7;
+    padding-bottom: 10px;
+}
+
+.lrzj_tabCard .title h2 {
+    font-size: 20px;
+    font-family: "microsoft yahei";
+}
+
+.lrzj_tabCard .title-list {
+    position: relative;
+    top: 6px;
+}
+
+.lrzj_tabCard .title-list li {
+    cursor: pointer;
+    color: #999;
+    margin: -9px 0 0 0;
+    width: 223px;
+    line-height: 33px;
+    text-align: center;
+    float: left;
+    display: inline;
+}
+
+.lrzj_tabCard .title-list li.on {
+    color: #008cee;
+    font-weight: bold;
+    margin: -9px 0 0 0;
+    border-width: 9px;
+    border-color: #008cee #fff #fff #fff;
+    border-bottom: 3px solid #008cee;
+}
+.product {
+    position: relative;
+    overflow: hidden;
+    display: none;
+    margin-top: 20px;
+}
+
+.product ul {
+    position: absolute;
+    left: 0px;
+}
+
+.product-wrap .show {
+    display: block;
+}
+
+.fieldset2_xm {
+    display: none;
+}
+
+.fieldset_wljl {
+    display: none;
+}
+
+.fieldset_bxmx {
+    display: none;
+}
+
+.fieldset_skjl {
+    display: none;
+}
+
+.fieldset_fwjl {
+    display: none;
+}
+
+.fieldset2_xm_sh {
+    display: none;
+}
+.fieldset2_skjl_sh {
+    display: none;
+}
+
+.fieldset2_wljl_sh {
+    display: none;
+}
+
+.fieldset_fwjl_sh {
+    display: none;
+}
+
+.fieldset2_bxmx_sh {
+    display: none;
+}
+
+.fieldset_skjl_sh {
+    display: none;
+}
+
+.fieldset_fwjl_sh {
+    display: none;
+}

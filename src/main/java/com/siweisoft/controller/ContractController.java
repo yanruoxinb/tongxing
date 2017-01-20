@@ -1,4 +1,5 @@
-package com.siweisoft.controller;/**
+package com.siweisoft.controller;
+/**
  * Created by sw-112 on 2017-01-14.
  */
 
@@ -6,15 +7,13 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.siweisoft.base.PageInfo;
 import com.siweisoft.base.StateCode;
 import com.siweisoft.constant.ConstantParams;
-import com.siweisoft.dao.ContractMapper;
-import com.siweisoft.dao.contractMarkMapper;
 import com.siweisoft.model.Contract;
-import com.siweisoft.model.contractMark;
+
 import com.siweisoft.service.ContractMarkService;
 import com.siweisoft.service.ContractService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
@@ -30,25 +29,16 @@ import java.util.Map;
  */
 
 @Controller
-@RequestMapping("/limitAndMenu")
+@RequestMapping("/contract")
 
 public class ContractController {
-    @RequestMapping(value = "tolimitAndMenu",method = RequestMethod.GET)
-    public String toUserManager() {
-        return "limitAndMenu/tjcd";
-    }
-
     @Resource
     private ContractService contractService;
-    @Resource
-    private ContractMarkService contractMarkService;
     private ObjectMapper mapper = new ObjectMapper();
     private PageInfo pageInfo=new PageInfo();
     private Map<String,Object> map=new HashMap<String,Object>();
     List<Map<String,Object>> listproject=new ArrayList<Map<String,Object>>();
-
-
-    @RequestMapping("/find")
+    @RequestMapping("/ht")
     public String find(){
         return "contract/ht";
     }
@@ -62,7 +52,7 @@ public class ContractController {
             int pageSize = ConstantParams.PAGE_SIZE;
             List<Contract> list=contractService.selectAll();
             ObjectMapper mapper = new ObjectMapper();
-            stateCode=new StateCode("200", "查询成功",list);
+            stateCode=new StateCode("200","查询成功",list);
             json = mapper.writeValueAsString(stateCode);
         } catch (Exception e) {
             e.printStackTrace();
@@ -81,7 +71,7 @@ public class ContractController {
             a=contractService.deleteByPrimaryKey(id);
             ObjectMapper mapper = new ObjectMapper();
             if(a>0){
-                stateCode=new StateCode("200", "删除成功");
+                stateCode=new StateCode("200","删除成功");
             }else{
                 stateCode=new StateCode("-200","删除成功");
             }
@@ -120,19 +110,4 @@ public class ContractController {
         request.setAttribute("id",id);
         return "contract/htxq";
     }
-
-//    @RequestMapping("/modify")
-//    @ResponseBody
-//    public String modify(Integer id){
-//        String json="";
-//        StateCode stateCode=null;
-//        try{
-//
-//        }catch (Exception e){
-//            e.printStackTrace();
-//        }
-//        return json;
-//
-//    }
-
 }

@@ -2,7 +2,7 @@ package com.siweisoft.model;
 
 import java.util.Date;
 
-public class carRecord {
+public class CarRecord {
     private Integer id;
 
     private String carNumber;

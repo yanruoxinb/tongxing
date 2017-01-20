@@ -15,14 +15,20 @@
     <result column="debug_name" jdbcType="VARCHAR" property="debugName" />
     <result column="project_status" jdbcType="INTEGER" property="projectStatus" />
     <result column="inform_num" jdbcType="VARCHAR" property="informNum" />
-    <result column="config_id" jdbcType="INTEGER" property="configId" />
     <result column="process_id" jdbcType="INTEGER" property="processId" />
+    <result column="configure_id" jdbcType="INTEGER" property="configureId" />
   </resultMap>
   <sql id="Base_Column_List">
     id, project_num, project_name, customer_id, project_code, deadline_type, commissioning_date, 
     debug_date, acceptance_date, contact_id, debug_name, project_status, inform_num, 
-    config_id, process_id
+    process_id, configure_id
   </sql>
+<!---->
+  <select id="findAllProject" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from project
+  </select>
 
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -39,13 +45,13 @@
       customer_id, project_code, deadline_type, 
       commissioning_date, debug_date, acceptance_date, 
       contact_id, debug_name, project_status, 
-      inform_num, config_id, process_id
+      inform_num, process_id, configure_id
       )
     values (#{id,jdbcType=INTEGER}, #{projectNum,jdbcType=VARCHAR}, #{projectName,jdbcType=VARCHAR}, 
       #{customerId,jdbcType=INTEGER}, #{projectCode,jdbcType=VARCHAR}, #{deadlineType,jdbcType=INTEGER}, 
       #{commissioningDate,jdbcType=TIMESTAMP}, #{debugDate,jdbcType=TIMESTAMP}, #{acceptanceDate,jdbcType=TIMESTAMP}, 
       #{contactId,jdbcType=INTEGER}, #{debugName,jdbcType=VARCHAR}, #{projectStatus,jdbcType=INTEGER}, 
-      #{informNum,jdbcType=VARCHAR}, #{configId,jdbcType=INTEGER}, #{processId,jdbcType=INTEGER}
+      #{informNum,jdbcType=VARCHAR}, #{processId,jdbcType=INTEGER}, #{configureId,jdbcType=INTEGER}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.siweisoft.model.Project">
@@ -90,11 +96,11 @@
       <if test="informNum != null">
         inform_num,
       </if>
-      <if test="configId != null">
-        config_id,
-      </if>
       <if test="processId != null">
         process_id,
+      </if>
+      <if test="configureId != null">
+        configure_id,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -137,11 +143,11 @@
       <if test="informNum != null">
         #{informNum,jdbcType=VARCHAR},
       </if>
-      <if test="configId != null">
-        #{configId,jdbcType=INTEGER},
-      </if>
       <if test="processId != null">
         #{processId,jdbcType=INTEGER},
+      </if>
+      <if test="configureId != null">
+        #{configureId,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -184,11 +190,11 @@
       <if test="informNum != null">
         inform_num = #{informNum,jdbcType=VARCHAR},
       </if>
-      <if test="configId != null">
-        config_id = #{configId,jdbcType=INTEGER},
-      </if>
       <if test="processId != null">
         process_id = #{processId,jdbcType=INTEGER},
+      </if>
+      <if test="configureId != null">
+        configure_id = #{configureId,jdbcType=INTEGER},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
@@ -207,8 +213,8 @@
       debug_name = #{debugName,jdbcType=VARCHAR},
       project_status = #{projectStatus,jdbcType=INTEGER},
       inform_num = #{informNum,jdbcType=VARCHAR},
-      config_id = #{configId,jdbcType=INTEGER},
-      process_id = #{processId,jdbcType=INTEGER}
+      process_id = #{processId,jdbcType=INTEGER},
+      configure_id = #{configureId,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

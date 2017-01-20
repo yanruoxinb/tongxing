@@ -60,7 +60,7 @@
                                     </a>
                                 </li>
                                 <li class="row info col-lg-12">
-                                    <a href="${ctx}/contract/find">
+                                    <a href="${ctx}/contract/ht">
                                         <img src="${ctx}image/合同管理.png" class="col-lg-offset-2">
                                         <span class="list">合同管理</span>
                                     </a>

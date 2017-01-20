@@ -29,9 +29,9 @@ public class Project {
 
     private String informNum;
 
-    private Integer configId;
-
     private Integer processId;
+
+    private Integer configureId;
 
     public Integer getId() {
         return id;
@@ -137,19 +137,19 @@ public class Project {
         this.informNum = informNum;
     }
 
-    public Integer getConfigId() {
-        return configId;
-    }
-
-    public void setConfigId(Integer configId) {
-        this.configId = configId;
-    }
-
     public Integer getProcessId() {
         return processId;
     }
 
     public void setProcessId(Integer processId) {
         this.processId = processId;
+    }
+
+    public Integer getConfigureId() {
+        return configureId;
+    }
+
+    public void setConfigureId(Integer configureId) {
+        this.configureId = configureId;
     }
 }

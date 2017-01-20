@@ -1,17 +1,17 @@
 package com.siweisoft.dao;
 
-import com.siweisoft.model.rolePermission;
+import com.siweisoft.model.RolePermission;
 
-public interface rolePermissionMapper {
+public interface RolePermissionMapper {
     int deleteByPrimaryKey(Integer id);
 
-    int insert(rolePermission record);
+    int insert(RolePermission record);
 
-    int insertSelective(rolePermission record);
+    int insertSelective(RolePermission record);
 
-    rolePermission selectByPrimaryKey(Integer id);
+    RolePermission selectByPrimaryKey(Integer id);
 
-    int updateByPrimaryKeySelective(rolePermission record);
+    int updateByPrimaryKeySelective(RolePermission record);
 
-    int updateByPrimaryKey(rolePermission record);
+    int updateByPrimaryKey(RolePermission record);
 }

@@ -1,3 +1,4 @@
+
 <%--
   Created by IntelliJ IDEA.
   User: sw-112
@@ -9,14 +10,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="/css/index.css"/>
-  <link rel="stylesheet" href="/css/tq.css">
-  <link rel="stylesheet" href="/css/bootstrap.min.css"/>
-  <link rel="stylesheet" href="/css/change_style.css"/>
-  <link rel="stylesheet" type="text/css" href="/assets/bootstrap/css/font-awesome.min.css" />
-  <script src="/js/jquery-1.11.3.min.js"></script>
-  <link rel="stylesheet" href="/css/tqcss.css"/>
-  <script src="/js/showBo.js"></script>
+  <jsp:include page="../public/lib.jsp"></jsp:include>
   <title>合同管理</title>
   <style>
     #pz button:hover,#jsjd button:hover,#kpsk button:hover{
@@ -431,12 +425,10 @@
 
 </div>
 <div id="zhe" style="display:none;"></div>
-<script src="/js/app.js"></script>
-
 <script>
   $(function(){
     callSapiServer("/contract/mark",function(data){
-      console.log(data);
+//      console.log(data);
       userBody1(data);
     },"GET");
   });
@@ -476,6 +468,5 @@
             })
   }
 </script>
-
 </body>
 </html>

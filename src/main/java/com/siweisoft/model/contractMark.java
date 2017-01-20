@@ -1,6 +1,6 @@
 package com.siweisoft.model;
 
-public class contractMark {
+public class ContractMark {
     private Integer id;
 
     private String productName;
