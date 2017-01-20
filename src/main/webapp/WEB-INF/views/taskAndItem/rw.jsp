@@ -38,10 +38,11 @@
             margin-left: 50px;
             border-bottom: 2px solid #c6c6c6;
         }
-        .taskAnditem li:hover,  .taskAnditem li:focus{
-            /*background-color: #008CEE;*/
-            /*color: #fff;*/
-            border-bottom: 2px solid #008CEE;
+        .taskAnditemfocus{
+            border-bottom: 2px solid #008CEE!important;
+        }
+        input[type="text"]{
+            width:80%;
         }
 
     </style>
@@ -62,7 +63,7 @@
         功能列表</a>
     <div class="taskAnditem">
         <ul class="taskList">
-            <li class="taskShow">任务管理</li>
+            <li class="taskShow taskAnditemfocus">任务管理</li>
             <li class="itemShow">项目管理</li>
         </ul>
     </div>
@@ -173,7 +174,7 @@
                         </a>
                     </td>
                     <td>
-                        <a href="../manage/infoMore.jsp"> <span class="xg"><button class="btn btn-primary" style="color: #FFFFFF;"> 更多
+                        <a href="taskMoreInfo.jsp.jsp"> <span class="xg"><button class="btn btn-primary" style="color: #FFFFFF;"> 更多
                         </button></span></a>
                     </td>
                 </tr>
@@ -197,7 +198,7 @@
                         </a>
                     </td>
                     <td>
-                        <a href="../manage/infoMore.jsp">
+                        <a href="taskMoreInfo.jsp.jsp">
                             <button class="btn btn-primary" style="color: #FFFFFF;"> 更多</button>
                         </a>
                     </td>
@@ -222,7 +223,7 @@
                         </a>
                     </td>
                     <td>
-                        <a href="../manage/infoMore.jsp">
+                        <a href="taskMoreInfo.jsp.jsp">
                             <button class="btn btn-primary" style="color: #FFFFFF;"> 更多</button>
                         </a>
                     </td>
@@ -247,7 +248,7 @@
                         </a>
                     </td>
                     <td>
-                        <a href="../manage/infoMore.jsp">
+                        <a href="taskMoreInfo.jsp.jsp">
                             <button class="btn btn-primary" style="color: #FFFFFF;"> 更多</button>
                         </a>
                     </td>
@@ -272,7 +273,7 @@
                         </a>
                     </td>
                     <td>
-                        <a href="../manage/infoMore.jsp">
+                        <a href="taskMoreInfo.jsp.jsp">
                             <button class="btn btn-primary" style="color: #FFFFFF;"> 更多</button>
                         </a>
                     </td>
@@ -297,7 +298,7 @@
                         </a>
                     </td>
                     <td>
-                        <a href="../manage/infoMore.jsp">
+                        <a href="taskMoreInfo.jsp.jsp">
                             <button class="btn btn-primary" style="color: #FFFFFF;"> 更多</button>
                         </a>
                     </td>
@@ -323,7 +324,7 @@
                         </a>
                     </td>
                     <td>
-                        <a href="../manage/infoMore.jsp">
+                        <a href="taskMoreInfo.jsp.jsp">
                             <button class="btn btn-primary" style="color: #FFFFFF;"> 更多</button>
                         </a>
                     </td>
@@ -348,7 +349,7 @@
                         </a>
                     </td>
                     <td>
-                        <a href="../manage/infoMore.jsp">
+                        <a href="taskMoreInfo.jsp.jsp">
                             <button class="btn btn-primary" style="color: #FFFFFF;"> 更多</button>
                         </a>
                     </td>
@@ -483,7 +484,9 @@
                 </tr>
                 </tbody>
             </table>
-
+            <div class="submit">
+                <button class="btn">提交</button>
+            </div>
             <nav style="    padding-left: 10px; text-align: center;">
                 <ul class="pagination" style="margin:0 10px 0 0;">
                     <li><a href="javascrip:;">«</a></li>
@@ -499,7 +502,9 @@
                     <li><a href="javascrip:;">»</a></li>
                 </ul>
             </nav>
+
         </div>
+
     </div>
     <div class="item">
         <form style="border:1px solid #ddd;padding:10px 20px;border-radius:5px;text-align:left;margin: 10px 10px 0 0;">
@@ -536,14 +541,12 @@
             <button type="reset" class="btn" style="background-color: #008cee;color: #fff">重置</button>
         </form>
         <div style="float:left;    padding: 15px 0 10px 0;">
-            <a href="swindex.html">
-                <button type="button" class="btn" style="background-color: #008cee;color: #fff;margin-left:10px;">新增
+                <button type="button" class="btn"id="addItem" style="background-color: #008cee;color: #fff;margin-left:10px;">新增
                 </button>
-            </a>
-            <button type="button" class="btn btn-danger" style="margin-left:10px;" onclick="">删除</button>
+            <button type="button" class="btn btn-danger"  id="deleteItem" style="margin-left:10px;" onclick="">删除</button>
         </div>
         <div class="table-responsive" style="margin-top:15px;">
-            <table class="table table-bordered" style="margin: 0 -5px;">
+            <table class="table table-bordered"id="itemTable" style="margin: 0 -5px;">
                 <thead>
                 <tr>
                     <td></td>
@@ -748,7 +751,7 @@
                 </tbody>
             </table>
         </div>
-        <div class="table-responsive pzmx" style="margin:15px 0;display: none">
+        <div class="table-responsive pzmx" style="margin:15px 0;">
             <table class="table table-bordered">
                 <thead>
                 <tr>
@@ -992,7 +995,7 @@
                 </tbody>
             </table>
         </div>
-        <div class="table-responsive gymx" style="margin:15px 0;display: none">
+        <div class="table-responsive gymx" style="margin:15px 0;">
             <table class="table table-bordered">
                 <thead>
                 <tr>
@@ -1093,6 +1096,9 @@
                 </tbody>
             </table>
         </div>
+        <div class="submit">
+            <button class="btn">提交</button>
+        </div>
         <nav style="    padding-left: 10px; text-align: center;">
             <ul class="pagination" style="margin:0 10px 0 0;">
                 <li><a href="javascrip:;">«</a></li>
@@ -1147,6 +1153,7 @@
 </div>
 <div id="ShowBolightBox" style=" width: 1932px; height: 100%;display:none;"></div>
 <div id="zhe" style="display:none;"></div>
+
 <script>
     var idTmr;
     function getExplorer() {

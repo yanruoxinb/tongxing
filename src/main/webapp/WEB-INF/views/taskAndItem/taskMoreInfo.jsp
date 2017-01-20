@@ -35,7 +35,7 @@
         </div>
     <div class="section" style="    margin-top: 60px;">
 
-        <fieldset id="fieldset2_xm" class="fieldset2_xm">
+        <fieldset id="" class="fieldset2_xm">
             <legend style="color:#008cee;line-height:20px;">任务信息</legend>
 
             <div class="table-responsive" style="margin-top:15px;">
@@ -201,44 +201,10 @@
                     </tr>
                     </tbody>
                 </table>
-                <!--             <div id="myDiv">
-                 <table id="tableExcel" width="100%" border="1" cellspacing="0" cellpadding="0">
-                     <tr>
-                         <td colspan="5" align="center">html 表格导出道Excel</td>
-                     </tr>
-                     <tr>
-                         <td>列标题1</td>
-                         <td>列标题2</td>
-                         <td>类标题3</td>
-                         <td>列标题4</td>
-                         <td>列标题5</td>
-                     </tr>
-                     <tr>
-                         <td>aaa</td>
-                         <td>bbb</td>
-                         <td>ccc</td>
-                         <td>ddd</td>
-                         <td>eee</td>
-                     </tr>
-                     <tr>
-                         <td>AAA</td>
-                         <td>BBB</td>
-                         <td>CCC</td>
-                         <td>DDD</td>
-                         <td>EEE</td>
-                     </tr>
-                     <tr>
-                         <td>FFF</td>
-                         <td>GGG</td>
-                         <td>HHH</td>
-                         <td>III</td>
-                         <td>JJJ</td>
-                     </tr>
-                 </table>
-                 </div>  -->
+
             </div>
         </fieldset>
-        <fieldset id="fieldset2_xm" class="fieldset2_xm">
+        <fieldset id="" class="fieldset2_xm">
             <legend style="color:#008cee;line-height:20px;">项目详情</legend>
 
 
@@ -977,87 +943,8 @@
         </fieldset>
     </div>
 </div>
-<div class="olct" style="position: fixed; top: 69px;    right: -250px;">
-    <div class="clearfloat">
-        <div class="olct_left"></div>
-        <div class="olct_right">
-            <div class="olct_box">
-                <div class="olct_top"
-                     style=" z-index:2;   display: inline-block;width: 100px;position: relative;right: -130px;"><a
-                        href="javascript:void(0);" style=""><img src="image/lADOjttrRMykXQ_93_164.png" alt=""
-                                                                 style="height: 150px; position: absolute;"></a></div>
-                <div class="olct_conwrap clearfloat">
-                    <div class="scrollbar" style="height: 280px;">
-                        <div class="track" style="height: 280px;">
-                            <div class="thumb" style="top: 0px; height: 100.384px;">
-                                <div class="end"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="olct_conbox">
-                        <div class="olct_con" style="top: 0px;">
 
-                            <div class="olct_teacher clearfloat col-lg-10" style="    position: relative; top: -19px;">
-                                <li class="row info col-lg-12">
-                                    <a id="f" href="kh.html">
-                                        <img src="image/客户管理.png" class="col-lg-offset-2">
-                                        <span class="list">客户管理</span>
-                                    </a>
-                                </li>
-                                <li class="row info col-lg-12">
-                                    <a id="j" href="rw.html">
-                                        <img src="image/任务管理.png" class="col-lg-offset-2">
-                                        <span class="list">任务管理</span>
-                                    </a>
-                                </li>
-                                <li class="row info col-lg-12">
-                                    <a id="c" href="ht.html">
-                                        <img src="image/合同管理.png" class="col-lg-offset-2">
-                                        <span class="list">合同管理</span>
-                                    </a>
-                                </li>
-                                <li class="row info col-lg-12">
-                                    <a id="h" href="sk.html">
-                                        <img src="image/收款管理.png" class="col-lg-offset-2">
-                                        <span class="list">收款管理</span>
-                                    </a>
-                                </li>
-                                <li class="row info col-lg-12">
-                                    <a id="h" href="bx.html">
-                                        <img src="image/报销管理.png" class="col-lg-offset-2">
-                                        <span class="list">报销管理</span>
-                                    </a>
-                                </li>
-                                <li class="row info col-lg-12">
-                                    <a id="e" href="yh.html">
-                                        <img src="image/用户管理.png" class="col-lg-offset-2">
-                                        <span class="list">用户管理</span>
-                                    </a>
-                                </li>
-                                <li class="row info col-lg-12">
-                                    <a href="qx.html">
-                                        <img src="image/权限管理.png" class="col-lg-offset-2">
-                                        <span class="list">权限管理</span>
-                                    </a>
-                                </li>
 
-                                <li class="row info col-lg-12">
-                                    <a href="cdmang.html">
-                                        <img src="image/菜单管理.png" class="col-lg-offset-2">
-                                        <span class="list">菜单管理</span>
-                                    </a>
-                                </li>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="olct_footer"></div>
-
-</div>
-<div id="zhe" style="display:none;"></div>
 
 </body>
 </html>

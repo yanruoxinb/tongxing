@@ -158,23 +158,6 @@ $(document).ready(function () {
         }
     })
 
-    $('.gy_mx').bind('click', function () {
-        if ($('.gymx').css('display') == 'none') {
-            $('.gymx').show(500);
-        } else {
-            $('.gymx').hide(500);
-        }
-    })
-
-    $('.pz_mx').bind('click', function () {
-        if ($('.pzmx').css('display') == 'none') {
-            $('.pzmx').show(500);
-        } else {
-            $('.pzmx').hide(500);
-        }
-    });
-
-
     $('.olct_left').bind('click', function () {
         $('#zhe').show();
         $('.olct_footer').animate({right: 0}, 500);

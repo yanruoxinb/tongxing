@@ -13,13 +13,14 @@ import javax.servlet.http.HttpServletResponse;
  * Created by sw004 on 2017-1-17.
  */
 @Controller
-@RequestMapping("/manage")
+@RequestMapping("/taskAndItem")
 public class MenuController {
 
         //跳转到报销管理页面
         @RequestMapping(value = "toAccount",method = RequestMethod.GET)
         public String toUserManager() {
-            return "taskAndItem/rw";
+//            return "taskAndItem/addItemSettingDetailAndCraftDetail";
+            return "taskAndItem/xmxg";
         }
     }
 

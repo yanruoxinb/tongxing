@@ -113,7 +113,6 @@
                 </table>
             </div>
 
-
             <div class="table-responsive" style="margin-top:15px;">
                 <table class="table table-bordered" id="addContractItemsTable">
                     <button class="btn btn-danger" id="deleteContractItems"

@@ -557,7 +557,7 @@ input{
     width:80%
 }
 .submit{
-    margin: 0 auto;
+   text-align:center;
 }
 .submit button{
     padding:5px 36px;

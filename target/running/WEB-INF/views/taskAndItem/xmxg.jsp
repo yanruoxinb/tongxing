@@ -20,8 +20,10 @@
         .peizhidetail thead tr td {
             padding: 8px 0;
         }
+        input[type="text"]{
+            width:80%;
+        }
     </style>
-
 </head>
 <body>
 <!------------------------------客户详情---------------------------------->
@@ -39,11 +41,21 @@
     <a class="btn1" href="javascript:void(0)" style="left: -30px;padding: 17px 5px;float: left;position: relative;">
         功能列表</a>
     <div class="section">
-        <h3 class="baoxiao">项目详情</h3>
+        <h2 class="baoxiao">项目详情</h2>
 
         <form class="form-horizontal" role="form">
-            <h4 style="text-align: left;font-weight:700!important;">配置明细</h4>
-            <div class="table-responsive pzmx" style="margin:15px 10px  0  0 ;">
+
+            <div style="float:left;    padding: 15px 0 10px 0;">
+                <button type="button" class="btn" id="addTask"
+                        style="background-color: #008cee;color: #fff;margin-left:10px;">新增
+                </button>
+                <button type="button" class="btn btn-danger" id="deleteTask" style="margin-left:10px;" onclick="">删除
+                </button>
+            </div>
+            <div>
+                <h3 style="text-align: center; padding: 20px 0 10px 0;" >配置明细</h3>
+            </div>
+            <div class="table-responsive" style="margin:15px 10px  0  0 ;">
 
                 <table class="table table-bordered peizhidetail">
                     <thead>
@@ -300,12 +312,13 @@
                     </tbody>
                 </table>
             </div>
-            <h4 style="text-align: left;font-weight:700!important;">工艺明细</h4>
-            <div class="table-responsive gymx" style="margin:15px 0;">
 
+            <div class="table-responsive" style="margin:15px 0;">
+                <caption style="text-align: left;font-weight:700!important;">工艺明细</caption>
                 <table class="table table-bordered">
                     <thead>
                     <tr>
+                        <td></td>
                         <td>生产线</td>
                         <td>水泥仓</td>
                         <td>容量</td>
@@ -331,75 +344,78 @@
                     </thead>
                     <tbody>
                     <tr>
-                        <td><input type="text" value="1" style="width:80%"></td>
-                        <td><input type="text" value="1" style="width:80%"></td>
-                        <td><input type="text" value="1" style="width:80%"></td>
-                        <td><input type="text" value="1" style="width:80%"></td>
-                        <td><input type="text" value="1" style="width:80%"></td>
-                        <td><input type="text" value="1" style="width:80%"></td>
-                        <td><input type="text" value="1" style="width:80%"></td>
-                        <td><input type="text" value="1" style="width:80%"></td>
-                        <td><input type="text" value="1" style="width:80%"></td>
-                        <td><input type="text" value="1" style="width:80%"></td>
-                        <td><input type="text" value="1" style="width:80%"></td>
-                        <td><input type="text" value="1" style="width:80%"></td>
-                        <td><input type="text" value="1" style="width:80%"></td>
-                        <td><input type="text" value="1" style="width:80%"></td>
-                        <td><input type="text" value="1" style="width:80%"></td>
-                        <td><input type="text" value="1" style="width:80%"></td>
-                        <td><input type="text" value="1" style="width:80%"></td>
-                        <td><input type="text" value="1" style="width:80%"></td>
-                        <td><input type="text" value="1" style="width:80%"></td>
-                        <td><input type="text" value="1" style="width:80%"></td>
-                        <td><input type="text" value="1" style="width:80%"></td>
+                        <td><input type="checkbox" name="pzmxEdit"></td>
+                        <td><input type="text" value="1"></td>
+                        <td><input type="text" value="1"></td>
+                        <td><input type="text" value="1"></td>
+                        <td><input type="text" value="1"></td>
+                        <td><input type="text" value="1"></td>
+                        <td><input type="text" value="1"></td>
+                        <td><input type="text" value="1"></td>
+                        <td><input type="text" value="1"></td>
+                        <td><input type="text" value="1"></td>
+                        <td><input type="text" value="1"></td>
+                        <td><input type="text" value="1"></td>
+                        <td><input type="text" value="1"></td>
+                        <td><input type="text" value="1"></td>
+                        <td><input type="text" value="1"></td>
+                        <td><input type="text" value="1"></td>
+                        <td><input type="text" value="1"></td>
+                        <td><input type="text" value="1"></td>
+                        <td><input type="text" value="1"></td>
+                        <td><input type="text" value="1"></td>
+                        <td><input type="text" value="1"></td>
+                        <td><input type="text" value="1"></td>
 
                     </tr>
                     <tr>
-                        <td><input type="text" value="1" style="width:80%"></td>
-                        <td><input type="text" value="1" style="width:80%"></td>
-                        <td><input type="text" value="1" style="width:80%"></td>
-                        <td><input type="text" value="1" style="width:80%"></td>
-                        <td><input type="text" value="1" style="width:80%"></td>
-                        <td><input type="text" value="1" style="width:80%"></td>
-                        <td><input type="text" value="1" style="width:80%"></td>
-                        <td><input type="text" value="1" style="width:80%"></td>
-                        <td><input type="text" value="1" style="width:80%"></td>
-                        <td><input type="text" value="1" style="width:80%"></td>
-                        <td><input type="text" value="1" style="width:80%"></td>
-                        <td><input type="text" value="1" style="width:80%"></td>
-                        <td><input type="text" value="1" style="width:80%"></td>
-                        <td><input type="text" value="1" style="width:80%"></td>
-                        <td><input type="text" value="1" style="width:80%"></td>
-                        <td><input type="text" value="1" style="width:80%"></td>
-                        <td><input type="text" value="1" style="width:80%"></td>
-                        <td><input type="text" value="1" style="width:80%"></td>
-                        <td><input type="text" value="1" style="width:80%"></td>
-                        <td><input type="text" value="1" style="width:80%"></td>
-                        <td><input type="text" value="1" style="width:80%"></td>
+                        td><input type="checkbox" name="pzmxEdit"></td>
+                        <td><input type="text" value="1"></td>
+                        <td><input type="text" value="1"></td>
+                        <td><input type="text" value="1"></td>
+                        <td><input type="text" value="1"></td>
+                        <td><input type="text" value="1"></td>
+                        <td><input type="text" value="1"></td>
+                        <td><input type="text" value="1"></td>
+                        <td><input type="text" value="1"></td>
+                        <td><input type="text" value="1"></td>
+                        <td><input type="text" value="1"></td>
+                        <td><input type="text" value="1"></td>
+                        <td><input type="text" value="1"></td>
+                        <td><input type="text" value="1"></td>
+                        <td><input type="text" value="1"></td>
+                        <td><input type="text" value="1"></td>
+                        <td><input type="text" value="1"></td>
+                        <td><input type="text" value="1"></td>
+                        <td><input type="text" value="1"></td>
+                        <td><input type="text" value="1"></td>
+                        <td><input type="text" value="1"></td>
+                        <td><input type="text" value="1"></td>
 
                     </tr>
                     <tr>
-                        <td><input type="text" value="1" style="width:80%"></td>
-                        <td><input type="text" value="1" style="width:80%"></td>
-                        <td><input type="text" value="1" style="width:80%"></td>
-                        <td><input type="text" value="1" style="width:80%"></td>
-                        <td><input type="text" value="1" style="width:80%"></td>
-                        <td><input type="text" value="1" style="width:80%"></td>
-                        <td><input type="text" value="1" style="width:80%"></td>
-                        <td><input type="text" value="1" style="width:80%"></td>
-                        <td><input type="text" value="1" style="width:80%"></td>
-                        <td><input type="text" value="1" style="width:80%"></td>
-                        <td><input type="text" value="1" style="width:80%"></td>
-                        <td><input type="text" value="1" style="width:80%"></td>
-                        <td><input type="text" value="1" style="width:80%"></td>
-                        <td><input type="text" value="1" style="width:80%"></td>
-                        <td><input type="text" value="1" style="width:80%"></td>
-                        <td><input type="text" value="1" style="width:80%"></td>
-                        <td><input type="text" value="1" style="width:80%"></td>
-                        <td><input type="text" value="1" style="width:80%"></td>
-                        <td><input type="text" value="1" style="width:80%"></td>
-                        <td><input type="text" value="1" style="width:80%"></td>
-                        <td><input type="text" value="1" style="width:80%"></td>
+                        td><input type="checkbox" name="pzmxEdit"></td>
+                        <td><input type="text" value="1"></td>
+                        <td><input type="text" value="1"></td>
+                        <td><input type="text" value="1"></td>
+                        <td><input type="text" value="1"></td>
+                        <td><input type="text" value="1"></td>
+                        <td><input type="text" value="1"></td>
+                        <td><input type="text" value="1"></td>
+                        <td><input type="text" value="1"></td>
+                        <td><input type="text" value="1"></td>
+                        <td><input type="text" value="1"></td>
+                        <td><input type="text" value="1"></td>
+                        <td><input type="text" value="1"></td>
+                        <td><input type="text" value="1"></td>
+                        <td><input type="text" value="1"></td>
+                        <td><input type="text" value="1"></td>
+                        <td><input type="text" value="1"></td>
+                        <td><input type="text" value="1"></td>
+                        <td><input type="text" value="1"></td>
+                        <td><input type="text" value="1"></td>
+                        <td><input type="text" value="1"></td>
+                        <td><input type="text" value="1"></td>
 
                     </tr>
 
@@ -435,7 +451,9 @@
             </div>
         </form>
     </div>
-
+    <div class="submit">
+        <button class="btn">提交</button>
+    </div>
 
 </div>
 </body>
