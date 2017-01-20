@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -39,7 +38,7 @@
 <a id="btn1" href="swindex.html"style="left: -30px;padding: 17px 10px;float: left;position: relative;" > 首页 / </a>
     <a class="btn1" href="javascript:void(0)"style="left: -30px;padding: 17px 5px;float: left;position: relative;" > 功能列表</a>
     <div class="section">
-        <h3 class="baoxiao"  style="padding:0 100px; margin: 15px;">客户详情</h3>
+        <h3 class="baoxiao">客户详情</h3>
         <hr/>
         <form class="form-horizontal" role="form" id="customer">
             <div class="row">
@@ -53,26 +52,15 @@
                         <i class="items pull-left">*</i>
                     </div>
                     <div class="form-group">
-                        <label  class="col-sm-3 control-label" >客户性质</label>
+                        <label  class="col-sm-3 control-label">客户性质</label>
                         <div class="col-sm-4">
-                            <select class="form-control" name="customerProperty" id="goodsType">
-                                <c:forEach items="${applicationScope.sysParam.goodsType}" var="goodsType">
-                                    <option id="types" value="${goodsType.key}">${goodsType.value}</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                </c:forEach>
+                            <select class="form-control" name="customerProperty">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
                             </select>
-
-                           <%-- <select name="classId" style="width:140px">
-                                <c:forEach var="academy" items="${list}">
-                                    <option value="${academy.id}" selected>
-                                            ${academy.name}
-                                    </option>
-                                </c:forEach>
-                            </select>--%>
                         </div>
                         <i class="items pull-left">*</i>
                     </div>
@@ -90,7 +78,7 @@
                         <i class="items pull-left">*</i>
                     </div>
                     <div class="form-group">
-                        <label for="inputEmail3" class="col-sm-3 control-label padright" value="${customer.source}">来源</label>
+                        <label for="inputEmail3" class="col-sm-3 control-label padright">来源</label>
                         <div class="col-sm-4">
                             <input type="text" class="form-control" id="inputEmail31" name="source" placeholder="请输入来源">
                         </div>
@@ -285,11 +273,30 @@
 </body>
 </html>
 <script>
-
+//    $(function(){
+//        var json = {
+//            customerName : 1,
+//            customerProperty :2,
+//            status :3,
+//            source :4,
+//            province:5,
+//            county:6,
+//            fixedPhone:7,
+//            level:8,
+//            mainBusiness:9,
+//            superiorBelong:10,
+//            enterpriseProperty:12,
+//            address:10,
+//            remark:1
+//        };
+//        jsonToForm("#customer",json);
+////        jsonToSelect("/user/login","#executorId",null,"id","trueName",true,false);
+//    });
 
     $("#but").click(function(){
         var json = formToJson("#customer");
         var url = "/customer/insert";
+        debugger;
         if(json.id != null && json.id != ""){
             url = "/customer/update";
         }

@@ -19,10 +19,6 @@ public class Configure {
 
     private String remark;
 
-    private Integer projectId;
-
-    private Integer processId;
-
     public Integer getId() {
         return id;
     }
@@ -93,21 +89,5 @@ public class Configure {
 
     public void setRemark(String remark) {
         this.remark = remark;
-    }
-
-    public Integer getProjectId() {
-        return projectId;
-    }
-
-    public void setProjectId(Integer projectId) {
-        this.projectId = projectId;
-    }
-
-    public Integer getProcessId() {
-        return processId;
-    }
-
-    public void setProcessId(Integer processId) {
-        this.processId = processId;
     }
 }

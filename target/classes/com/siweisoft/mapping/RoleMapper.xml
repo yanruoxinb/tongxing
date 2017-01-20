@@ -10,22 +10,12 @@
   <sql id="Base_Column_List">
     id, role_name, is_zhuguan, status
   </sql>
-
-  <!--查询所有角色-->
-  <select id="selectAll" resultMap="BaseResultMap">
-    SELECT
-    <include refid="Base_Column_List"/>
-    FROM role
-  </select>
-
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from role
     where id = #{id,jdbcType=INTEGER}
   </select>
-
-    <!--删除一个角色-->
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from role
     where id = #{id,jdbcType=INTEGER}

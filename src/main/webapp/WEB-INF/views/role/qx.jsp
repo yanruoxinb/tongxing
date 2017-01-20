@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="/assets/bootstrap/css/font-awesome.min.css" />
     <script src="/js/jquery-1.11.3.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
-    <jsp:include page="../public/lib.jsp"></jsp:include>
+
         <link rel="stylesheet" href="/css/tqcss.css"/>
 <script src="/js/showBo.js"></script>
     <title>权限管理</title>
@@ -19,10 +19,10 @@
 <body>
 <!------------------------------权限管理---------------------------------->
 <div class="main-container container-fluid" class="top"style="padding-left: 0;">
-<img src="/image/2.png" alt="">
+<img src="./image/2.png" alt="">
 </div>
 <div class="main-container container-fluid" class="left"style="display:inline-block;    padding-left: 0;">
-<img src="/image/1.png" alt=""style="width:230px;    height: 100%;">
+<img src="./image/1.png" alt=""style="width:230px;    height: 100%;">
 </div>
 
 <div style="height200px;width:350px;font-size:26px;font-family:'华文行楷','Arial','Microsoft YaHei','黑体','宋体','sans-serif';margin:0 auto; border:1px solid #008cee;background-color:#008cee;color:#fff;z-index:999;display:inline-block;line-height:50px;text-align:center;border-radius:20px;position:absolute;right: 42%;top: 480px;display:none;" class="noticeCon">
@@ -38,8 +38,8 @@
          <form style="padding:10px 0;text-align:left;">
             <button type="button" class="btn creatNewRole" style="margin-left:10px;background-color: #008cee;color: #fff">创建新角色</button>
         </form>
-        <div class="table-responsive" style="margin-top:15px;" id="deleteLimitTable">
-            <%--<table class="table table-bordered" >
+        <div class="table-responsive" style="margin-top:15px;">
+            <table class="table table-bordered" id="deleteLimitTable">
                 <thead>
                 <tr>
                     <td>角色名</td>
@@ -89,7 +89,7 @@
                     </td>
                 </tr> -->
                 </tbody>
-            </table>--%>
+            </table>
         </div>
     </div>
 
@@ -293,7 +293,7 @@
             </div>
        
                        <div class="modal-body">
-
+<!-- <h4 class="modal-title" id="myModalLabel">修改角色</h4> -->
                 <label>角色名：</label>&nbsp;&nbsp;
                 <input type="text" placeholder="请输入角色名称" class="set" class="pic" value="" style="border:1px solid  #f00!important;" />&nbsp;&nbsp;
 
@@ -389,6 +389,7 @@
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal -->
+    <div></div>
 </div>
 <div id="dvMsgBox" style="width: 400px;top: 440px; left: 751px;display:none;">
     <div class="top">
@@ -418,66 +419,8 @@
     </div>
 </div>
 <div id="ShowBolightBox" style="width: 1932px; height: 100%;display:none;"></div>
-<script src="/js/app.js"></script>
-
+<script src="js/app.js"></script>
 <script>
-    $(function(){
-        callSapiServer("/role/selectAll",function(data){
-            roleBody1(data);
-        },"GET");
-    });
-
-    function roleBody1(data){
-        //列名初始化
-        var head = ["角色名","操作"];
-        tab_jsonTable($("#deleteLimitTable"), data, head,
-                function (td, row, col, content) {
-                    $(td).css("text-align", "center");//添加td的样式
-                    //初始化每一行的数据
-                    switch (col) {
-                        case 0:
-                            return nullToString(content.roleName) + "<input name='id' type='hidden' value='"+content.id+"'>";
-                        case 1:
-                            var html = '<button name="update" class="btn btn-info ">修改</button>&nbsp;<button name="delete"  class="btn btn-danger">删除</button>';
-                            return $(html);
-                        default :
-                            return null;
-                    }
-                }, function (table) {
-                    //设置table的样式
-                    $(table).addClass("table table-bordered");
-
-                    //通过检索table里面所有button赋值，当button的name为delete时，为它执行删除操作
-                    $(table).find("button[name='delete']").click(function(){
-                        var flag = confirm("您确定删除该元数据吗？一旦删除，将无法恢复！");
-                        var tr = $(this).parents("tr");
-                        if(flag) {
-                            //检索当前行中，name为id的input
-                            var id = $(this).parents("tr").find("input[name='id']").val();
-                            //参数列表
-                            var json = {
-                                id : id
-                            };
-                            //请求后台
-                            callSapiServer("/role/deleteByPrimaryKey",function(data){
-                                //成功后，执行此回调函数
-                                alert(data.message);
-                                if(data.code == 200) {
-                                    //如果后台删除成功，直接删除当前行，不需要再请求后台，减少后台压力
-                                    $(tr).remove();
-                                }
-                            },"POST",json);
-                        }
-                    });
-                    $(table).find("button[name='update']").click(function(){
-                        var tr = $(this).parents("tr");
-                        var id = $(this).parents("tr").find("input[name='id']").val();
-                      /*  window.location.href = ctx + "/user/toUpdate?userId="+id;*/
-                    });
-                })
-    }
-
-    /*修改按钮*/
         $(".xg1").click(function(){
                 $('#myModal2').modal("show");
                $("#myModal2").modal({
@@ -493,6 +436,8 @@
     $(".creatNewRole").click(function(){
         $('#myModal4').modal('show')
     });
+
+
 </script>
 </body>
 </html>

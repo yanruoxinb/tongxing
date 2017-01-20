@@ -17,14 +17,6 @@ public class Receipt {
 
     private String rmark;
 
-    private Integer status;
-
-    private Integer handed;
-
-    private Date handedDate;
-
-    private String ticketNum;
-
     public Integer getId() {
         return id;
     }
@@ -79,37 +71,5 @@ public class Receipt {
 
     public void setRmark(String rmark) {
         this.rmark = rmark;
-    }
-
-    public Integer getStatus() {
-        return status;
-    }
-
-    public void setStatus(Integer status) {
-        this.status = status;
-    }
-
-    public Integer getHanded() {
-        return handed;
-    }
-
-    public void setHanded(Integer handed) {
-        this.handed = handed;
-    }
-
-    public Date getHandedDate() {
-        return handedDate;
-    }
-
-    public void setHandedDate(Date handedDate) {
-        this.handedDate = handedDate;
-    }
-
-    public String getTicketNum() {
-        return ticketNum;
-    }
-
-    public void setTicketNum(String ticketNum) {
-        this.ticketNum = ticketNum;
     }
 }

@@ -2,6 +2,8 @@ package com.siweisoft.dao;
 
 import com.siweisoft.model.Project;
 
+import java.util.List;
+
 public interface ProjectMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -14,4 +16,7 @@ public interface ProjectMapper {
     int updateByPrimaryKeySelective(Project record);
 
     int updateByPrimaryKey(Project record);
+
+    //根据合同ID查项目
+    List<Project> selectByCID(Integer id);
 }

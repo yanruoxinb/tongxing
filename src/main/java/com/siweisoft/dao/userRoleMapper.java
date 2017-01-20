@@ -2,7 +2,7 @@ package com.siweisoft.dao;
 
 import com.siweisoft.model.userRole;
 
-public interface UserRoleMapper {
+public interface userRoleMapper {
     int deleteByPrimaryKey(Integer id);
 
     int insert(userRole record);

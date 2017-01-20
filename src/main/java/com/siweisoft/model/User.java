@@ -45,29 +45,9 @@ public class User {
 
     private Integer deptId;
 
-/*    //元数据表部门名称
-    private String metaName;
-
-    //角色表中的
-    private String roleName;
-
-    public String getMetaName() {
-        return metaName;
+    public Integer getId() {
+        return id;
     }
-
-    public void setMetaName(String metaName) {
-        this.metaName = metaName;
-    }
-
-    public String getRoleName() {
-        return roleName;
-    }
-
-    public void setRoleName(String roleName) {
-        this.roleName = roleName;
-    }*/
-
-    public Integer getId() {return id;}
 
     public void setId(Integer id) {
         this.id = id;

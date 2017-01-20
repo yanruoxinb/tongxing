@@ -28,7 +28,7 @@ public class CustomerController {
 //    跳转到toLIst页面（客服页面）
     @RequestMapping(value = "toList",method = RequestMethod.GET)
     public String toCustomer(){
-//        System.out.print(11);
+        System.out.print(11);
         return "customer/kh";
     }
 

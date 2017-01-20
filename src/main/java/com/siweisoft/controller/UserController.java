@@ -3,7 +3,6 @@ package com.siweisoft.controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.siweisoft.base.StateCode;
 import com.siweisoft.constant.ConstantParams;
-import com.siweisoft.controller.base.BaseController;
 import com.siweisoft.model.User;
 import com.siweisoft.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,14 +14,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by Robin on 2017-1-13.
  */
 @Controller
 @RequestMapping("/user")
-public class UserController extends BaseController<User>{
+public class UserController {
     @Autowired
     private UserService userService;
 
@@ -38,7 +36,7 @@ public class UserController extends BaseController<User>{
         String json="";
         try {
             int pageSize = ConstantParams.PAGE_SIZE;
-            List<Map<String,Object>> list = userService.selectAll();
+            List<User> list = userService.selectAll();
             ObjectMapper mapper = new ObjectMapper();
             json = mapper.writeValueAsString(list);
         } catch (Exception e) {
@@ -47,32 +45,82 @@ public class UserController extends BaseController<User>{
         return json;
     }
 
-    @Override
-    protected String getPrefix() {
-        return "/user/";
+
+
+    //删除用户数据
+    @RequestMapping(value = "deleteByPrimaryKey",method = RequestMethod.POST)
+    @ResponseBody
+    public String deleteByPrimaryKey(Integer id){
+        String json = "";
+        StateCode sc = null;
+        try {
+            Integer count = userService.deleteByPrimaryKey(id);
+            if (count > 0) {
+                sc = new StateCode("200", "删除元数据成功");
+            } else {
+                sc = new StateCode("-200", "删除元数据失败");
+            }
+            ObjectMapper mapper = new ObjectMapper();
+            json = mapper.writeValueAsString(sc);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return json;
     }
 
-    @Override
-    protected User findById(int id) {
-        User user = userService.selectByPrimaryKey(id);
-        return user;
+    //跳转到添加用户页面
+    @RequestMapping(value = "toUserTjyh",method = RequestMethod.GET)
+    public String toUserTjyh(HttpServletRequest request, HttpServletResponse response) {
+        return "user/user_tjyh";
     }
 
-    @Override
-    protected int deleteById(int id) {
-        int count = userService.deleteByPrimaryKey(id);
-        return count;
+    //跳转到修改页面
+    @RequestMapping(value = "toUpdate",method = RequestMethod.GET)
+    public String toUpdate(int userId, HttpServletRequest request, HttpServletResponse response) {
+        User user = userService.selectByPrimaryKey(userId);
+        request.setAttribute("user",user);
+        return "user/user_tjyh";
     }
 
-    @Override
-    protected int updateById(User user) {
-        int count = userService.updateByPrimaryKey(user);
-        return count;
+    //修改用户数据
+    @RequestMapping(value = "update",method = RequestMethod.POST)
+    @ResponseBody
+    public String update(User record){
+        String json = "";
+        StateCode sc = null;
+        try {
+            Integer count = userService.updateByPrimaryKey(record);
+            if (count > 0) {
+                sc = new StateCode("200", "修改用户数据成功");
+            } else {
+                sc = new StateCode("-200", "修改用户数据失败");
+            }
+            ObjectMapper mapper = new ObjectMapper();
+            json = mapper.writeValueAsString(sc);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return json;
     }
 
-    @Override
-    protected int insert(User user) {
-        int count = userService.insert(user);
-        return count;
+    //添加用户数据
+    @RequestMapping(value = "insert",method = RequestMethod.POST)
+    @ResponseBody
+    public String insert(User record){
+        String json = "";
+        StateCode sc = null;
+        try {
+            Integer count = userService.insert(record);
+            if (count > 0) {
+                sc = new StateCode("200", "添加用户数据成功");
+            } else {
+                sc = new StateCode("-200", "删除用户数据失败");
+            }
+            ObjectMapper mapper = new ObjectMapper();
+            json = mapper.writeValueAsString(sc);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return json;
     }
 }

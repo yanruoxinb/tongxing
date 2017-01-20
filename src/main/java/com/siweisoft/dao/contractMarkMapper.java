@@ -1,12 +1,10 @@
 package com.siweisoft.dao;
 
 import com.siweisoft.model.contractMark;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
-public interface ContractMarkMapper {
+public interface contractMarkMapper {
 
     int deleteByPrimaryKey(Integer id);
 

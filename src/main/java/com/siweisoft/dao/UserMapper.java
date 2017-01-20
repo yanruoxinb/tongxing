@@ -4,7 +4,6 @@ import com.siweisoft.model.User;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-import java.util.Map;
 
 @Repository
 public interface UserMapper {
@@ -18,6 +17,6 @@ public interface UserMapper {
 
     int updateByPrimaryKey(User record);
 
-    List<Map<String,Object>> selectAll();
+    List<User> selectAll();
     int deleteByPrimaryKey(Integer id);
 }

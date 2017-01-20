@@ -23,26 +23,18 @@
     <result column="status" jdbcType="INTEGER" property="status" />
     <result column="qq" jdbcType="INTEGER" property="qq" />
     <result column="dept_id" jdbcType="INTEGER" property="deptId" />
-
   </resultMap>
-
   <sql id="Base_Column_List">
-    id, user_type, username, password, create_time, last_login_date, true_name, company,
-    tel, address, weixin, ding_name, is_login, loaction_id, message_id, charge_id, parent_id,
+    id, user_type, username, password, create_time, last_login_date, true_name, company, 
+    tel, address, weixin, ding_name, is_login, loaction_id, message_id, charge_id, parent_id, 
     role_id, status, qq, dept_id
   </sql>
 
-  <sql id="Base_Column_List1">
-    u.id, u.user_type, u.username, u.password, u.create_time, u.last_login_date, u.true_name, u.company,
-    u.tel, u.address, u.weixin, u.ding_name, u.is_login, u.loaction_id, u.message_id, u.charge_id, u.parent_id,
-    u.role_id, u.status, u.qq, u.dept_id,m.meta_name,r.role_name
-  </sql>
-
   <!--查询所有用户-->
-  <select id="selectAll"  resultType="java.util.Map">
+  <select id="selectAll"  resultMap="BaseResultMap">
     SELECT
-    <include refid="Base_Column_List1"/>
-    from user u INNER JOIN metadata m on u.dept_id=m.id INNER JOIN role r on u.role_id=r.id
+    <include refid="Base_Column_List"/>
+    FROM user
   </select>
 
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">

@@ -1,10 +1,8 @@
 package com.siweisoft.dao;
 
 import com.siweisoft.model.contactMark;
-import org.springframework.stereotype.Repository;
 
-@Repository
-public interface ContactMarkMapper {
+public interface contactMarkMapper {
     int deleteByPrimaryKey(Integer id);
 
     int insert(contactMark record);

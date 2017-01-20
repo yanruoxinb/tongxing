@@ -9,67 +9,10 @@
     <result column="reimburse_date" jdbcType="TIMESTAMP" property="reimburseDate" />
     <result column="reimburse_money" jdbcType="REAL" property="reimburseMoney" />
     <result column="rmark" jdbcType="VARCHAR" property="rmark" />
-    <result column="status" jdbcType="INTEGER" property="status" />
-    <result column="handed" jdbcType="INTEGER" property="handed" />
-    <result column="handed_date" jdbcType="TIMESTAMP" property="handedDate" />
-    <result column="ticket_num" jdbcType="VARCHAR" property="ticketNum" />
   </resultMap>
-  <sql id="Example_Where_Clause">
-    <where>
-      <foreach collection="oredCriteria" item="criteria" separator="or">
-        <if test="criteria.valid">
-          <trim prefix="(" prefixOverrides="and" suffix=")">
-            <foreach collection="criteria.criteria" item="criterion">
-              <choose>
-                <when test="criterion.noValue">
-                  and ${criterion.condition}
-                </when>
-                <when test="criterion.singleValue">
-                  and ${criterion.condition} #{criterion.value}
-                </when>
-                <when test="criterion.betweenValue">
-                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
-                </when>
-                <when test="criterion.listValue">
-                  and ${criterion.condition}
-                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
-                    #{listItem}
-                  </foreach>
-                </when>
-              </choose>
-            </foreach>
-          </trim>
-        </if>
-      </foreach>
-    </where>
-  </sql>
   <sql id="Base_Column_List">
-    id, task_id, user_id, reimburse_type, reimburse_date, reimburse_money, rmark, status, 
-    handed, handed_date, ticket_num
+    id, task_id, user_id, reimburse_type, reimburse_date, reimburse_money, rmark
   </sql>
-
-
-  <select id="selectByExample" parameterType="com.siweisoft.model.ReceiptExample" resultMap="BaseResultMap">
-    select
-    <if test="distinct">
-      distinct
-    </if>
-    <include refid="Base_Column_List" />
-    from receipt
-    <if test="_parameter != null">
-      <include refid="Example_Where_Clause" />
-    </if>
-    <if test="orderByClause != null">
-      order by ${orderByClause}
-    </if>
-  </select>
-
-  <select id="findByReceipt"  resultMap="BaseResultMap">
-    select
-    <include refid="Base_Column_List" />
-    from receipt
-  </select>
-
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
@@ -83,12 +26,10 @@
   <insert id="insert" parameterType="com.siweisoft.model.Receipt">
     insert into receipt (id, task_id, user_id, 
       reimburse_type, reimburse_date, reimburse_money, 
-      rmark, status, handed, 
-      handed_date, ticket_num)
+      rmark)
     values (#{id,jdbcType=INTEGER}, #{taskId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, 
       #{reimburseType,jdbcType=INTEGER}, #{reimburseDate,jdbcType=TIMESTAMP}, #{reimburseMoney,jdbcType=REAL}, 
-      #{rmark,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{handed,jdbcType=INTEGER}, 
-      #{handedDate,jdbcType=TIMESTAMP}, #{ticketNum,jdbcType=VARCHAR})
+      #{rmark,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.siweisoft.model.Receipt">
     insert into receipt
@@ -114,18 +55,6 @@
       <if test="rmark != null">
         rmark,
       </if>
-      <if test="status != null">
-        status,
-      </if>
-      <if test="handed != null">
-        handed,
-      </if>
-      <if test="handedDate != null">
-        handed_date,
-      </if>
-      <if test="ticketNum != null">
-        ticket_num,
-      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -148,18 +77,6 @@
       </if>
       <if test="rmark != null">
         #{rmark,jdbcType=VARCHAR},
-      </if>
-      <if test="status != null">
-        #{status,jdbcType=INTEGER},
-      </if>
-      <if test="handed != null">
-        #{handed,jdbcType=INTEGER},
-      </if>
-      <if test="handedDate != null">
-        #{handedDate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="ticketNum != null">
-        #{ticketNum,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -184,18 +101,6 @@
       <if test="rmark != null">
         rmark = #{rmark,jdbcType=VARCHAR},
       </if>
-      <if test="status != null">
-        status = #{status,jdbcType=INTEGER},
-      </if>
-      <if test="handed != null">
-        handed = #{handed,jdbcType=INTEGER},
-      </if>
-      <if test="handedDate != null">
-        handed_date = #{handedDate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="ticketNum != null">
-        ticket_num = #{ticketNum,jdbcType=VARCHAR},
-      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -206,11 +111,7 @@
       reimburse_type = #{reimburseType,jdbcType=INTEGER},
       reimburse_date = #{reimburseDate,jdbcType=TIMESTAMP},
       reimburse_money = #{reimburseMoney,jdbcType=REAL},
-      rmark = #{rmark,jdbcType=VARCHAR},
-      status = #{status,jdbcType=INTEGER},
-      handed = #{handed,jdbcType=INTEGER},
-      handed_date = #{handedDate,jdbcType=TIMESTAMP},
-      ticket_num = #{ticketNum,jdbcType=VARCHAR}
+      rmark = #{rmark,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

@@ -86,7 +86,7 @@ $(document).ready(function () {
         $("#disPass").click(function () {
             if (confirm('您确认要进行该操作吗？')) {
                 $("#leftimg").css({"height": "1318"});
-                window.location.href = "swindex_sh.html";
+                window.location.href = "swindex_sh.jsp";
             }
         });
         $("#pass_GD").click(function () {
@@ -128,7 +128,7 @@ $(document).ready(function () {
     //        $("#leftimg").css({"height": "1318"});
     //        $(".sh_info").hide();
     //        $(".sh_info_suc").show();
-    //        window.location.href = "swindex_sh.html";
+    //        window.location.href = "swindex_sh.jsp";
     //    }
     //});
     $('#bnt').bind('click', function () {
@@ -375,7 +375,7 @@ $("#btn_confirm_hf").click(function () {
     $(".noticeCon").fadeOut(2000);
     $(".hf_info").hide();
     $(".hf_info_suc").show();
-    window.location.href = "swindex_hf.html";
+    window.location.href = "swindex_hf.jsp";
 });
 $("#btn_confirm_cancel_hf").click(function () {
     $("#dvMsgBox").hide();
@@ -388,7 +388,7 @@ $("#btn_confirm_gd").click(function () {
     $(".noticeCon").fadeOut(2000);
     $(".hf_info").hide();
     $(".hf_info_suc").show();
-    window.location.href = "swindex_gd.html";
+    window.location.href = "swindex_gd.jsp";
 });
 $("#btn_confirm_cancel_gd").click(function () {
     $("#dvMsgBox").hide();
@@ -401,7 +401,7 @@ $("#btn_confirm_SH").click(function () {
     $(".noticeCon").fadeOut(2000);
     $(".hf_info").hide();
     $(".hf_info_suc").show();
-    window.location.href = "swindex_sh.html";
+    window.location.href = "swindex_sh.jsp";
 });
 $("#btn_confirm_cancel_SH").click(function () {
     $("#dvMsgBox").hide();
@@ -499,7 +499,7 @@ $("#btn_confirm_hf").click(function () {
     $(".noticeCon").fadeOut(2000);
     $(".hf_info").hide();
     $(".hf_info_suc").show();
-    window.location.href = "swindex_hf.html";
+    window.location.href = "swindex_hf.jsp";
 });
 $("#btn_confirm_cancel_hf").click(function () {
     $("#dvMsgBox").hide();
@@ -542,7 +542,7 @@ $("#btn_confirm_gd").click(function () {
     $(".noticeCon").fadeOut(2000);
     $(".hf_info").hide();
     $(".hf_info_suc").show();
-    window.location.href = "swindex_gd.html";
+    window.location.href = "swindex_gd.jsp";
 });
 $("#btn_confirm_cancel_gd").click(function () {
     $("#dvMsgBox").hide();
@@ -555,7 +555,7 @@ $("#btn_confirm_SH").click(function () {
     $(".noticeCon").fadeOut(2000);
     $(".hf_info").hide();
     $(".hf_info_suc").show();
-    window.location.href = "swindex_sh.html";
+    window.location.href = "swindex_sh.jsp";
 });
 $("#btn_confirm_shtj").click(function () {
     $("#dvMsgBox").hide();
@@ -564,7 +564,7 @@ $("#btn_confirm_shtj").click(function () {
     $(".noticeCon").fadeOut(2000);
     $(".hf_info").hide();
     $(".hf_info_suc").show();
-    window.location.href = "swindex_sh.html";
+    window.location.href = "swindex_sh.jsp";
 });
 
 $("#btn_confirm_cancel_SH").click(function () {
@@ -714,7 +714,7 @@ $(document).ready(function () {
             $(".noticeCon").fadeOut(2000);
             $(".hf_info").hide();
             $(".hf_info_suc").show();
-            window.location.href = "swindex_hf.html";
+            window.location.href = "swindex_hf.jsp";
         });
         $("#btn_confirm_cancel_hf").click(function () {
             $("#dvMsgBox").hide();
@@ -764,7 +764,7 @@ $(document).ready(function () {
             $(".noticeCon").fadeOut(2000);
             $(".hf_info").hide();
             $(".hf_info_suc").show();
-            window.location.href = "swindex_gd.html";
+            window.location.href = "swindex_gd.jsp";
         });
         $("#btn_confirm_cancel_gd").click(function () {
             $("#dvMsgBox").hide();
@@ -777,7 +777,7 @@ $(document).ready(function () {
             $(".noticeCon").fadeOut(2000);
             $(".hf_info").hide();
             $(".hf_info_suc").show();
-            window.location.href = "swindex_sh.html";
+            window.location.href = "swindex_sh.jsp";
         });
         $("#btn_confirm_cancel_SH").click(function () {
             $("#dvMsgBox").hide();

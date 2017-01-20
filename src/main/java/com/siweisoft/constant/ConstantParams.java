@@ -8,7 +8,5 @@ public class ConstantParams {
 
     public static final String SUCCESS="200";
 
-    public static final String CACHE_PREFIX = "cache_meta_";
-
 
 }
