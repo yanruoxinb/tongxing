@@ -89,5 +89,30 @@ $(document).ready(function () {
             $("#gymxTable").find("tr:eq(" + n + ")").remove();
         });
     });
-
+    //修改工艺详情页面配置新增
+    $("#editSettingDetail").bind('click', function () {
+        $("#settingNoEdit").before(
+            "<tr> <td><input type='checkbox' name='editSetting'></td><td><input type='text'></td> <td><input type='text'></td> <td><input type='text'></td> <td><input type='text'></td> <td><input type='text'></td> <td><input type='text'></td> <td><input type='text'></td> <td><input type='text'></td> <td><input type='text'></td> </tr>"
+        );
+    });
+    //修改工艺详情页面配置删除
+    $('#deleteSettingDetail').on('click', function () {
+        $("input[name='editSetting']:checked").each(function () { // 遍历选中的checkbox
+            n = $(this).parents("tr").index()+1;  // 获取checkbox所在行的顺序
+            $("#editPeiZhiDetailTable").find("tr:eq(" + n + ")").remove();
+        });
+    });
+    //修改工艺详情页面工艺新增
+    $("#editCraftDetail").bind('click', function () {
+        $("#editGymxTable").append(
+            "<tr> <td><input type='checkbox' name='gymxEdit'></td><td><input type='text'></td> <td><input type='text'></td> <td><input type='text'></td> <td><input type='text'></td> <td><input type='text'></td> <td><input type='text'></td> <td><input type='text'></td> <td><input type='text'></td> <td><input type='text'></td><td><input type='text'></td> <td><input type='text'></td><td><input type='text'></td> <td><input type='text'></td><td><input type='text'></td> <td><input type='text'></td><td><input type='text'></td> <td><input type='text'></td><td><input type='text'></td> <td><input type='text'></td><td><input type='text'></td> <td><input type='text'></td> </tr>"
+        );
+    });
+    //修改工艺详情页面工艺删除
+    $('#deleteCraftDetail').on('click', function () {
+        $("input[name='gymxEdit']:checked").each(function () { // 遍历选中的checkbox
+            n = $(this).parents("tr").index()+1;  // 获取checkbox所在行的顺序
+            $("#editGymxTable").find("tr:eq(" + n + ")").remove();
+        });
+    });
 });

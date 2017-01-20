@@ -20,8 +20,9 @@
         .peizhidetail thead tr td {
             padding: 8px 0;
         }
-        input[type="text"]{
-            width:80%;
+
+        input[type="text"] {
+            width: 80%;
         }
     </style>
 </head>
@@ -41,25 +42,27 @@
     <a class="btn1" href="javascript:void(0)" style="left: -30px;padding: 17px 5px;float: left;position: relative;">
         功能列表</a>
     <div class="section">
-        <h2 class="baoxiao">项目详情</h2>
+        <h2 class="baoxiao"  style="margin: 15px 0;">项目详情</h2>
 
         <form class="form-horizontal" role="form">
 
-            <div style="float:left;    padding: 15px 0 10px 0;">
-                <button type="button" class="btn" id="addTask"
+            <div style="float:left;    padding: 10px 0 10px 0;">
+                <button type="button" class="btn" id="editSettingDetail"
                         style="background-color: #008cee;color: #fff;margin-left:10px;">新增
                 </button>
-                <button type="button" class="btn btn-danger" id="deleteTask" style="margin-left:10px;" onclick="">删除
+                <button type="button" class="btn btn-danger" id="deleteSettingDetail" style="margin-left:10px;"
+                        onclick="">删除
                 </button>
             </div>
             <div>
-                <h3 style="text-align: center; padding: 20px 0 10px 0;" >配置明细</h3>
+                <h3 style="text-align: center;">配置明细</h3>
             </div>
             <div class="table-responsive" style="margin:15px 10px  0  0 ;">
 
-                <table class="table table-bordered peizhidetail">
+                <table class="table table-bordered" id="editPeiZhiDetailTable">
                     <thead>
                     <tr>
+                        <td></td>
                         <td style="padding: 0px 0px;">序号</td>
                         <td>名称</td>
                         <td>单位</td>
@@ -73,6 +76,7 @@
                     </thead>
                     <tbody>
                     <tr>
+                        <td><input type="checkbox" name="editSetting"></td>
                         <td>1</td>
                         <td><input type="text" value="商品砼自动化生产管理软件V6.0" style="width: 100%;"></td>
                         <td><input type="text" value="套"></td>
@@ -84,6 +88,7 @@
                         <td><input type="text" value=""></td>
                     </tr>
                     <tr>
+                        <td><input type="checkbox" name="editSetting"></td>
                         <td>2</td>
                         <td><input type="text" value="工业控制机" style="width: 100%;"></td>
                         <td><input type="text" value="台"></td>
@@ -95,6 +100,7 @@
                         <td><input type="text" value=""></td>
                     </tr>
                     <tr>
+                        <td><input type="checkbox" name="editSetting"></td>
                         <td>3</td>
                         <td><input type="text" value="工业控制输入板" style="width: 100%;"></td>
                         <td><input type="text" value="块"></td>
@@ -107,6 +113,7 @@
 
                     </tr>
                     <tr>
+                        <td><input type="checkbox" name="editSetting"></td>
                         <td>4</td>
                         <td><input type="text" value="工业控制输出板" style="width: 100%;"></td>
                         <td><input type="text" value="块"></td>
@@ -120,6 +127,7 @@
                     </tr>
 
                     <tr>
+                        <td><input type="checkbox" name="editSetting"></td>
                         <td>5</td>
                         <td><input type="text" value="商品砼自动化生产管理软件V6.0" style="width: 100%;"></td>
                         <td><input type="text" value="套"></td>
@@ -131,6 +139,7 @@
                         <td><input type="text" value=""></td>
                     </tr>
                     <tr>
+                        <td><input type="checkbox" name="editSetting"></td>
                         <td>6</td>
                         <td><input type="text" value="工业控制机" style="width: 100%;"></td>
                         <td><input type="text" value="台"></td>
@@ -142,6 +151,7 @@
                         <td><input type="text" value=""></td>
                     </tr>
                     <tr>
+                        <td><input type="checkbox" name="editSetting"></td>
                         <td>7</td>
                         <td><input type="text" value="工业控制输入板" style="width: 100%;"></td>
                         <td><input type="text" value="块"></td>
@@ -154,6 +164,7 @@
 
                     </tr>
                     <tr>
+                        <td><input type="checkbox" name="editSetting"></td>
                         <td>8</td>
                         <td><input type="text" value="工业控制输出板" style="width: 100%;"></td>
                         <td><input type="text" value="块"></td>
@@ -166,6 +177,7 @@
 
                     </tr>
                     <tr>
+                        <td><input type="checkbox" name="editSetting"></td>
                         <td>9</td>
                         <td><input type="text" value="商品砼自动化生产管理软件V6.0" style="width: 100%;"></td>
                         <td><input type="text" value="套"></td>
@@ -177,6 +189,7 @@
                         <td><input type="text" value=""></td>
                     </tr>
                     <tr>
+                        <td><input type="checkbox" name="editSetting"></td>
                         <td>10</td>
                         <td><input type="text" value="工业控制机" style="width: 100%;"></td>
                         <td><input type="text" value="台"></td>
@@ -188,6 +201,7 @@
                         <td><input type="text" value=""></td>
                     </tr>
                     <tr>
+                        <td><input type="checkbox" name="editSetting"></td>
                         <td>11</td>
                         <td><input type="text" value="工业控制输入板" style="width: 100%;"></td>
                         <td><input type="text" value="块"></td>
@@ -200,6 +214,7 @@
 
                     </tr>
                     <tr>
+                        <td><input type="checkbox" name="editSetting"></td>
                         <td>12</td>
                         <td><input type="text" value="工业控制输出板" style="width: 100%;"></td>
                         <td><input type="text" value="块"></td>
@@ -213,6 +228,7 @@
                     </tr>
 
                     <tr>
+                        <td><input type="checkbox" name="editSetting"></td>
                         <td>13</td>
                         <td><input type="text" value="商品砼自动化生产管理软件V6.0" style="width: 100%;"></td>
                         <td><input type="text" value="套"></td>
@@ -224,6 +240,7 @@
                         <td><input type="text" value=""></td>
                     </tr>
                     <tr>
+                        <td><input type="checkbox" name="editSetting"></td>
                         <td>14</td>
                         <td><input type="text" value="工业控制机" style="width: 100%;"></td>
                         <td><input type="text" value="台"></td>
@@ -235,6 +252,7 @@
                         <td><input type="text" value=""></td>
                     </tr>
                     <tr>
+                        <td><input type="checkbox" name="editSetting"></td>
                         <td>15</td>
                         <td><input type="text" value="工业控制输入板" style="width: 100%;"></td>
                         <td><input type="text" value="块"></td>
@@ -247,6 +265,7 @@
 
                     </tr>
                     <tr>
+                        <td><input type="checkbox" name="editSetting"></td>
                         <td>16</td>
                         <td><input type="text" value="工业控制输出板" style="width: 100%;"></td>
                         <td><input type="text" value="块"></td>
@@ -259,6 +278,7 @@
 
                     </tr>
                     <tr>
+                        <td><input type="checkbox" name="editSetting"></td>
                         <td>17</td>
                         <td><input type="text" value="工业控制输入板" style="width: 100%;"></td>
                         <td><input type="text" value="块"></td>
@@ -271,6 +291,7 @@
 
                     </tr>
                     <tr>
+                        <td><input type="checkbox" name="editSetting"></td>
                         <td>18</td>
                         <td><input type="text" value="工业控制输出板" style="width: 100%;"></td>
                         <td><input type="text" value="块"></td>
@@ -283,6 +304,7 @@
 
                     </tr>
                     <tr>
+                        <td><input type="checkbox" name="editSetting"></td>
                         <td>19</td>
                         <td><input type="text" value="商品砼自动化生产管理软件V6.0" style="width: 100%;"></td>
                         <td><input type="text" value="套"></td>
@@ -293,9 +315,10 @@
                         <td><input type="text" value="思伟"></td>
                         <td><input type="text" value=""></td>
                     </tr>
-                    <tr>
+                    <tr id="settingNoEdit">
+
                         <td>20</td>
-                        <td colspan="4">税金(元)</td>
+                        <td colspan="5">税金(元)</td>
                         <td><input type="text" value="70280"></td>
                         <td colspan="2"></td>
 
@@ -303,7 +326,7 @@
                     </tr>
                     <tr>
                         <td>21</td>
-                        <td colspan="4">优惠价(元)</td>
+                        <td colspan="5">优惠价(元)</td>
                         <td><input type="text" value="48000"></td>
                         <td colspan="2"></td>
 
@@ -314,8 +337,18 @@
             </div>
 
             <div class="table-responsive" style="margin:15px 0;">
-                <caption style="text-align: left;font-weight:700!important;">工艺明细</caption>
-                <table class="table table-bordered">
+                <div style="float:left;    padding: 15px 0 10px 0;">
+                    <button type="button" class="btn" id="editCraftDetail"
+                            style="background-color: #008cee;color: #fff;margin-left:10px;">新增
+                    </button>
+                    <button type="button" class="btn btn-danger" id="deleteCraftDetail" style="margin-left:10px;"
+                            onclick="">删除
+                    </button>
+                </div>
+                <div>
+                    <h3 style="text-align: center; padding: 20px 0 10px 0;">工艺明细</h3>
+                </div>
+                <table class="table table-bordered" id="editGymxTable">
                     <thead>
                     <tr>
                         <td></td>
@@ -344,7 +377,7 @@
                     </thead>
                     <tbody>
                     <tr>
-                        <td><input type="checkbox" name="pzmxEdit"></td>
+                        <td><input type="checkbox" name="gymxEdit"></td>
                         <td><input type="text" value="1"></td>
                         <td><input type="text" value="1"></td>
                         <td><input type="text" value="1"></td>
@@ -369,7 +402,7 @@
 
                     </tr>
                     <tr>
-                        td><input type="checkbox" name="pzmxEdit"></td>
+                        <td><input type="checkbox" name="gymxEdit"></td>
                         <td><input type="text" value="1"></td>
                         <td><input type="text" value="1"></td>
                         <td><input type="text" value="1"></td>
@@ -394,7 +427,7 @@
 
                     </tr>
                     <tr>
-                        td><input type="checkbox" name="pzmxEdit"></td>
+                        <td><input type="checkbox" name="gymxEdit"></td>
                         <td><input type="text" value="1"></td>
                         <td><input type="text" value="1"></td>
                         <td><input type="text" value="1"></td>
@@ -416,16 +449,14 @@
                         <td><input type="text" value="1"></td>
                         <td><input type="text" value="1"></td>
                         <td><input type="text" value="1"></td>
-
                     </tr>
-
                     </tbody>
                 </table>
 
             </div>
-            <div style="    margin: 15px 0 0 0;">
+            <div style="margin: 15px 0 0 0;">
                  <textarea style="width:80%;margin-right:44px;" class="form-control right" name="sendDemand" rows="6"
-                           id="sendDemand" placeholder="  请输入特殊工艺说明" value="" disabled="disabled">
+                           id="sendDemand" placeholder="  请输入特殊工艺说明" value="">
                  搅拌站工艺：
                         > 4个骨料仓对应4个骨料秤通过皮带上料（中途仓有秤）
                         > 1个掺和剂对应1个秤通过斜皮带上料 
@@ -434,25 +465,11 @@
                     </textarea>
                 <p style="margin-right: 8px;float:right;color:#000;">特殊工艺说明：</p>
             </div>
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="form-group">
-                        <!--  <div style="text-align:center;display:inline-block;width:50%;float:left;"> -->
-                        <a href="xm.jsp">
-                            <button type="button" class="btn padding" style="background-color: #008cee;color: #fff">确定
-                            </button>
-                        </a>
-                        <!--  </div> -->
-                        <!--  <div style="text-align:center;display:inline-block;width:50%;float:right;"> -->
-                        <button type="reset" class="btn" style="background-color: #008cee;color: #fff">重置</button>
-                        <!--  </div> -->
-                    </div>
-                </div>
+            <div class="submit" style=" margin-top: 150px;">
+                <button class="btn">提交</button>
             </div>
         </form>
-    </div>
-    <div class="submit">
-        <button class="btn">提交</button>
+
     </div>
 
 </div>
