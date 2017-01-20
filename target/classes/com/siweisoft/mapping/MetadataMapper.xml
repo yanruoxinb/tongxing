@@ -21,6 +21,15 @@
     from metadata
     where id = #{id,jdbcType=INTEGER}
   </select>
+
+  <!--根据父节点获取元数据-->
+  <select id="selectByParentId"  resultMap="BaseResultMap" parameterType="java.lang.Integer">
+    SELECT
+    id, meta_name as metaName
+    FROM metadata
+    where parent_id = #{parentId,jdbcType=INTEGER}
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from metadata
     where id = #{id,jdbcType=INTEGER}

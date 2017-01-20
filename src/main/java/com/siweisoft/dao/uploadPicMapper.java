@@ -2,7 +2,7 @@ package com.siweisoft.dao;
 
 import com.siweisoft.model.uploadPic;
 
-public interface uploadPicMapper {
+public interface UploadPicMapper {
     int deleteByPrimaryKey(Integer id);
 
     int insert(uploadPic record);

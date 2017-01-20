@@ -202,9 +202,7 @@ function formToJson(target,prefix) {
 
 //自动填充select
 function jsonToSelect(url, target, json, valueName, textName, async,isMultiple) {
-
     callSapiServer(url, function (data) {
-
         if(data.code == 200) {
             var options = data.result;
             var html = "";

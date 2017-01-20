@@ -36,10 +36,10 @@
 </script>
 <!------------------------------用户管理---------------------------------->
 <div class="main-container container-fluid" class="top"style="padding-left: 0;">
-    <img src="./image/2.png" alt="">
+    <img src="/image/2.png" alt="">
 </div>
 <div class="main-container container-fluid" class="left"style="display:inline-block;    padding-left: 0;">
-    <img src="./image/1.png" alt=""style="width:230px;    height: 100%;">
+    <img src="/image/1.png" alt=""style="width:230px;    height: 100%;">
 </div>
 
 <div style="height200px;width:350px;font-size:26px;font-family:'华文行楷','Arial','Microsoft YaHei','黑体','宋体','sans-serif';margin:0 auto; border:1px solid #008cee;background-color:#008cee;color:#fff;z-index:999;display:inline-block;line-height:50px;text-align:center;border-radius:20px;position:absolute;right: 42%;top: 480px;display:none;" class="noticeCon">
@@ -57,16 +57,12 @@
             <input type="text" placeholder="请输入用户名或者姓名" class="set" />&nbsp;&nbsp;
 
             <label>部门</label>&nbsp;&nbsp;
-            <select name="set"  class="set">
-                <option value="">------请选择------</option>
-                <option value="1">研发部</option>
-                <option value="2">客服部</option>
-                <option value="1">财务部</option>
-                <option value="2">大BOSS</option>
+            <select name="set"  class="set" id="deptId" name="deptId">
+
             </select>&nbsp;&nbsp;
 
             <label>职务</label>&nbsp;&nbsp;
-            <select name="set"  class="set">
+            <select name="set"  class="set" id="role">
                 <option value="">------请选择------</option>
                 <option value="1">工程师</option>
                 <option value="2">客服</option>
@@ -76,12 +72,10 @@
 
             <button type="button" class="btn" style="background-color: #008cee;color: #fff;margin:0 10px;">搜索</button>
             <button type="reset" class="btn" style="background-color: #008cee;color: #fff;margin:0 10px;">重置</button>
-            <a href="tjyh.html"> <button type="button" class="btn" style="background-color: #008cee;color: #fff;margin:0 10px;">新增</button></a>
+            <a href="${ctx}/user/toInsert"> <button type="button" class="btn" style="background-color: #008cee;color: #fff;margin:0 10px;">新增</button></a>
         </form>
-
-
         <div id="table-responsive" class="table-responsive" style="margin-top:15px;">
-            <table class="table table-bordered" id="deleteUserTable">
+          <%--  <table class="table table-bordered" id="deleteUserTable">
                 <thead>
                 <tr>
                     <td>用户名</td>
@@ -222,7 +216,7 @@
                     </td>
                 </tr>
                 </tbody>
-            </table>
+            </table>--%>
             <nav style="    padding-left: 10px; text-align: center;">
                 <ul class="pagination" style="margin:0 10px 0 0;">
                     <li><a href="javascrip:;">«</a></li>
@@ -410,76 +404,40 @@
 <!-- <a  id="btn2" href='swindex.html'>返回首页</a> -->
 <script src="js/app.js"></script>
 <script>
-   /* callSapiServer("/user/login",function(data){
-        userList(data);
-    },"GET");
-    });*/
-
    $(function() {
        callSapiServer("/user/selectAll",function(data){
            userBody1(data);
        },"GET");
+       var array = [
+           {target : "#deptId",parentId:2},
+           {target : "#role",parentId:5}
+       ];
+       initSelects(array);
    });
 
     function userBody1(data){
+        debugger;
         //列名初始化
-        var head = ["姓名","位置","状态"];
+        var head = ["用户名","真实名字","职务","部门","联系电话","地址","操作"];
         tab_jsonTable($("#table-responsive"), data, head,
                 function (td, row, col, content) {
                     $(td).css("text-align", "center");//添加td的样式
                     //初始化每一行的数据
                     switch (col) {
                         case 0:
-                            return nullToString(content.trueName) + "<input name='id' type='hidden' value='"+content.id+"'>";
+                            return nullToString(content.username) + "<input name='id' type='hidden' value='"+content.id+"'>";
                         case 1:
-                            return "<a href='javascript:void(0);'>" + nullToString(content.address) + "</a>";
+                            return nullToString(content.true_name);
                         case 2:
-                            var statusText = "";
-                            if(content.status == null || content.status == "") {
-                                statusText = "--";
-                            } else if(content.status == 0) {
-                                statusText = "工作中";
-                            }  else if(content.status == 1) {
-                                statusText = "休息中";
-                            } else {
-                                statusText = "异常";
-                            }
-                            return statusText;
-
+                            return nullToString(content.role_name);
                         case 3:
-                            var statusText = "";
-                            if(content.roleId == null || content.roleId == "") {
-                                statusText = "--";
-                            } else if(content.roleId == 0) {
-                                statusText = "员工";
-                            }  else if(content.roleId == 1) {
-                                statusText = "经理";
-                            } else if(content.roleId == 2){
-                                statusText = "主管";
-                            }else {
-                                statusText = "boss";
-                            }
-                            return statusText;
+                            return nullToString(content.meta_name);
                         case 4:
-                            var statusText = "";
-                            if(content.deptId == null || content.deptId == "") {
-                                statusText = "--";
-                            } else if(content.deptId == 0) {
-                                statusText = "开发部";
-                            }  else if(content.deptId == 1) {
-                                statusText = "客服部";
-                            } else if(content.deptId == 2){
-                                statusText = "测试部";
-                            }else {
-                                statusText = "酱油部";
-                            }
-                            return statusText;
-                        case 5:
                             return nullToString(content.tel);
-                        case 6:
+                        case 5:
                             return nullToString(content.address);
-                        case 7:
-                            var html = '<button name="update">修改</button>&nbsp;<button name="delete">删除</button>&nbsp;<button name="setRole">设置角色</button>';
+                        case 6:
+                            var html = '<button name="update" class="btn btn-info ">修改</button>&nbsp;<button name="delete"  class="btn btn-danger">删除</button>&nbsp;<button name="setRole"  class="btn" style="color:#FFFFFF;background-color: #008CEE">设置角色</button>';
                             return $(html);
                         default :
                             return null;
@@ -487,6 +445,7 @@
                 }, function (table) {
                     //设置table的样式
                     $(table).addClass("table table-bordered");
+
                     //通过检索table里面所有button赋值，当button的name为delete时，为它执行删除操作
                     $(table).find("button[name='delete']").click(function(){
                         var flag = confirm("您确定删除该元数据吗？一旦删除，将无法恢复！");
@@ -500,7 +459,7 @@
                                 id : id
                             };
                             //请求后台
-                            callSapiServer("/user/deleteByPrimaryKey",function(data){
+                            callSapiServer("/user/delete",function(data){
                                 //成功后，执行此回调函数
                                 alert(data.message);
                                 if(data.code == 200) {
@@ -513,7 +472,7 @@
                     $(table).find("button[name='update']").click(function(){
                         var tr = $(this).parents("tr");
                         var id = $(this).parents("tr").find("input[name='id']").val();
-                        window.location.href = ctx + "/user/toUpdate?userId="+id;
+                        window.location.href = ctx + "/user/toEdit?id="+id;
                     });
                 })
     }

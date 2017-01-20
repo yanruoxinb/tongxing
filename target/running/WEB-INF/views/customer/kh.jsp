@@ -71,27 +71,15 @@
             </select>&nbsp;&nbsp;
 
             <label>等级</label>&nbsp;&nbsp;
-            <select name="zt"  class="noset">
-                <option value="">-----请选择-----</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
+            <select name="zt"  class="noset" id="level">
             </select>&nbsp;&nbsp;
 
             <label>状态</label>&nbsp;&nbsp;
-            <select name="zt"  class="noset">
-                <option value="">-----请选择-----</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
+            <select name="zt"  class="noset" id="status">
             </select>&nbsp;&nbsp;
 
             <label>客户性质</label>&nbsp;&nbsp;
-            <select name="zt"  class="noset">
-                <option value="">-----请选择-----</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
+            <select name="zt"  class="noset" id="xz">
             </select>&nbsp;&nbsp;
 
 
@@ -157,6 +145,12 @@
             list(data);
 //            console.log(data);
         },"GET");
+        var array = [
+            {target : "#level",parentId:7},
+            {target : "#xz",parentId:9},
+            {target : "#status",parentId:8}
+        ];
+        initSelects(array);
     });
 
     function list(data){
@@ -168,7 +162,7 @@
                     //初始化每一行的数据
                     switch (col) {
                         case 0:
-                            return nullToString(content.customerNum) + "<input name='id' type='hidden' value='"+content.id+"'>";
+                            return nullToString(content.id) + "<input name='id' type='hidden' value='"+content.id+"'>";
                         case 1:
                             return "<a href='javascript:void(0);'>" + nullToString(content.customerName) + "</a>";
                         case 2:
@@ -218,10 +212,10 @@
                             }
                             return statusText;
                         case 15:
-                            var html = '<button name="select">详情</button>';
+                            var html = '<button name="select" class="btn" style="color:#FFFFFF;background-color: #008CEE">详情</button>';
                             return $(html);
                         case 16:
-                            var html = '<button name="update">修改</button>&nbsp;<button name="delete">删除</button>';
+                            var html = '<button name="update" class="btn btn-info ">修改</button>&nbsp;<button name="delete"  class="btn btn-danger">删除</button>';
                             return $(html);
                         default :
                             return null;

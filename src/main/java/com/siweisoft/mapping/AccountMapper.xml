@@ -29,6 +29,11 @@
     hotel_address, hotel_day, uuit_price, hours, call_time, edited, edit_time, creater, 
     car_record_id, status, auditor, audit_time
   </sql>
+  <select id="findByAccount" parameterType="com.siweisoft.model.Account" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from account
+  </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />

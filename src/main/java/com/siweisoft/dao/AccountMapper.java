@@ -1,7 +1,11 @@
 package com.siweisoft.dao;
 
 import com.siweisoft.model.Account;
+import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
+@Repository
 public interface AccountMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -14,4 +18,8 @@ public interface AccountMapper {
     int updateByPrimaryKeySelective(Account record);
 
     int updateByPrimaryKey(Account record);
+
+    List<Account> findByAccount();
+
+    List<Account> addByAccount();
 }

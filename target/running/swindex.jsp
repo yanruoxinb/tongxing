@@ -330,7 +330,6 @@
 
 <script>
 
-
     $(function(){
         $(".btnpz").bind('click',function(){
             $("#pz1").show();

@@ -5,6 +5,7 @@ package com.siweisoft.service.impl;/**
 import com.siweisoft.dao.ContractMapper;
 import com.siweisoft.model.Contract;
 import com.siweisoft.service.ContractService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -15,9 +16,9 @@ import java.util.Map;
  * @author sw-112 on 2017-01-16.
  * @create 2017-01-16-9:30.
  */
-@Service("contractService")
+@Service
 public class ContractServiceImpl implements ContractService{
-    @Resource
+    @Autowired
     private ContractMapper contractMapper;
     @Override
     public int deleteByPrimaryKey(Integer id) {

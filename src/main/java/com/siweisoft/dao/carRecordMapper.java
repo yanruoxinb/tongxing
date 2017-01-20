@@ -2,7 +2,7 @@ package com.siweisoft.dao;
 
 import com.siweisoft.model.carRecord;
 
-public interface carRecordMapper {
+public interface CarRecordMapper {
     int deleteByPrimaryKey(Integer id);
 
     int insert(carRecord record);

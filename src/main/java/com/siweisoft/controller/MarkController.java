@@ -34,7 +34,7 @@ public class MarkController {
             List<contractMark> list=contractMarkService.selectByCID(id);
             System.out.println(list);
             ObjectMapper mapper = new ObjectMapper();
-            stateCode=new StateCode(ConstantParams.SUCCESS,"查询成功",list);
+            stateCode=new StateCode("200","查询成功",list);
             json = mapper.writeValueAsString(stateCode);
             System.out.println(json);
         }catch (Exception e){

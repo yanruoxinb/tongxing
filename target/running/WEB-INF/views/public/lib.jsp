@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<script src="${ctx}/js/txCommon.js"></script>
 <link rel="stylesheet" href="${ctx}/css/index.css"/>
 <link rel="stylesheet" href="${ctx}/css/tq.css">
 <link rel="stylesheet" href="${ctx}/css/bootstrap.min.css"/>

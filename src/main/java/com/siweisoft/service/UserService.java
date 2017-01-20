@@ -3,6 +3,7 @@ package com.siweisoft.service;
 import com.siweisoft.model.User;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Robin on 2017-1-13.
@@ -42,6 +43,6 @@ public interface UserService {
      * @param params 参数列表
      * @return 符合条件的用户数据列表
      */
-      List<User> selectAll();
+      List<Map<String,Object>> selectAll();
 
 }

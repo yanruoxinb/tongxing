@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.siweisoft.dao.contractMarkMapper">
+<mapper namespace="com.siweisoft.dao.ContractMarkMapper">
   <resultMap id="BaseResultMap" type="com.siweisoft.model.contractMark">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="product_name" jdbcType="VARCHAR" property="productName" />

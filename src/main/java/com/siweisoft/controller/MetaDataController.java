@@ -50,6 +50,24 @@ public class MetaDataController {
     }
 
     //int pageIndex, int pageSize,String fno
+    @RequestMapping(value = "listByParentId",method = RequestMethod.GET)
+    @ResponseBody
+    public String listByParentId(int parentId,boolean refresh) {
+        String json = "";
+        StateCode sc = null;
+        try {
+            int pageSize = ConstantParams.PAGE_SIZE;
+            List list = metaDataService.listByParentId(parentId, refresh);
+            ObjectMapper mapper = new ObjectMapper();
+            sc = new StateCode("200", "查询成功",list);
+            json = mapper.writeValueAsString(sc);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return json;
+    }
+
+    //int pageIndex, int pageSize,String fno
     @RequestMapping(value = "delete",method = RequestMethod.POST)
     @ResponseBody
     public String delete(Integer id) {

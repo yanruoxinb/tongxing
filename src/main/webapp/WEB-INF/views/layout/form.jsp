@@ -1202,10 +1202,11 @@
 
     $(function(){
         var json = {
-            taskNum : 1,
+            taskNum :1,
             createdPerson :2,
             sendTime :3
         };
+
         jsonToForm("#fieldset_baiyouli",json);
 
         jsonToSelect("/user/selectAll","#executorId",null,"id","trueName",true,false);
